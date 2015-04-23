@@ -4,7 +4,8 @@ import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 import java.util.Date;
-/*
+import java.util.logging.Level;
+
 public class Subscriber extends Thread {
 
     private String topicPerfix;
@@ -30,7 +31,8 @@ public class Subscriber extends Thread {
         try {
             mqtt.disconnect();
         } catch (MqttException ex) {
-            System.out.println("Disconnect failed for: " + topic());
+            ex.printStackTrace();
+            SubscriberRunnner.logger.log(Level.ALL, ex.getMessage(), ex);
         }
     }
 
@@ -48,7 +50,7 @@ public class Subscriber extends Thread {
 
             mqtt.setCallback(new MqttCallback() {
                 public void connectionLost(Throwable cause) {
-                    System.out.println((new Date()) + " " + topicId + " disconnected");
+                    SubscriberRunnner.logger.info((new Date()) + " " + topicId + " disconnected");
                 }
 
                 public void messageArrived(String topic, MqttMessage message) {
@@ -60,23 +62,24 @@ public class Subscriber extends Thread {
 
             synchronized (Subscriber.class) {
                 isWorking = true;
-                while(isWorking)
+                while (isWorking)
                     Subscriber.class.wait();
             }
 
         } catch (MqttException e) {
             e.printStackTrace();
-        }
-        catch (InterruptedException e) {
+            SubscriberRunnner.logger.log(Level.ALL, e.getMessage(), e);
+        } catch (InterruptedException e) {
             e.printStackTrace();
+            SubscriberRunnner.logger.log(Level.ALL, e.getMessage(), e);
         }
     }
 
-    public void finish(){
+    public void finish() {
         isWorking = false;
     }
 
-    private String topic(){
-        return topicPerfix+topicId;
+    private String topic() {
+        return topicPerfix + topicId;
     }
-    */
+}
