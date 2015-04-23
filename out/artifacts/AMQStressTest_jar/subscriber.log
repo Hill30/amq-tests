@@ -1,0 +1,1780 @@
+Apr 22, 2015 6:08:17 PM com.hill30.amqstresstest.periodicsub.SubscriberRunnner main
+INFO: Periodic subscriber started
+Apr 22, 2015 6:08:17 PM com.hill30.amqstresstest.periodicsub.SubscriberRunnner main
+INFO: Starting topic ID: 300
+Apr 22, 2015 6:08:17 PM com.hill30.amqstresstest.periodicsub.SubscriberRunnner main
+INFO: Total subscribers: 1000
+Apr 22, 2015 6:08:17 PM com.hill30.amqstresstest.periodicsub.SubscriberRunnner main
+INFO: Topic prefix: mqtt_sub
+Apr 22, 2015 6:08:17 PM com.hill30.amqstresstest.periodicsub.SubscriberRunnner main
+INFO: Cycle iteration 0 from globalCyclesCount
+Apr 22, 2015 6:08:17 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub300
+Apr 22, 2015 6:08:17 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:17 MSK 2015 300 connected
+Apr 22, 2015 6:08:17 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub301
+Apr 22, 2015 6:08:17 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:17 MSK 2015 301 connected
+Apr 22, 2015 6:08:18 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub302
+Apr 22, 2015 6:08:18 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:18 MSK 2015 302 connected
+Apr 22, 2015 6:08:18 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub303
+Apr 22, 2015 6:08:18 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:18 MSK 2015 303 connected
+Apr 22, 2015 6:08:19 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub304
+Apr 22, 2015 6:08:19 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:19 MSK 2015 304 connected
+Apr 22, 2015 6:08:19 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub305
+Apr 22, 2015 6:08:20 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub306
+Apr 22, 2015 6:08:20 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub307
+Apr 22, 2015 6:08:21 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub308
+Apr 22, 2015 6:08:21 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub309
+Apr 22, 2015 6:08:22 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub310
+Apr 22, 2015 6:08:22 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:22 MSK 2015 307 connected
+Apr 22, 2015 6:08:22 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:22 MSK 2015 310 connected
+Apr 22, 2015 6:08:22 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:22 MSK 2015 309 connected
+Apr 22, 2015 6:08:22 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:22 MSK 2015 308 connected
+Apr 22, 2015 6:08:22 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:22 MSK 2015 306 connected
+Apr 22, 2015 6:08:22 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:22 MSK 2015 305 connected
+Apr 22, 2015 6:08:22 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub311
+Apr 22, 2015 6:08:23 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub312
+Apr 22, 2015 6:08:23 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub313
+Apr 22, 2015 6:08:24 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:24 MSK 2015 312 connected
+Apr 22, 2015 6:08:24 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:24 MSK 2015 311 connected
+Apr 22, 2015 6:08:24 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:24 MSK 2015 313 connected
+Apr 22, 2015 6:08:24 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub314
+Apr 22, 2015 6:08:24 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:24 MSK 2015 314 connected
+Apr 22, 2015 6:08:24 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub315
+Apr 22, 2015 6:08:24 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:24 MSK 2015 315 connected
+Apr 22, 2015 6:08:25 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub316
+Apr 22, 2015 6:08:26 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub317
+Apr 22, 2015 6:08:26 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:26 MSK 2015 317 connected
+Apr 22, 2015 6:08:26 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:26 MSK 2015 316 connected
+Apr 22, 2015 6:08:26 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub318
+Apr 22, 2015 6:08:26 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:26 MSK 2015 318 connected
+Apr 22, 2015 6:08:26 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub319
+Apr 22, 2015 6:08:26 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:26 MSK 2015 319 connected
+Apr 22, 2015 6:08:27 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub320
+Apr 22, 2015 6:08:27 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:27 MSK 2015 320 connected
+Apr 22, 2015 6:08:27 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub321
+Apr 22, 2015 6:08:28 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub322
+Apr 22, 2015 6:08:28 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub323
+Apr 22, 2015 6:08:29 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub324
+Apr 22, 2015 6:08:29 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:29 MSK 2015 322 connected
+Apr 22, 2015 6:08:29 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:29 MSK 2015 324 connected
+Apr 22, 2015 6:08:29 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:29 MSK 2015 323 connected
+Apr 22, 2015 6:08:29 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:29 MSK 2015 321 connected
+Apr 22, 2015 6:08:29 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub325
+Apr 22, 2015 6:08:29 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:29 MSK 2015 325 connected
+Apr 22, 2015 6:08:30 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub326
+Apr 22, 2015 6:08:30 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:30 MSK 2015 326 connected
+Apr 22, 2015 6:08:30 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub327
+Apr 22, 2015 6:08:31 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub328
+Apr 22, 2015 6:08:31 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:31 MSK 2015 327 connected
+Apr 22, 2015 6:08:31 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:31 MSK 2015 328 connected
+Apr 22, 2015 6:08:32 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub329
+Apr 22, 2015 6:08:32 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:32 MSK 2015 329 connected
+Apr 22, 2015 6:08:32 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub330
+Apr 22, 2015 6:08:32 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:32 MSK 2015 330 connected
+Apr 22, 2015 6:08:33 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub331
+Apr 22, 2015 6:08:33 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:33 MSK 2015 331 connected
+Apr 22, 2015 6:08:33 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub332
+Apr 22, 2015 6:08:34 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub333
+Apr 22, 2015 6:08:34 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub334
+Apr 22, 2015 6:08:35 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub335
+Apr 22, 2015 6:08:35 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:35 MSK 2015 334 connected
+Apr 22, 2015 6:08:35 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:35 MSK 2015 335 connected
+Apr 22, 2015 6:08:35 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:35 MSK 2015 332 connected
+Apr 22, 2015 6:08:35 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:35 MSK 2015 333 connected
+Apr 22, 2015 6:08:35 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub336
+Apr 22, 2015 6:08:35 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:35 MSK 2015 336 connected
+Apr 22, 2015 6:08:36 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub337
+Apr 22, 2015 6:08:36 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub338
+Apr 22, 2015 6:08:37 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub339
+Apr 22, 2015 6:08:37 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub340
+Apr 22, 2015 6:08:37 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:37 MSK 2015 338 connected
+Apr 22, 2015 6:08:37 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:37 MSK 2015 340 connected
+Apr 22, 2015 6:08:37 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:37 MSK 2015 339 connected
+Apr 22, 2015 6:08:37 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:37 MSK 2015 337 connected
+Apr 22, 2015 6:08:38 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub341
+Apr 22, 2015 6:08:38 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:38 MSK 2015 341 connected
+Apr 22, 2015 6:08:38 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub342
+Apr 22, 2015 6:08:39 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub343
+Apr 22, 2015 6:08:39 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub344
+Apr 22, 2015 6:08:40 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub345
+Apr 22, 2015 6:08:40 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:40 MSK 2015 342 connected
+Apr 22, 2015 6:08:40 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:40 MSK 2015 344 connected
+Apr 22, 2015 6:08:40 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:40 MSK 2015 343 connected
+Apr 22, 2015 6:08:40 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:40 MSK 2015 345 connected
+Apr 22, 2015 6:08:40 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub346
+Apr 22, 2015 6:08:40 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:40 MSK 2015 346 connected
+Apr 22, 2015 6:08:41 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub347
+Apr 22, 2015 6:08:41 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub348
+Apr 22, 2015 6:08:41 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:41 MSK 2015 347 connected
+Apr 22, 2015 6:08:41 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:41 MSK 2015 348 connected
+Apr 22, 2015 6:08:42 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub349
+Apr 22, 2015 6:08:42 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:42 MSK 2015 349 connected
+Apr 22, 2015 6:08:42 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub350
+Apr 22, 2015 6:08:42 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:42 MSK 2015 350 connected
+Apr 22, 2015 6:08:43 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub351
+Apr 22, 2015 6:08:43 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:43 MSK 2015 351 connected
+Apr 22, 2015 6:08:43 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub352
+Apr 22, 2015 6:08:44 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub353
+Apr 22, 2015 6:08:44 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:44 MSK 2015 353 connected
+Apr 22, 2015 6:08:44 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:44 MSK 2015 352 connected
+Apr 22, 2015 6:08:44 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub354
+Apr 22, 2015 6:08:44 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:44 MSK 2015 354 connected
+Apr 22, 2015 6:08:45 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub355
+Apr 22, 2015 6:08:45 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:45 MSK 2015 355 connected
+Apr 22, 2015 6:08:45 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub356
+Apr 22, 2015 6:08:46 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub357
+Apr 22, 2015 6:08:46 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub358
+Apr 22, 2015 6:08:47 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub359
+Apr 22, 2015 6:08:47 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:47 MSK 2015 357 connected
+Apr 22, 2015 6:08:47 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:47 MSK 2015 359 connected
+Apr 22, 2015 6:08:47 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:47 MSK 2015 358 connected
+Apr 22, 2015 6:08:47 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:47 MSK 2015 356 connected
+Apr 22, 2015 6:08:47 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub360
+Apr 22, 2015 6:08:47 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:47 MSK 2015 360 connected
+Apr 22, 2015 6:08:48 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub361
+Apr 22, 2015 6:08:48 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub362
+Apr 22, 2015 6:08:49 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub363
+Apr 22, 2015 6:08:49 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub364
+Apr 22, 2015 6:08:49 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:49 MSK 2015 361 connected
+Apr 22, 2015 6:08:49 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:49 MSK 2015 363 connected
+Apr 22, 2015 6:08:49 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:49 MSK 2015 362 connected
+Apr 22, 2015 6:08:49 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:49 MSK 2015 364 connected
+Apr 22, 2015 6:08:50 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub365
+Apr 22, 2015 6:08:50 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub366
+Apr 22, 2015 6:08:51 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub367
+Apr 22, 2015 6:08:51 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub368
+Apr 22, 2015 6:08:52 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:52 MSK 2015 365 connected
+Apr 22, 2015 6:08:52 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:52 MSK 2015 366 connected
+Apr 22, 2015 6:08:52 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:52 MSK 2015 368 connected
+Apr 22, 2015 6:08:52 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:52 MSK 2015 367 connected
+Apr 22, 2015 6:08:52 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub369
+Apr 22, 2015 6:08:52 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:52 MSK 2015 369 connected
+Apr 22, 2015 6:08:52 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub370
+Apr 22, 2015 6:08:53 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub371
+Apr 22, 2015 6:08:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:53 MSK 2015 370 connected
+Apr 22, 2015 6:08:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:53 MSK 2015 371 connected
+Apr 22, 2015 6:08:53 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub372
+Apr 22, 2015 6:08:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:53 MSK 2015 372 connected
+Apr 22, 2015 6:08:54 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub373
+Apr 22, 2015 6:08:54 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:54 MSK 2015 373 connected
+Apr 22, 2015 6:08:54 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub374
+Apr 22, 2015 6:08:55 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub375
+Apr 22, 2015 6:08:55 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:55 MSK 2015 374 connected
+Apr 22, 2015 6:08:55 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:55 MSK 2015 375 connected
+Apr 22, 2015 6:08:55 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub376
+Apr 22, 2015 6:08:55 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:55 MSK 2015 376 connected
+Apr 22, 2015 6:08:56 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub377
+Apr 22, 2015 6:08:56 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:56 MSK 2015 377 connected
+Apr 22, 2015 6:08:56 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub378
+Apr 22, 2015 6:08:57 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub379
+Apr 22, 2015 6:08:57 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:57 MSK 2015 379 connected
+Apr 22, 2015 6:08:57 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:57 MSK 2015 378 connected
+Apr 22, 2015 6:08:57 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub380
+Apr 22, 2015 6:08:57 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:57 MSK 2015 380 connected
+Apr 22, 2015 6:08:58 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub381
+Apr 22, 2015 6:08:58 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:58 MSK 2015 381 connected
+Apr 22, 2015 6:08:58 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub382
+Apr 22, 2015 6:08:59 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub383
+Apr 22, 2015 6:08:59 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:59 MSK 2015 382 connected
+Apr 22, 2015 6:08:59 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:59 MSK 2015 383 connected
+Apr 22, 2015 6:08:59 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub384
+Apr 22, 2015 6:08:59 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:08:59 MSK 2015 384 connected
+Apr 22, 2015 6:09:00 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub385
+Apr 22, 2015 6:09:00 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:00 MSK 2015 385 connected
+Apr 22, 2015 6:09:00 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub386
+Apr 22, 2015 6:09:01 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub387
+Apr 22, 2015 6:09:01 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:01 MSK 2015 387 connected
+Apr 22, 2015 6:09:01 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:01 MSK 2015 386 connected
+Apr 22, 2015 6:09:01 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub388
+Apr 22, 2015 6:09:01 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:01 MSK 2015 388 connected
+Apr 22, 2015 6:09:02 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub389
+Apr 22, 2015 6:09:02 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:02 MSK 2015 389 connected
+Apr 22, 2015 6:09:02 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub390
+Apr 22, 2015 6:09:03 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub391
+Apr 22, 2015 6:09:03 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:03 MSK 2015 391 connected
+Apr 22, 2015 6:09:03 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:03 MSK 2015 390 connected
+Apr 22, 2015 6:09:03 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub392
+Apr 22, 2015 6:09:03 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:03 MSK 2015 392 connected
+Apr 22, 2015 6:09:04 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub393
+Apr 22, 2015 6:09:04 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:04 MSK 2015 393 connected
+Apr 22, 2015 6:09:04 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub394
+Apr 22, 2015 6:09:05 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub395
+Apr 22, 2015 6:09:05 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:05 MSK 2015 394 connected
+Apr 22, 2015 6:09:05 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:05 MSK 2015 395 connected
+Apr 22, 2015 6:09:06 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub396
+Apr 22, 2015 6:09:06 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:06 MSK 2015 396 connected
+Apr 22, 2015 6:09:06 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub397
+Apr 22, 2015 6:09:06 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:06 MSK 2015 397 connected
+Apr 22, 2015 6:09:07 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub398
+Apr 22, 2015 6:09:07 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub399
+Apr 22, 2015 6:09:07 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:07 MSK 2015 399 connected
+Apr 22, 2015 6:09:07 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:07 MSK 2015 398 connected
+Apr 22, 2015 6:09:08 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub400
+Apr 22, 2015 6:09:08 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:08 MSK 2015 400 connected
+Apr 22, 2015 6:09:08 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub401
+Apr 22, 2015 6:09:09 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub402
+Apr 22, 2015 6:09:09 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:09 MSK 2015 401 connected
+Apr 22, 2015 6:09:09 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:09 MSK 2015 402 connected
+Apr 22, 2015 6:09:09 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub403
+Apr 22, 2015 6:09:09 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:09 MSK 2015 403 connected
+Apr 22, 2015 6:09:10 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub404
+Apr 22, 2015 6:09:10 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:10 MSK 2015 404 connected
+Apr 22, 2015 6:09:10 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub405
+Apr 22, 2015 6:09:11 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub406
+Apr 22, 2015 6:09:11 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:11 MSK 2015 406 connected
+Apr 22, 2015 6:09:11 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:11 MSK 2015 405 connected
+Apr 22, 2015 6:09:11 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub407
+Apr 22, 2015 6:09:11 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:11 MSK 2015 407 connected
+Apr 22, 2015 6:09:12 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub408
+Apr 22, 2015 6:09:12 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:12 MSK 2015 408 connected
+Apr 22, 2015 6:09:12 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub409
+Apr 22, 2015 6:09:13 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub410
+Apr 22, 2015 6:09:13 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub411
+Apr 22, 2015 6:09:14 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub412
+Apr 22, 2015 6:09:14 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:14 MSK 2015 410 connected
+Apr 22, 2015 6:09:14 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:14 MSK 2015 411 connected
+Apr 22, 2015 6:09:14 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:14 MSK 2015 409 connected
+Apr 22, 2015 6:09:14 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:14 MSK 2015 412 connected
+Apr 22, 2015 6:09:14 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub413
+Apr 22, 2015 6:09:15 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub414
+Apr 22, 2015 6:09:15 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:15 MSK 2015 414 connected
+Apr 22, 2015 6:09:15 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:15 MSK 2015 413 connected
+Apr 22, 2015 6:09:15 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub415
+Apr 22, 2015 6:09:16 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub416
+Apr 22, 2015 6:09:16 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub417
+Apr 22, 2015 6:09:17 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub418
+Apr 22, 2015 6:09:17 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub419
+Apr 22, 2015 6:09:17 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:17 MSK 2015 415 connected
+Apr 22, 2015 6:09:17 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:17 MSK 2015 419 connected
+Apr 22, 2015 6:09:17 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:17 MSK 2015 418 connected
+Apr 22, 2015 6:09:17 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:17 MSK 2015 417 connected
+Apr 22, 2015 6:09:17 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:17 MSK 2015 416 connected
+Apr 22, 2015 6:09:18 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub420
+Apr 22, 2015 6:09:18 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub421
+Apr 22, 2015 6:09:19 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:19 MSK 2015 420 connected
+Apr 22, 2015 6:09:19 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:19 MSK 2015 421 connected
+Apr 22, 2015 6:09:19 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub422
+Apr 22, 2015 6:09:19 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub423
+Apr 22, 2015 6:09:20 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub424
+Apr 22, 2015 6:09:20 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub425
+Apr 22, 2015 6:09:21 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub426
+Apr 22, 2015 6:09:21 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:21 MSK 2015 423 connected
+Apr 22, 2015 6:09:21 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:21 MSK 2015 424 connected
+Apr 22, 2015 6:09:21 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:21 MSK 2015 422 connected
+Apr 22, 2015 6:09:21 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:21 MSK 2015 426 connected
+Apr 22, 2015 6:09:21 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:21 MSK 2015 425 connected
+Apr 22, 2015 6:09:21 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub427
+Apr 22, 2015 6:09:22 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub428
+Apr 22, 2015 6:09:22 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub429
+Apr 22, 2015 6:09:23 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub430
+Apr 22, 2015 6:09:23 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:23 MSK 2015 428 connected
+Apr 22, 2015 6:09:23 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:23 MSK 2015 427 connected
+Apr 22, 2015 6:09:23 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:23 MSK 2015 430 connected
+Apr 22, 2015 6:09:23 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:23 MSK 2015 429 connected
+Apr 22, 2015 6:09:23 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub431
+Apr 22, 2015 6:09:24 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub432
+Apr 22, 2015 6:09:24 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:24 MSK 2015 431 connected
+Apr 22, 2015 6:09:24 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:24 MSK 2015 432 connected
+Apr 22, 2015 6:09:24 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub433
+Apr 22, 2015 6:09:25 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub434
+Apr 22, 2015 6:09:25 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub435
+Apr 22, 2015 6:09:26 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub436
+Apr 22, 2015 6:09:26 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub437
+Apr 22, 2015 6:09:26 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:26 MSK 2015 436 connected
+Apr 22, 2015 6:09:26 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:26 MSK 2015 435 connected
+Apr 22, 2015 6:09:26 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:26 MSK 2015 434 connected
+Apr 22, 2015 6:09:26 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:26 MSK 2015 433 connected
+Apr 22, 2015 6:09:26 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:26 MSK 2015 437 connected
+Apr 22, 2015 6:09:27 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub438
+Apr 22, 2015 6:09:27 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub439
+Apr 22, 2015 6:09:28 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub440
+Apr 22, 2015 6:09:28 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub441
+Apr 22, 2015 6:09:28 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:28 MSK 2015 438 connected
+Apr 22, 2015 6:09:28 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:28 MSK 2015 440 connected
+Apr 22, 2015 6:09:28 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:28 MSK 2015 439 connected
+Apr 22, 2015 6:09:28 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:28 MSK 2015 441 connected
+Apr 22, 2015 6:09:29 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub442
+Apr 22, 2015 6:09:29 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub443
+Apr 22, 2015 6:09:30 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:30 MSK 2015 442 connected
+Apr 22, 2015 6:09:30 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:30 MSK 2015 443 connected
+Apr 22, 2015 6:09:30 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub444
+Apr 22, 2015 6:09:30 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub445
+Apr 22, 2015 6:09:31 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub446
+Apr 22, 2015 6:09:31 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub447
+Apr 22, 2015 6:09:32 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub448
+Apr 22, 2015 6:09:32 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:32 MSK 2015 444 connected
+Apr 22, 2015 6:09:32 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:32 MSK 2015 446 connected
+Apr 22, 2015 6:09:32 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:32 MSK 2015 445 connected
+Apr 22, 2015 6:09:32 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:32 MSK 2015 447 connected
+Apr 22, 2015 6:09:32 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:32 MSK 2015 448 connected
+Apr 22, 2015 6:09:32 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub449
+Apr 22, 2015 6:09:33 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub450
+Apr 22, 2015 6:09:33 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:33 MSK 2015 450 connected
+Apr 22, 2015 6:09:33 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:33 MSK 2015 449 connected
+Apr 22, 2015 6:09:33 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub451
+Apr 22, 2015 6:09:34 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub452
+Apr 22, 2015 6:09:34 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub453
+Apr 22, 2015 6:09:35 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub454
+Apr 22, 2015 6:09:35 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub455
+Apr 22, 2015 6:09:35 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:35 MSK 2015 451 connected
+Apr 22, 2015 6:09:35 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:35 MSK 2015 453 connected
+Apr 22, 2015 6:09:35 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:35 MSK 2015 452 connected
+Apr 22, 2015 6:09:35 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:35 MSK 2015 455 connected
+Apr 22, 2015 6:09:35 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:35 MSK 2015 454 connected
+Apr 22, 2015 6:09:36 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub456
+Apr 22, 2015 6:09:36 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub457
+Apr 22, 2015 6:09:37 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub458
+Apr 22, 2015 6:09:37 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub459
+Apr 22, 2015 6:09:37 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:37 MSK 2015 458 connected
+Apr 22, 2015 6:09:37 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:37 MSK 2015 457 connected
+Apr 22, 2015 6:09:37 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:37 MSK 2015 456 connected
+Apr 22, 2015 6:09:37 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:37 MSK 2015 459 connected
+Apr 22, 2015 6:09:38 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub460
+Apr 22, 2015 6:09:38 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub461
+Apr 22, 2015 6:09:39 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub462
+Apr 22, 2015 6:09:39 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:39 MSK 2015 460 connected
+Apr 22, 2015 6:09:39 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:39 MSK 2015 462 connected
+Apr 22, 2015 6:09:39 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:39 MSK 2015 461 connected
+Apr 22, 2015 6:09:39 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub463
+Apr 22, 2015 6:09:40 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub464
+Apr 22, 2015 6:09:40 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub465
+Apr 22, 2015 6:09:41 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub466
+Apr 22, 2015 6:09:41 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:41 MSK 2015 463 connected
+Apr 22, 2015 6:09:41 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:41 MSK 2015 465 connected
+Apr 22, 2015 6:09:41 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:41 MSK 2015 464 connected
+Apr 22, 2015 6:09:41 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:41 MSK 2015 466 connected
+Apr 22, 2015 6:09:41 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub467
+Apr 22, 2015 6:09:42 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub468
+Apr 22, 2015 6:09:42 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:42 MSK 2015 467 connected
+Apr 22, 2015 6:09:42 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:42 MSK 2015 468 connected
+Apr 22, 2015 6:09:42 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub469
+Apr 22, 2015 6:09:43 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub470
+Apr 22, 2015 6:09:43 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:43 MSK 2015 470 connected
+Apr 22, 2015 6:09:43 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:43 MSK 2015 469 connected
+Apr 22, 2015 6:09:43 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub471
+Apr 22, 2015 6:09:43 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:43 MSK 2015 471 connected
+Apr 22, 2015 6:09:44 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub472
+Apr 22, 2015 6:09:44 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub473
+Apr 22, 2015 6:09:45 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:45 MSK 2015 472 connected
+Apr 22, 2015 6:09:45 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:45 MSK 2015 473 connected
+Apr 22, 2015 6:09:45 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub474
+Apr 22, 2015 6:09:45 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub475
+Apr 22, 2015 6:09:46 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub476
+Apr 22, 2015 6:09:46 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:46 MSK 2015 474 connected
+Apr 22, 2015 6:09:46 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:46 MSK 2015 476 connected
+Apr 22, 2015 6:09:46 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:46 MSK 2015 475 connected
+Apr 22, 2015 6:09:46 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub477
+Apr 22, 2015 6:09:47 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub478
+Apr 22, 2015 6:09:47 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub479
+Apr 22, 2015 6:09:48 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub480
+Apr 22, 2015 6:09:48 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:48 MSK 2015 478 connected
+Apr 22, 2015 6:09:48 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:48 MSK 2015 480 connected
+Apr 22, 2015 6:09:48 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:48 MSK 2015 479 connected
+Apr 22, 2015 6:09:48 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:48 MSK 2015 477 connected
+Apr 22, 2015 6:09:48 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub481
+Apr 22, 2015 6:09:49 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub482
+Apr 22, 2015 6:09:49 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub483
+Apr 22, 2015 6:09:49 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:49 MSK 2015 483 connected
+Apr 22, 2015 6:09:49 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:49 MSK 2015 481 connected
+Apr 22, 2015 6:09:49 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:49 MSK 2015 482 connected
+Apr 22, 2015 6:09:50 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub484
+Apr 22, 2015 6:09:50 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub485
+Apr 22, 2015 6:09:51 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub486
+Apr 22, 2015 6:09:51 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub487
+Apr 22, 2015 6:09:52 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:52 MSK 2015 484 connected
+Apr 22, 2015 6:09:52 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:52 MSK 2015 485 connected
+Apr 22, 2015 6:09:52 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:52 MSK 2015 486 connected
+Apr 22, 2015 6:09:52 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:52 MSK 2015 487 connected
+Apr 22, 2015 6:09:52 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub488
+Apr 22, 2015 6:09:52 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub489
+Apr 22, 2015 6:09:53 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub490
+Apr 22, 2015 6:09:54 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub491
+Apr 22, 2015 6:09:54 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:54 MSK 2015 488 connected
+Apr 22, 2015 6:09:54 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:54 MSK 2015 490 connected
+Apr 22, 2015 6:09:54 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:54 MSK 2015 489 connected
+Apr 22, 2015 6:09:54 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub492
+Apr 22, 2015 6:09:55 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub493
+Apr 22, 2015 6:09:55 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub494
+Apr 22, 2015 6:09:56 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub495
+Apr 22, 2015 6:09:56 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:56 MSK 2015 491 connected
+Apr 22, 2015 6:09:56 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:56 MSK 2015 492 connected
+Apr 22, 2015 6:09:56 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:56 MSK 2015 493 connected
+Apr 22, 2015 6:09:56 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub496
+Apr 22, 2015 6:09:57 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub497
+Apr 22, 2015 6:09:57 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub498
+Apr 22, 2015 6:09:58 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub499
+Apr 22, 2015 6:09:58 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:58 MSK 2015 495 connected
+Apr 22, 2015 6:09:58 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:58 MSK 2015 494 connected
+Apr 22, 2015 6:09:58 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:58 MSK 2015 496 connected
+Apr 22, 2015 6:09:58 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:58 MSK 2015 497 connected
+Apr 22, 2015 6:09:58 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:58 MSK 2015 499 connected
+Apr 22, 2015 6:09:58 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:58 MSK 2015 498 connected
+Apr 22, 2015 6:09:58 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub500
+Apr 22, 2015 6:09:59 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub501
+Apr 22, 2015 6:09:59 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub502
+Apr 22, 2015 6:09:59 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:59 MSK 2015 501 connected
+Apr 22, 2015 6:09:59 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:59 MSK 2015 502 connected
+Apr 22, 2015 6:09:59 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:09:59 MSK 2015 500 connected
+Apr 22, 2015 6:10:00 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub503
+Apr 22, 2015 6:10:00 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub504
+Apr 22, 2015 6:10:01 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub505
+Apr 22, 2015 6:10:01 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub506
+Apr 22, 2015 6:10:02 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub507
+Apr 22, 2015 6:10:02 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub508
+Apr 22, 2015 6:10:03 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:10:03 MSK 2015 503 connected
+Apr 22, 2015 6:10:03 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:10:03 MSK 2015 504 connected
+Apr 22, 2015 6:10:03 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub509
+Apr 22, 2015 6:10:03 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub510
+Apr 22, 2015 6:10:04 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub511
+Apr 22, 2015 6:10:04 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub512
+Apr 22, 2015 6:10:05 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub513
+Apr 22, 2015 6:10:05 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:10:05 MSK 2015 505 connected
+Apr 22, 2015 6:10:05 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub514
+Apr 22, 2015 6:10:06 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub515
+Apr 22, 2015 6:10:06 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub516
+Apr 22, 2015 6:10:07 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub517
+Apr 22, 2015 6:10:07 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:10:07 MSK 2015 506 connected
+Apr 22, 2015 6:10:07 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub518
+Apr 22, 2015 6:10:08 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub519
+Apr 22, 2015 6:10:08 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub520
+Apr 22, 2015 6:10:09 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub521
+Apr 22, 2015 6:10:09 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub522
+Apr 22, 2015 6:10:10 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub523
+Apr 22, 2015 6:10:10 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:10:10 MSK 2015 509 connected
+Apr 22, 2015 6:10:10 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub524
+Apr 22, 2015 6:10:11 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub525
+Apr 22, 2015 6:10:11 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub526
+Apr 22, 2015 6:10:12 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub527
+Apr 22, 2015 6:10:12 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:10:12 MSK 2015 507 connected
+Apr 22, 2015 6:10:12 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub528
+Apr 22, 2015 6:10:13 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub529
+Apr 22, 2015 6:10:13 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub530
+Apr 22, 2015 6:10:14 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub531
+Apr 22, 2015 6:10:14 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:10:14 MSK 2015 508 connected
+Apr 22, 2015 6:10:14 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:10:14 MSK 2015 514 connected
+Apr 22, 2015 6:10:14 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub532
+Apr 22, 2015 6:10:15 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub533
+Apr 22, 2015 6:10:15 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub534
+Apr 22, 2015 6:10:16 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub535
+Apr 22, 2015 6:10:16 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub536
+Apr 22, 2015 6:10:17 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub537
+Apr 22, 2015 6:10:17 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub538
+Apr 22, 2015 6:10:18 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub539
+Apr 22, 2015 6:10:18 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub540
+Apr 22, 2015 6:10:19 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub541
+Apr 22, 2015 6:10:19 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub542
+Apr 22, 2015 6:10:20 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub543
+Apr 22, 2015 6:10:20 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub544
+Apr 22, 2015 6:10:21 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub545
+Apr 22, 2015 6:10:21 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub546
+Apr 22, 2015 6:10:22 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub547
+Apr 22, 2015 6:10:22 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub548
+Apr 22, 2015 6:10:23 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub549
+Apr 22, 2015 6:10:23 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub550
+Apr 22, 2015 6:10:24 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub551
+Apr 22, 2015 6:10:24 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub552
+Apr 22, 2015 6:10:25 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub553
+Apr 22, 2015 6:10:25 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub554
+Apr 22, 2015 6:10:26 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub555
+Apr 22, 2015 6:10:26 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub556
+Apr 22, 2015 6:10:26 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:26 MSK 2015 433 disconnected
+Apr 22, 2015 6:10:26 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:26 MSK 2015 434 disconnected
+Apr 22, 2015 6:10:26 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:26 MSK 2015 436 disconnected
+Apr 22, 2015 6:10:26 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:26 MSK 2015 435 disconnected
+Apr 22, 2015 6:10:27 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub557
+Apr 22, 2015 6:10:27 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub558
+Apr 22, 2015 6:10:28 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub559
+Apr 22, 2015 6:10:28 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub560
+Apr 22, 2015 6:10:28 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:28 MSK 2015 441 disconnected
+Apr 22, 2015 6:10:28 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:28 MSK 2015 438 disconnected
+Apr 22, 2015 6:10:28 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:28 MSK 2015 440 disconnected
+Apr 22, 2015 6:10:29 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub561
+Apr 22, 2015 6:10:29 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:10:29 MSK 2015 511 connected
+Apr 22, 2015 6:10:29 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub562
+Apr 22, 2015 6:10:30 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:30 MSK 2015 443 disconnected
+Apr 22, 2015 6:10:30 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub563
+Apr 22, 2015 6:10:30 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:30 MSK 2015 442 disconnected
+Apr 22, 2015 6:10:30 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub564
+Apr 22, 2015 6:10:31 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub565
+Apr 22, 2015 6:10:31 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:10:31 MSK 2015 513 connected
+Apr 22, 2015 6:10:31 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:10:31 MSK 2015 510 connected
+Apr 22, 2015 6:10:31 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:10:31 MSK 2015 512 connected
+Apr 22, 2015 6:10:31 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub566
+Apr 22, 2015 6:10:32 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub567
+Apr 22, 2015 6:10:32 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:32 MSK 2015 446 disconnected
+Apr 22, 2015 6:10:32 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:32 MSK 2015 445 disconnected
+Apr 22, 2015 6:10:32 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:32 MSK 2015 444 disconnected
+Apr 22, 2015 6:10:32 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:32 MSK 2015 448 disconnected
+Apr 22, 2015 6:10:32 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:32 MSK 2015 447 disconnected
+Apr 22, 2015 6:10:32 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub568
+Apr 22, 2015 6:10:33 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub569
+Apr 22, 2015 6:10:33 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:10:33 MSK 2015 520 connected
+Apr 22, 2015 6:10:33 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:33 MSK 2015 449 disconnected
+Apr 22, 2015 6:10:33 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:33 MSK 2015 450 disconnected
+Apr 22, 2015 6:10:33 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub570
+Apr 22, 2015 6:10:34 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub571
+Apr 22, 2015 6:10:34 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub572
+Apr 22, 2015 6:10:35 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub573
+Apr 22, 2015 6:10:35 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub574
+Apr 22, 2015 6:10:35 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:35 MSK 2015 451 disconnected
+Apr 22, 2015 6:10:35 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:35 MSK 2015 453 disconnected
+Apr 22, 2015 6:10:35 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:35 MSK 2015 454 disconnected
+Apr 22, 2015 6:10:35 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:35 MSK 2015 455 disconnected
+Apr 22, 2015 6:10:35 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:35 MSK 2015 452 disconnected
+Apr 22, 2015 6:10:36 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub575
+Apr 22, 2015 6:10:36 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub576
+Apr 22, 2015 6:10:37 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub577
+Apr 22, 2015 6:10:37 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub578
+Apr 22, 2015 6:10:37 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:37 MSK 2015 457 disconnected
+Apr 22, 2015 6:10:37 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:37 MSK 2015 456 disconnected
+Apr 22, 2015 6:10:37 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:37 MSK 2015 458 disconnected
+Apr 22, 2015 6:10:37 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:37 MSK 2015 459 disconnected
+Apr 22, 2015 6:10:38 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub579
+Apr 22, 2015 6:10:38 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub580
+Apr 22, 2015 6:10:39 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub581
+Apr 22, 2015 6:10:39 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:39 MSK 2015 462 disconnected
+Apr 22, 2015 6:10:39 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:39 MSK 2015 460 disconnected
+Apr 22, 2015 6:10:39 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:39 MSK 2015 461 disconnected
+Apr 22, 2015 6:10:39 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:10:39 MSK 2015 516 connected
+Apr 22, 2015 6:10:39 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub582
+Apr 22, 2015 6:10:40 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub583
+Apr 22, 2015 6:10:40 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub584
+Apr 22, 2015 6:10:41 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub585
+Apr 22, 2015 6:10:41 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:41 MSK 2015 466 disconnected
+Apr 22, 2015 6:10:41 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:41 MSK 2015 465 disconnected
+Apr 22, 2015 6:10:41 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:41 MSK 2015 463 disconnected
+Apr 22, 2015 6:10:41 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:41 MSK 2015 464 disconnected
+Apr 22, 2015 6:10:41 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub586
+Apr 22, 2015 6:10:42 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub587
+Apr 22, 2015 6:10:42 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:42 MSK 2015 467 disconnected
+Apr 22, 2015 6:10:42 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:42 MSK 2015 468 disconnected
+Apr 22, 2015 6:10:42 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub588
+Apr 22, 2015 6:10:43 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub589
+Apr 22, 2015 6:10:43 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:43 MSK 2015 469 disconnected
+Apr 22, 2015 6:10:43 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:43 MSK 2015 470 disconnected
+Apr 22, 2015 6:10:43 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:43 MSK 2015 471 disconnected
+Apr 22, 2015 6:10:43 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub590
+Apr 22, 2015 6:10:44 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub591
+Apr 22, 2015 6:10:44 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub592
+Apr 22, 2015 6:10:45 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:45 MSK 2015 473 disconnected
+Apr 22, 2015 6:10:45 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:45 MSK 2015 472 disconnected
+Apr 22, 2015 6:10:45 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub593
+Apr 22, 2015 6:10:45 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub594
+Apr 22, 2015 6:10:46 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub595
+Apr 22, 2015 6:10:46 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:46 MSK 2015 475 disconnected
+Apr 22, 2015 6:10:46 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:46 MSK 2015 476 disconnected
+Apr 22, 2015 6:10:46 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:46 MSK 2015 474 disconnected
+Apr 22, 2015 6:10:46 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub596
+Apr 22, 2015 6:10:47 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub597
+Apr 22, 2015 6:10:47 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub598
+Apr 22, 2015 6:10:48 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub599
+Apr 22, 2015 6:10:48 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:48 MSK 2015 478 disconnected
+Apr 22, 2015 6:10:48 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:48 MSK 2015 477 disconnected
+Apr 22, 2015 6:10:48 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:48 MSK 2015 480 disconnected
+Apr 22, 2015 6:10:48 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:48 MSK 2015 479 disconnected
+Apr 22, 2015 6:10:49 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub600
+Apr 22, 2015 6:10:49 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub601
+Apr 22, 2015 6:10:49 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:49 MSK 2015 481 disconnected
+Apr 22, 2015 6:10:49 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:49 MSK 2015 483 disconnected
+Apr 22, 2015 6:10:49 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:49 MSK 2015 482 disconnected
+Apr 22, 2015 6:10:50 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub602
+Apr 22, 2015 6:10:50 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub603
+Apr 22, 2015 6:10:51 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub604
+Apr 22, 2015 6:10:51 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub605
+Apr 22, 2015 6:10:52 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub606
+Apr 22, 2015 6:10:52 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:52 MSK 2015 487 disconnected
+Apr 22, 2015 6:10:52 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:52 MSK 2015 486 disconnected
+Apr 22, 2015 6:10:52 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:52 MSK 2015 484 disconnected
+Apr 22, 2015 6:10:52 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:52 MSK 2015 485 disconnected
+Apr 22, 2015 6:10:52 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub607
+Apr 22, 2015 6:10:53 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub608
+Apr 22, 2015 6:10:53 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub609
+Apr 22, 2015 6:10:54 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub610
+Apr 22, 2015 6:10:54 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:54 MSK 2015 490 disconnected
+Apr 22, 2015 6:10:54 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:54 MSK 2015 488 disconnected
+Apr 22, 2015 6:10:54 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:54 MSK 2015 489 disconnected
+Apr 22, 2015 6:10:54 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub611
+Apr 22, 2015 6:10:55 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub612
+Apr 22, 2015 6:10:55 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub613
+Apr 22, 2015 6:10:56 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub614
+Apr 22, 2015 6:10:56 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:56 MSK 2015 491 disconnected
+Apr 22, 2015 6:10:56 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:56 MSK 2015 492 disconnected
+Apr 22, 2015 6:10:56 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:56 MSK 2015 493 disconnected
+Apr 22, 2015 6:10:56 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub615
+Apr 22, 2015 6:10:57 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub616
+Apr 22, 2015 6:10:57 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub617
+Apr 22, 2015 6:10:58 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub618
+Apr 22, 2015 6:10:58 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:58 MSK 2015 498 disconnected
+Apr 22, 2015 6:10:58 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:58 MSK 2015 499 disconnected
+Apr 22, 2015 6:10:58 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:58 MSK 2015 494 disconnected
+Apr 22, 2015 6:10:58 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:58 MSK 2015 497 disconnected
+Apr 22, 2015 6:10:58 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:58 MSK 2015 496 disconnected
+Apr 22, 2015 6:10:58 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:58 MSK 2015 495 disconnected
+Apr 22, 2015 6:10:58 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub619
+Apr 22, 2015 6:10:59 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub620
+Apr 22, 2015 6:10:59 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub621
+Apr 22, 2015 6:10:59 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:59 MSK 2015 501 disconnected
+Apr 22, 2015 6:10:59 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:59 MSK 2015 502 disconnected
+Apr 22, 2015 6:10:59 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:10:59 MSK 2015 500 disconnected
+Apr 22, 2015 6:11:00 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub622
+Apr 22, 2015 6:11:00 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub623
+Apr 22, 2015 6:11:01 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub624
+Apr 22, 2015 6:11:01 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub625
+Apr 22, 2015 6:11:02 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub626
+Apr 22, 2015 6:11:02 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub627
+Apr 22, 2015 6:11:03 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:03 MSK 2015 503 disconnected
+Apr 22, 2015 6:11:03 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:03 MSK 2015 504 disconnected
+Apr 22, 2015 6:11:03 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub628
+Apr 22, 2015 6:11:03 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub629
+Apr 22, 2015 6:11:04 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub630
+Apr 22, 2015 6:11:04 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub631
+Apr 22, 2015 6:11:05 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub632
+Apr 22, 2015 6:11:05 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:05 MSK 2015 505 disconnected
+Apr 22, 2015 6:11:05 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub633
+Apr 22, 2015 6:11:06 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub634
+Apr 22, 2015 6:11:06 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:11:06 MSK 2015 517 connected
+Apr 22, 2015 6:11:06 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub635
+Apr 22, 2015 6:11:07 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub636
+Apr 22, 2015 6:11:07 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:07 MSK 2015 506 disconnected
+Apr 22, 2015 6:11:07 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub637
+Apr 22, 2015 6:11:08 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub638
+Apr 22, 2015 6:11:08 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:11:08 MSK 2015 518 connected
+Apr 22, 2015 6:11:08 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub639
+Apr 22, 2015 6:11:09 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub640
+Apr 22, 2015 6:11:09 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub641
+Apr 22, 2015 6:11:10 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub642
+Apr 22, 2015 6:11:10 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:10 MSK 2015 509 disconnected
+Apr 22, 2015 6:11:10 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:11:10 MSK 2015 515 connected
+Apr 22, 2015 6:11:10 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub643
+Apr 22, 2015 6:11:11 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub644
+Apr 22, 2015 6:11:11 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub645
+Apr 22, 2015 6:11:12 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub646
+Apr 22, 2015 6:11:12 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub647
+Apr 22, 2015 6:11:12 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:12 MSK 2015 507 disconnected
+Apr 22, 2015 6:11:13 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub648
+Apr 22, 2015 6:11:13 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub649
+Apr 22, 2015 6:11:14 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub650
+Apr 22, 2015 6:11:14 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub651
+Apr 22, 2015 6:11:14 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:14 MSK 2015 514 disconnected
+Apr 22, 2015 6:11:14 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:14 MSK 2015 508 disconnected
+Apr 22, 2015 6:11:15 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub652
+Apr 22, 2015 6:11:15 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub653
+Apr 22, 2015 6:11:16 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub654
+Apr 22, 2015 6:11:16 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub655
+Apr 22, 2015 6:11:17 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub656
+Apr 22, 2015 6:11:17 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub657
+Apr 22, 2015 6:11:18 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub658
+Apr 22, 2015 6:11:18 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub659
+Apr 22, 2015 6:11:19 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub660
+Apr 22, 2015 6:11:19 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub661
+Apr 22, 2015 6:11:20 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub662
+Apr 22, 2015 6:11:20 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub663
+Apr 22, 2015 6:11:21 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub664
+Apr 22, 2015 6:11:21 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub665
+Apr 22, 2015 6:11:22 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub666
+Apr 22, 2015 6:11:22 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub667
+Apr 22, 2015 6:11:23 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub668
+Apr 22, 2015 6:11:23 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub669
+Apr 22, 2015 6:11:24 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub670
+Apr 22, 2015 6:11:24 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub671
+Apr 22, 2015 6:11:25 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub672
+Apr 22, 2015 6:11:25 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onConnected
+INFO: Wed Apr 22 18:11:25 MSK 2015 521 connected
+Apr 22, 2015 6:11:25 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub673
+Apr 22, 2015 6:11:26 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub674
+Apr 22, 2015 6:11:26 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub675
+Apr 22, 2015 6:11:27 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub676
+Apr 22, 2015 6:11:27 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub677
+Apr 22, 2015 6:11:28 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub678
+Apr 22, 2015 6:11:28 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub679
+Apr 22, 2015 6:11:29 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub680
+Apr 22, 2015 6:11:29 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:29 MSK 2015 511 disconnected
+Apr 22, 2015 6:11:29 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub681
+Apr 22, 2015 6:11:30 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub682
+Apr 22, 2015 6:11:30 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub683
+Apr 22, 2015 6:11:31 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub684
+Apr 22, 2015 6:11:31 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:31 MSK 2015 512 disconnected
+Apr 22, 2015 6:11:31 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:31 MSK 2015 513 disconnected
+Apr 22, 2015 6:11:31 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:31 MSK 2015 510 disconnected
+Apr 22, 2015 6:11:31 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub685
+Apr 22, 2015 6:11:32 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub686
+Apr 22, 2015 6:11:32 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub687
+Apr 22, 2015 6:11:33 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub688
+Apr 22, 2015 6:11:33 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:33 MSK 2015 520 disconnected
+Apr 22, 2015 6:11:33 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub689
+Apr 22, 2015 6:11:34 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub690
+Apr 22, 2015 6:11:34 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub691
+Apr 22, 2015 6:11:35 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub692
+Apr 22, 2015 6:11:35 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub693
+Apr 22, 2015 6:11:36 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub694
+Apr 22, 2015 6:11:36 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub695
+Apr 22, 2015 6:11:37 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub696
+Apr 22, 2015 6:11:37 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub697
+Apr 22, 2015 6:11:38 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub698
+Apr 22, 2015 6:11:38 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub699
+Apr 22, 2015 6:11:39 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub700
+Apr 22, 2015 6:11:39 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub701
+Apr 22, 2015 6:11:39 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:39 MSK 2015 516 disconnected
+Apr 22, 2015 6:11:40 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub702
+Apr 22, 2015 6:11:40 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub703
+Apr 22, 2015 6:11:41 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub704
+Apr 22, 2015 6:11:41 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub705
+Apr 22, 2015 6:11:42 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub706
+Apr 22, 2015 6:11:42 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub707
+Apr 22, 2015 6:11:43 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub708
+Apr 22, 2015 6:11:43 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub709
+Apr 22, 2015 6:11:44 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub710
+Apr 22, 2015 6:11:44 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub711
+Apr 22, 2015 6:11:45 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub712
+Apr 22, 2015 6:11:46 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub713
+Apr 22, 2015 6:11:46 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub714
+Apr 22, 2015 6:11:46 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub715
+Apr 22, 2015 6:11:47 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub716
+Apr 22, 2015 6:11:48 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub717
+Apr 22, 2015 6:11:48 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub718
+Apr 22, 2015 6:11:48 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub719
+Apr 22, 2015 6:11:49 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub720
+Apr 22, 2015 6:11:49 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub721
+Apr 22, 2015 6:11:50 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub722
+Apr 22, 2015 6:11:50 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub723
+Apr 22, 2015 6:11:51 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub724
+Apr 22, 2015 6:11:52 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub725
+Apr 22, 2015 6:11:52 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub726
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub727
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub728
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 300 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 304 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 313 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 303 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 301 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 315 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 307 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 314 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 308 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 412 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 340 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 332 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 396 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 380 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 348 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 356 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 404 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 420 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 410 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 426 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 338 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 402 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 330 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 316 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 362 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 364 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 394 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 346 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 388 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 372 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 354 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 386 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 418 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 306 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 378 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 428 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 322 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 324 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 406 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 518 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 398 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 326 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 302 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 358 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 382 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 310 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 342 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 390 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 318 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 422 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 370 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 350 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 430 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 374 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 414 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 366 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 334 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 360 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 328 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 320 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 343 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 312 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 336 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 384 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 392 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 424 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 432 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 408 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 400 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 368 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 344 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 375 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 376 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 416 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 352 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 431 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 415 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 391 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 351 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 439 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 423 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 319 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 311 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 367 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 407 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 399 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 327 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 359 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 383 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 335 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 337 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 417 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 321 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 353 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 305 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 369 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 409 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 395 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 419 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 385 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 355 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 371 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 363 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 347 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 377 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 331 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 401 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 403 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 345 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 339 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 521 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 411 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 515 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 329 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 379 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 323 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 393 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 361 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 387 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 425 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 427 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 333 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 405 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 309 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 325 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 365 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 389 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 357 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 397 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 317 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 429 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 517 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 421 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 437 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 349 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 381 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 413 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 341 disconnected
+Apr 22, 2015 6:11:53 PM com.hill30.amqstresstest.periodicsub.Subscriber$1 onDisconnected
+INFO: Wed Apr 22 18:11:53 MSK 2015 373 disconnected
+Apr 22, 2015 6:11:54 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub729
+Apr 22, 2015 6:11:54 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub730
+Apr 22, 2015 6:11:55 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub731
+Apr 22, 2015 6:11:55 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub732
+Apr 22, 2015 6:11:56 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub733
+Apr 22, 2015 6:11:56 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub734
+Apr 22, 2015 6:11:57 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub735
+Apr 22, 2015 6:11:57 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub736
+Apr 22, 2015 6:11:58 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub737
+Apr 22, 2015 6:11:58 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub738
+Apr 22, 2015 6:11:59 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub739
+Apr 22, 2015 6:11:59 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub740
+Apr 22, 2015 6:12:00 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub741
+Apr 22, 2015 6:12:00 PM com.hill30.amqstresstest.periodicsub.Subscriber run
+INFO: Subscribing to topic: mqtt_sub742
