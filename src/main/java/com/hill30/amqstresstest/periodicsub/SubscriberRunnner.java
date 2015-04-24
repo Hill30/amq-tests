@@ -31,34 +31,61 @@ public class SubscriberRunnner {
             String user = arg(args, 5, "admin");
             String password = arg(args, 6, "admin");
             int port = 1883;
+            boolean isMultithreading = Boolean.parseBoolean(arg(args, 7, "false"));
 
             logger.info("Periodic subscriber started");
             logger.info("Starting topic ID: " + startingTopicId);
             logger.info("Total subscribers: " + totalSubscribers);
             logger.info("Topic prefix: " + topicPrefix);
+            logger.info("Is multithreading: " + isMultithreading);
 
             for(int iteration = 0; iteration <= globalCyclesCount; iteration++) {
-                ArrayList<Subscriber> threadsList = new ArrayList<Subscriber>();
-                logger.info("Cycle iteration " + iteration + " from globalCyclesCount");
+                if(isMultithreading) {
+                    ArrayList<Subscriber> subscribersList = new ArrayList<Subscriber>();
+                    logger.info("Cycle iteration " + iteration + " from globalCyclesCount");
 
-                for (int topicId = startingTopicId; topicId <= startingTopicId + totalSubscribers; topicId++) {
-                    Subscriber thread = new Subscriber(topicPrefix, topicId, user, password, host, port);
-                    thread.start();
-                    threadsList.add(thread);
-                    Thread.sleep(500);
+                    for (int topicId = startingTopicId; topicId <= startingTopicId + totalSubscribers; topicId++) {
+                        Subscriber subscriber = new Subscriber(topicPrefix, topicId, user, password, host, port);
+                        subscriber.start();
+                        subscribersList.add(subscriber);
+                        Thread.sleep(500);
+                    }
+
+                    Thread.sleep(8000);
+
+                    for (Subscriber thread : subscribersList) {
+                        thread.disconnect();
+                        thread.finish();
+                        Thread.sleep(500);
+                    }
+
+                    subscribersList.clear();
+                    subscribersList = null;
+                    Thread.sleep(8000);
                 }
+                else {
+                    ArrayList<SubscriberSync> subscribersList = new ArrayList<SubscriberSync>();
+                    logger.info("Cycle iteration " + iteration + " from globalCyclesCount");
 
-                Thread.sleep(8000);
+                    for (int topicId = startingTopicId; topicId <= startingTopicId + totalSubscribers; topicId++) {
+                        SubscriberSync subscriber = new SubscriberSync(topicPrefix, topicId, user, password, host, port);
+                        subscriber.start();
+                        subscribersList.add(subscriber);
+                        Thread.sleep(500);
+                    }
 
-                for (Subscriber thread : threadsList) {
-                    thread.disconnect();
-                    thread.finish();
-                    Thread.sleep(500);
+                    Thread.sleep(8000);
+
+                    for (SubscriberSync subscriber : subscribersList) {
+                        subscriber.disconnect();
+                        subscriber = null;
+                        Thread.sleep(500);
+                    }
+
+                    subscribersList.clear();
+                    subscribersList = null;
+                    Thread.sleep(8000);
                 }
-
-                threadsList.clear();
-                threadsList = null;
-                Thread.sleep(8000);
             }
 
             System.in.read();

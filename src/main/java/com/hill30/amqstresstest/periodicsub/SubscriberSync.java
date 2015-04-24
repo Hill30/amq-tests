@@ -9,8 +9,7 @@ import java.util.Date;
 import java.util.logging.Level;
 
 
-public class Subscriber extends Thread {
-
+public class SubscriberSync {
     private String topicPerfix;
     private int topicId;
     private String user;
@@ -20,7 +19,7 @@ public class Subscriber extends Thread {
     private boolean isWorking;
     private CallbackConnection connection;
 
-    public Subscriber(String topicPrefix, int topicId, String user, String password, String host, int port) {
+    public SubscriberSync(String topicPrefix, int topicId, String user, String password, String host, int port) {
         this.topicPerfix = topicPrefix;
         this.topicId = topicId;
         this.user = user;
@@ -34,8 +33,7 @@ public class Subscriber extends Thread {
     }
 
 
-    @Override
-    public void run() {
+    public void start() {
         SubscriberRunnner.logger.info("Subscribing to topic: " + topic());
 
         MQTT mqtt = new MQTT();
@@ -87,9 +85,6 @@ public class Subscriber extends Thread {
                         if( count == 0 ) {
                             start = System.currentTimeMillis();
                         }
-//                        if( count % 100 == 0 ) {
-//                            SubscriberRunnner.logger.info(String.format("Received %d messages.", count));
-//                        }
                         count ++;
                     }
                     ack.run();
@@ -105,40 +100,23 @@ public class Subscriber extends Thread {
                         public void onFailure(Throwable value) {
                             value.printStackTrace();
                             SubscriberRunnner.logger.log(Level.ALL, value.getMessage(), value);
-                            finish();
-                            //System.exit(-2);
+                            disconnect();
                         }
                     });
                 }
                 @Override
                 public void onFailure(Throwable value) {
                     value.printStackTrace();
-                    finish();
-                    //System.exit(-2);
+                    disconnect();
                 }
             });
 
-            // Wait forever..
-            synchronized (Subscriber.class) {
-                isWorking = true;
-                while(isWorking)
-                    Subscriber.class.wait();
-            }
-
         } catch (URISyntaxException e) {
-            e.printStackTrace();
-            SubscriberRunnner.logger.log(Level.ALL, e.getMessage(), e);
-        } catch (InterruptedException e) {
             e.printStackTrace();
             SubscriberRunnner.logger.log(Level.ALL, e.getMessage(), e);
         } catch (Exception e) {
             SubscriberRunnner.logger.log(Level.ALL, e.getMessage(), e);
         }
-    }
-
-    public void finish(){
-        isWorking = false;
-        connection = null;
     }
 
     private String topic(){
