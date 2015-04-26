@@ -1,7 +1,6 @@
 package com.hill30.amqstresstest.paho.subscriber;
 
 import org.eclipse.paho.client.mqttv3.*;
-import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 import java.util.Date;
 import java.util.logging.Level;
@@ -25,12 +24,13 @@ public class Subscriber extends Thread {
         this.password = password;
         this.host = host;
         this.port = port;
+        this.serviceUri = "tcp://" + host + ":" + port;
     }
 
     public void disconnect() {
         try {
             mqtt.disconnect();
-        } catch (MqttException ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
             SubscriberRunnner.logger.log(Level.ALL, ex.getMessage(), ex);
         }
@@ -42,11 +42,15 @@ public class Subscriber extends Thread {
         System.out.println("Subscribing to topic: " + topic());
 
         try {
-            MqttClient mqtt = new MqttClient(serviceUri, topic());
+            mqtt = new MqttClient(serviceUri, topic());
             MqttConnectOptions connOpts = new MqttConnectOptions();
-            connOpts.setUserName(user);
+            if(user != null && !user.isEmpty()) {
+                connOpts.setUserName(user);
+            }
             connOpts.setCleanSession(false);
-            connOpts.setPassword(password.toCharArray());
+            if(password != null && !password.isEmpty()) {
+                connOpts.setPassword(password.toCharArray());
+            }
 
             mqtt.setCallback(new MqttCallback() {
                 public void connectionLost(Throwable cause) {
@@ -54,11 +58,16 @@ public class Subscriber extends Thread {
                 }
 
                 public void messageArrived(String topic, MqttMessage message) {
+                    if(topic != null && message != null) {
+                        SubscriberRunnner.logger.info("Message from " + topic + " arrived: " + message.toString());
+                    }
                 }
 
                 public void deliveryComplete(IMqttDeliveryToken token) {
                 }
             });
+
+            mqtt.connect(connOpts);
 
             synchronized (Subscriber.class) {
                 isWorking = true;

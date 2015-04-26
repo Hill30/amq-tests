@@ -42,7 +42,7 @@ public class SubscriberRunnner {
             for(int iteration = 0; iteration <= globalCyclesCount; iteration++) {
                 if(isMultithreading) {
                     ArrayList<Subscriber> subscribersList = new ArrayList<Subscriber>();
-                    logger.info("Cycle iteration " + iteration + " from globalCyclesCount");
+                    logger.info("Cycle iteration " + iteration + " from " + globalCyclesCount);
 
                     for (int topicId = startingTopicId; topicId <= startingTopicId + totalSubscribers; topicId++) {
                         Subscriber subscriber = new Subscriber(topicPrefix, topicId, user, password, host, port);
@@ -65,7 +65,7 @@ public class SubscriberRunnner {
                 }
                 else {
                     ArrayList<SubscriberSync> subscribersList = new ArrayList<SubscriberSync>();
-                    logger.info("Cycle iteration " + iteration + " from globalCyclesCount");
+                    logger.info("Cycle iteration " + iteration + " from " + globalCyclesCount);
 
                     for (int topicId = startingTopicId; topicId <= startingTopicId + totalSubscribers; topicId++) {
                         SubscriberSync subscriber = new SubscriberSync(topicPrefix, topicId, user, password, host, port);

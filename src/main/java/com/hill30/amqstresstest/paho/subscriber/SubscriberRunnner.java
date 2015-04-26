@@ -40,11 +40,11 @@ public class SubscriberRunnner {
             logger.info("Topic prefix: " + topicPrefix);
 
             for(int iteration = 0; iteration <= globalCyclesCount; iteration++) {
-                ArrayList<com.hill30.amqstresstest.paho.subscriber.Subscriber> threadsList = new ArrayList<com.hill30.amqstresstest.paho.subscriber.Subscriber>();
-                logger.info("Cycle iteration " + iteration + " from globalCyclesCount");
+                ArrayList<Subscriber> threadsList = new ArrayList<Subscriber>();
+                logger.info("Cycle iteration " + iteration + " from " + globalCyclesCount);
 
                 for (int topicId = startingTopicId; topicId <= startingTopicId + totalSubscribers; topicId++) {
-                    com.hill30.amqstresstest.paho.subscriber.Subscriber thread = new com.hill30.amqstresstest.paho.subscriber.Subscriber(topicPrefix, topicId, user, password, host, port);
+                    Subscriber thread = new Subscriber(topicPrefix, topicId, user, password, host, port);
                     thread.start();
                     threadsList.add(thread);
                     Thread.sleep(500);
@@ -52,7 +52,7 @@ public class SubscriberRunnner {
 
                 Thread.sleep(8000);
 
-                for (com.hill30.amqstresstest.paho.subscriber.Subscriber thread : threadsList) {
+                for (Subscriber thread : threadsList) {
                     thread.disconnect();
                     thread.finish();
                     Thread.sleep(500);
