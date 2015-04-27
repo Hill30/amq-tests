@@ -31,17 +31,30 @@
       <file leaf-file-name="Subscriber.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/periodicsub/Subscriber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="44" />
+            <state vertical-scroll-proportion="4.1034484">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding>
+                <element signature="e#973#974#0" expanded="true" />
+                <element signature="e#1016#1017#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SubscriberRunnner.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/periodicsub/SubscriberRunnner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.25485715">
+              <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MANIFEST.MF" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MANIFEST.MF" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.03761062">
+            <state vertical-scroll-proportion="0.0">
               <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
@@ -73,14 +86,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/publisher/PublisherRunner.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/publisher/Publisher.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/subscriber/SubscriberRunnner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/periodicsub/Subscriber.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/periodicsub/SubscriberSync.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/periodicsub/SubscriberRunnner.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/paho/subscriber/SubscriberRunnner.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/paho/subscriber/Subscriber.java" />
         <option value="$PROJECT_DIR$/target/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/periodicsub/Subscriber.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/periodicsub/SubscriberRunnner.java" />
       </list>
     </option>
   </component>
@@ -610,36 +623,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/publisher/PublisherRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/periodicsub/Subscriber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#863#864#0" expanded="false" />
-            <element signature="e#906#907#0" expanded="false" />
-            <element signature="e#5117#5118#0" expanded="false" />
-            <element signature="e#5159#5160#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/periodicsub/SubscriberRunnner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1932#1944#0" expanded="false" />
-            <element signature="e#2946#2962#0" expanded="false" />
+            <element signature="e#2009#2021#0" expanded="false" />
+            <element signature="e#3043#3059#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -974,21 +965,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/periodicsub/SubscriberRunnner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="44" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/paho/subscriber/SubscriberRunnner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="52" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1736#1748#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1736#1748#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1055,18 +1038,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/periodicsub/Subscriber.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="44" />
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/fusesource/mqtt-client/mqtt-client/1.10/mqtt-client-1.10.jar!/org/fusesource/mqtt/codec/CONNECT.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03761062">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.34243459">
+          <caret line="189" column="19" selection-start-line="189" selection-start-column="19" selection-end-line="189" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/fusesource/mqtt-client/mqtt-client/1.10/mqtt-client-1.10.jar!/org/fusesource/mqtt/client/MQTT.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03868032">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/periodicsub/Subscriber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.1034484">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="e#973#974#0" expanded="true" />
+            <element signature="e#1016#1017#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hill30/amqstresstest/periodicsub/SubscriberRunnner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25485715">
+          <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
           <folding />
         </state>
       </provider>

@@ -19,14 +19,16 @@ public class Subscriber extends Thread {
     private int port;
     private boolean isWorking;
     private CallbackConnection connection;
+    private short keepAliveTimeout;
 
-    public Subscriber(String topicPrefix, int topicId, String user, String password, String host, int port) {
+    public Subscriber(String topicPrefix, int topicId, String user, String password, String host, int port, short keepAliveTimeout) {
         this.topicPerfix = topicPrefix;
         this.topicId = topicId;
         this.user = user;
         this.password = password;
         this.host = host;
         this.port = port;
+        this.keepAliveTimeout = keepAliveTimeout;
     }
 
     public void disconnect() {
@@ -45,6 +47,7 @@ public class Subscriber extends Thread {
             mqtt.setCleanSession(false);
             mqtt.setClientId(topic());
             mqtt.setPassword(password);
+            mqtt.setKeepAlive(keepAliveTimeout);
 
             connection = mqtt.callbackConnection();
             connection.listener(new Listener() {

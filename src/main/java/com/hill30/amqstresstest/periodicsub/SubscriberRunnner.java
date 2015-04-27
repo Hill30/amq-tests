@@ -23,13 +23,14 @@ public class SubscriberRunnner {
             logger.addHandler(fh);
             SimpleFormatter formatter = new SimpleFormatter();
             fh.setFormatter(formatter);
-            int startingTopicId = Integer.parseInt(arg(args,0,"0"));
+            int startingTopicId = Integer.parseInt(arg(args, 0, "0"));
             int totalSubscribers = Integer.parseInt(arg(args, 1, "1"));
             int globalCyclesCount = Integer.parseInt(arg(args, 2, "1"));
             String host = arg(args, 3, "127.0.0.1");
             String topicPrefix = arg(args, 4, "/mqtt_test_topic_");
             String user = arg(args, 5, "admin");
             String password = arg(args, 6, "admin");
+            Short keepAliveTimeout = Short.parseShort(arg(args, 7, "30"));
             int port = 1883;
             boolean isMultithreading = Boolean.parseBoolean(arg(args, 7, "false"));
 
@@ -45,13 +46,13 @@ public class SubscriberRunnner {
                     logger.info("Cycle iteration " + iteration + " from " + globalCyclesCount);
 
                     for (int topicId = startingTopicId; topicId <= startingTopicId + totalSubscribers; topicId++) {
-                        Subscriber subscriber = new Subscriber(topicPrefix, topicId, user, password, host, port);
+                        Subscriber subscriber = new Subscriber(topicPrefix, topicId, user, password, host, port, keepAliveTimeout);
                         subscriber.start();
                         subscribersList.add(subscriber);
                         Thread.sleep(500);
                     }
 
-                    Thread.sleep(8000);
+                    Thread.sleep(10000);
 
                     for (Subscriber thread : subscribersList) {
                         thread.disconnect();
@@ -61,7 +62,7 @@ public class SubscriberRunnner {
 
                     subscribersList.clear();
                     subscribersList = null;
-                    Thread.sleep(8000);
+                    Thread.sleep(10000);
                 }
                 else {
                     ArrayList<SubscriberSync> subscribersList = new ArrayList<SubscriberSync>();
