@@ -18,8 +18,9 @@ public class SubscriberSync {
     private int port;
     private boolean isWorking;
     private CallbackConnection connection;
+    private short keepAliveTimeout;
 
-    public SubscriberSync(String topicPrefix, int topicId, String user, String password, String host, int port) {
+    public SubscriberSync(String topicPrefix, int topicId, String user, String password, String host, int port, short keepAliveTimeout) {
         this.topicPerfix = topicPrefix;
         this.topicId = topicId;
         this.user = user;
@@ -43,6 +44,7 @@ public class SubscriberSync {
             mqtt.setCleanSession(false);
             mqtt.setClientId(topic());
             mqtt.setPassword(password);
+            mqtt.setKeepAlive(keepAliveTimeout);
 
             connection = mqtt.callbackConnection();
             connection.listener(new Listener() {

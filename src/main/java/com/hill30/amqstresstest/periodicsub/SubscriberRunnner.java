@@ -30,15 +30,17 @@ public class SubscriberRunnner {
             String topicPrefix = arg(args, 4, "/mqtt_test_topic_");
             String user = arg(args, 5, "admin");
             String password = arg(args, 6, "admin");
-            Short keepAliveTimeout = Short.parseShort(arg(args, 7, "30"));
-            int port = 1883;
             boolean isMultithreading = Boolean.parseBoolean(arg(args, 7, "false"));
+            Short keepAliveTimeout = Short.parseShort(arg(args, 8, "30"));
+            int port = 1883;
+
 
             logger.info("Periodic subscriber started");
             logger.info("Starting topic ID: " + startingTopicId);
             logger.info("Total subscribers: " + totalSubscribers);
             logger.info("Topic prefix: " + topicPrefix);
             logger.info("Is multithreading: " + isMultithreading);
+            logger.info("Keep alive timeout: " + keepAliveTimeout);
 
             for(int iteration = 0; iteration <= globalCyclesCount; iteration++) {
                 if(isMultithreading) {
@@ -69,7 +71,7 @@ public class SubscriberRunnner {
                     logger.info("Cycle iteration " + iteration + " from " + globalCyclesCount);
 
                     for (int topicId = startingTopicId; topicId <= startingTopicId + totalSubscribers; topicId++) {
-                        SubscriberSync subscriber = new SubscriberSync(topicPrefix, topicId, user, password, host, port);
+                        SubscriberSync subscriber = new SubscriberSync(topicPrefix, topicId, user, password, host, port, keepAliveTimeout);
                         subscriber.start();
                         subscribersList.add(subscriber);
                         Thread.sleep(500);
