@@ -1,3 +1,2 @@
 Manifest-Version: 1.0
-Main-Class: com.hill30.amqstresstest.paho.subscriber.SubscriberRunnner
-
+Main-Class: com.hill30.amqstresstest.periodicsub.SubscriberRunnner

@@ -1,7 +1,6 @@
 package com.hill30.amqstresstest.paho.subscriber;
 
 import org.eclipse.paho.client.mqttv3.*;
-
 import java.util.Date;
 import java.util.logging.Level;
 
@@ -75,10 +74,7 @@ public class Subscriber extends Thread {
                     Subscriber.class.wait();
             }
 
-        } catch (MqttException e) {
-            e.printStackTrace();
-            SubscriberRunnner.logger.log(Level.ALL, e.getMessage(), e);
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             SubscriberRunnner.logger.log(Level.ALL, e.getMessage(), e);
         }

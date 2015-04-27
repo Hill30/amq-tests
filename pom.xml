@@ -26,8 +26,8 @@
         <dependency>
             <groupId>org.eclipse.paho</groupId>
             <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
-    <version>1.0.2</version>
-</dependency>
+             <version>1.0.2</version>
+        </dependency>
 
     </dependencies>
 
@@ -55,6 +55,7 @@
                     </execution>
                 </executions>
             </plugin>
+
 
         </plugins>
     </build>
