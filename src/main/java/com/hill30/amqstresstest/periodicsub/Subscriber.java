@@ -101,7 +101,10 @@ public class Subscriber extends Thread {
             connection.connect(new Callback<Void>() {
                 @Override
                 public void onSuccess(Void value) {
+
                     Topic[] topics = { new Topic(topic(), QoS.EXACTLY_ONCE )};
+                    //do not subscribe, connect only
+                    /*
                     connection.subscribe(topics, new Callback<byte[]>() {
                         public void onSuccess(byte[] qoses) {
                         }
@@ -112,6 +115,7 @@ public class Subscriber extends Thread {
                             //System.exit(-2);
                         }
                     });
+                    */
                 }
                 @Override
                 public void onFailure(Throwable value) {

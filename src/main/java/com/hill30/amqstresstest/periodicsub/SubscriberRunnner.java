@@ -23,15 +23,14 @@ public class SubscriberRunnner {
             logger.addHandler(fh);
             SimpleFormatter formatter = new SimpleFormatter();
             fh.setFormatter(formatter);
-            int startingTopicId = Integer.parseInt(arg(args, 0, "0"));
-            int totalSubscribers = Integer.parseInt(arg(args, 1, "1"));
-            int globalCyclesCount = Integer.parseInt(arg(args, 2, "1"));
-            String host = arg(args, 3, "127.0.0.1");
-            String topicPrefix = arg(args, 4, "/mqtt_test_topic_");
-            String user = arg(args, 5, "admin");
-            String password = arg(args, 6, "admin");
-            boolean isMultithreading = Boolean.parseBoolean(arg(args, 7, "false"));
-            Short keepAliveTimeout = Short.parseShort(arg(args, 8, "30"));
+            int startingTopicId = 1;
+            int totalSubscribers = Integer.parseInt(arg(args, 0, "1"));
+            int globalCyclesCount = Integer.parseInt(arg(args, 1, "2"));
+            String host = arg(args, 2, "127.0.0.1");
+            String topicPrefix = arg(args, 3, "/mqtt_test_topic_");
+            String user = arg(args, 4, "admin");
+            String password = arg(args, 5, "admin");
+            Short keepAliveTimeout = Short.parseShort(arg(args, 6, "30"));
             int port = 1883;
 
 
@@ -39,56 +38,30 @@ public class SubscriberRunnner {
             logger.info("Starting topic ID: " + startingTopicId);
             logger.info("Total subscribers: " + totalSubscribers);
             logger.info("Topic prefix: " + topicPrefix);
-            logger.info("Is multithreading: " + isMultithreading);
             logger.info("Keep alive timeout: " + keepAliveTimeout);
 
             for(int iteration = 0; iteration <= globalCyclesCount; iteration++) {
-                if(isMultithreading) {
-                    ArrayList<Subscriber> subscribersList = new ArrayList<Subscriber>();
-                    logger.info("Cycle iteration " + iteration + " from " + globalCyclesCount);
+                ArrayList<Subscriber> subscribersList = new ArrayList<Subscriber>();
+                logger.info("Cycle iteration " + iteration + " from " + globalCyclesCount);
 
-                    for (int topicId = startingTopicId; topicId <= startingTopicId + totalSubscribers; topicId++) {
-                        Subscriber subscriber = new Subscriber(topicPrefix, topicId, user, password, host, port, keepAliveTimeout);
-                        subscriber.start();
-                        subscribersList.add(subscriber);
-                        Thread.sleep(500);
-                    }
-
-                    Thread.sleep(10000);
-
-                    for (Subscriber thread : subscribersList) {
-                        thread.disconnect();
-                        thread.finish();
-                        Thread.sleep(500);
-                    }
-
-                    subscribersList.clear();
-                    subscribersList = null;
-                    Thread.sleep(10000);
+                for (int topicId = startingTopicId; topicId <= startingTopicId + totalSubscribers; topicId++) {
+                    Subscriber subscriber = new Subscriber(topicPrefix, topicId, user, password, host, port, keepAliveTimeout);
+                    subscriber.start();
+                    subscribersList.add(subscriber);
+                    Thread.sleep(500);
                 }
-                else {
-                    ArrayList<SubscriberSync> subscribersList = new ArrayList<SubscriberSync>();
-                    logger.info("Cycle iteration " + iteration + " from " + globalCyclesCount);
 
-                    for (int topicId = startingTopicId; topicId <= startingTopicId + totalSubscribers; topicId++) {
-                        SubscriberSync subscriber = new SubscriberSync(topicPrefix, topicId, user, password, host, port, keepAliveTimeout);
-                        subscriber.start();
-                        subscribersList.add(subscriber);
-                        Thread.sleep(500);
-                    }
+                Thread.sleep(10000);
 
-                    Thread.sleep(8000);
-
-                    for (SubscriberSync subscriber : subscribersList) {
-                        subscriber.disconnect();
-                        subscriber = null;
-                        Thread.sleep(500);
-                    }
-
-                    subscribersList.clear();
-                    subscribersList = null;
-                    Thread.sleep(8000);
+                for (Subscriber thread : subscribersList) {
+                    thread.disconnect();
+                    thread.finish();
+                    Thread.sleep(500);
                 }
+
+                subscribersList.clear();
+                subscribersList = null;
+                Thread.sleep(10000);
             }
 
             System.in.read();
