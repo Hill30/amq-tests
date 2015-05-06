@@ -1,0 +1,6 @@
+AMQStressTest-1.0-SNAPSHOT.jar=C:\Projects\AMQStressTest\target\AMQStressTest-1.0-SNAPSHOT.jar
+mqtt-client-1.10.jar=C:\Users\vpanfilov\.m2\repository\org\fusesource\mqtt-client\mqtt-client\1.10\mqtt-client-1.10.jar
+hawtdispatch-transport-1.20.jar=C:\Users\vpanfilov\.m2\repository\org\fusesource\hawtdispatch\hawtdispatch-transport\1.20\hawtdispatch-transport-1.20.jar
+hawtdispatch-1.20.jar=C:\Users\vpanfilov\.m2\repository\org\fusesource\hawtdispatch\hawtdispatch\1.20\hawtdispatch-1.20.jar
+hawtbuf-1.10.jar=C:\Users\vpanfilov\.m2\repository\org\fusesource\hawtbuf\hawtbuf\1.10\hawtbuf-1.10.jar
+org.eclipse.paho.client.mqttv3-1.0.2.jar=C:\Users\vpanfilov\.m2\repository\org\eclipse\paho\org.eclipse.paho.client.mqttv3\1.0.2\org.eclipse.paho.client.mqttv3-1.0.2.jar
