@@ -2,22 +2,35 @@ package com.hill30.AMQTests;
 
 import org.eclipse.paho.client.mqttv3.*;
 
-import java.util.logging.Logger;
+import java.time.LocalDateTime;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        String brokerUrl = "tcp://localhost:1883";
-        String clientID = "Client04";
-        String topicName = "topic03";
-        int QoS = 0;
+        args = new String[]{"01", "none"};
 
-        Logger logger = Logger.getLogger("main");
-        logger.info("hello");
+        String clientID = "Client" + args[0];
+        String topicName = "Topic" + args[0];
+
+        int QoS = -1;
+        switch (args[1]) {
+            case "0": QoS = 0; break;
+            case "1": QoS = 1; break;
+            case "2": QoS = 2; break;
+        }
+
+        String brokerUrl = "tcp://localhost:1883";
+
+        if (args.length > 2)
+            brokerUrl = args[2];
 
         MqttConnectOptions options = new MqttConnectOptions();
         options.setCleanSession(false);
+
+        System.out.printf("started: %s%n", LocalDateTime.now());
+        System.out.printf("clientID: %s, Topic: %s, QoS: %s\n", clientID, topicName, args[1]);
+
 
         try {
 
@@ -31,8 +44,10 @@ public class Main {
                     Thread.sleep(10);
 
                 try {
-                    //if (i==0)
+                    if (QoS >= 0)
                         client.subscribe(topicName, QoS);
+
+                    Thread.sleep(10);
 
                     client.disconnect();
 
@@ -40,7 +55,7 @@ public class Main {
                     e.printStackTrace();
                 }
 
-                logger.info("disconnected " + Integer.toString(i) + "\r");
+                System.out.print("disconnected " + Integer.toString(i) + "\r");
 
                 while(client.isConnected())
                     Thread.sleep(10);
@@ -51,5 +66,7 @@ public class Main {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        System.out.printf("\nfinished: %s%n", LocalDateTime.now());
     }
 }
