@@ -1,4 +1,6 @@
 
-MQTTDisconnect/.idea
+.idea/*.*
 
-MQTTDisconnect/out
+*/.idea
+
+*/out

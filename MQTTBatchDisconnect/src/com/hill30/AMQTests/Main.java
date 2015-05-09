@@ -3,6 +3,7 @@ package com.hill30.AMQTests;
 import org.eclipse.paho.client.mqttv3.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -28,37 +29,47 @@ public class Main {
         MqttConnectOptions options = new MqttConnectOptions();
         options.setCleanSession(false);
 
-        System.out.printf("single\nstarted: %s%n", LocalDateTime.now());
+        System.out.printf("batch 500\nstarted: %s%n", LocalDateTime.now());
         System.out.printf("clientID: %s, Topic: %s, QoS: %s\n", clientID, topicName, args[1]);
 
 
         try {
 
             int i;
-            for (i=0; i<5000; i++) {
+            for (i=0; i<10; i++) {
 
-                MqttAsyncClient client = new MqttAsyncClient(brokerUrl, clientID, null);
-                client.connect(options);
+                ArrayList<MqttAsyncClient> clients = new ArrayList<>();
 
-                while(!client.isConnected())
-                    Thread.sleep(10);
+                int j;
+                for (j=0; j<500; j++) {
+                    MqttAsyncClient client = new MqttAsyncClient(brokerUrl, clientID + "j" + Integer.toString(j), null);
+                    client.connect(options);
+                    clients.add(client);
 
-                try {
+                    while(!client.isConnected())
+                        Thread.sleep(10);
+
                     if (QoS >= 0)
-                        client.subscribe(topicName, QoS);
+                        client.subscribe(topicName + "j" + Integer.toString(j), QoS);
 
-                    Thread.sleep(10);
+                    System.out.print("connected: " + Integer.toString(i * 500 + j) + "\r");
+                }
+
+                Thread.sleep(1000);
+
+                for (j=0; j<500; j++) {
+
+                    MqttAsyncClient client = clients.get(j);
 
                     client.disconnect();
 
-                } catch (MqttException e) {
-                    e.printStackTrace();
+                    while(client.isConnected())
+                        Thread.sleep(10);
+
+                    System.out.print("disconnected: " + Integer.toString(i * 500 + j) + "\r");
                 }
 
-                System.out.print("disconnected " + Integer.toString(i) + "\r");
 
-                while(client.isConnected())
-                    Thread.sleep(10);
             }
 
         } catch (MqttException e) {
