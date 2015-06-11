@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        args = new String[]{"01", "none"};
+        args = new String[]{"01", "2"};
 
         String clientID = "Client" + args[0];
         String topicName = "Topic" + args[0];
