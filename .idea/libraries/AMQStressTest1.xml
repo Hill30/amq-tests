@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="AMQStressTest1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mqtt_conncect-disconnect/out/artifacts/AMQStressTest_jar/AMQStressTest.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

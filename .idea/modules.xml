@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AMQStressTest.iml" filepath="$PROJECT_DIR$/AMQStressTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MQTTBatchDisconnect/MQTTBatchDisconnect.iml" filepath="$PROJECT_DIR$/MQTTBatchDisconnect/MQTTBatchDisconnect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MQTTDisconnect/MQTTDisconnect.iml" filepath="$PROJECT_DIR$/MQTTDisconnect/MQTTDisconnect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mqtt_conncect-disconnect/src/main/main.iml" filepath="$PROJECT_DIR$/mqtt_conncect-disconnect/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/main/main1.iml" filepath="$PROJECT_DIR$/src/main/main1.iml" />
     </modules>
   </component>
 </project>
