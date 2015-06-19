@@ -14,6 +14,8 @@ public class Main {
         String clientID = "Client" + args[0];
         String topicName = "Topic" + args[0];
 
+        int batchSize = 500;
+
         int QoS = -1;
         switch (args[1]) {
             case "0": QoS = 0; break;
@@ -29,7 +31,7 @@ public class Main {
         MqttConnectOptions options = new MqttConnectOptions();
         options.setCleanSession(false);
 
-        System.out.printf("batch 500\nstarted: %s%n", LocalDateTime.now());
+        System.out.printf("batch size %d\nstarted: %s%n", batchSize, LocalDateTime.now());
         System.out.printf("clientID: %s, Topic: %s, QoS: %s\n", clientID, topicName, args[1]);
 
 
@@ -41,7 +43,7 @@ public class Main {
                 ArrayList<MqttAsyncClient> clients = new ArrayList<>();
 
                 int j;
-                for (j=0; j<500; j++) {
+                for (j=0; j<batchSize; j++) {
                     MqttAsyncClient client = new MqttAsyncClient(brokerUrl, clientID + "j" + Integer.toString(j), null);
                     client.connect(options);
                     clients.add(client);
@@ -52,21 +54,16 @@ public class Main {
                     if (QoS >= 0)
                         client.subscribe(topicName + "j" + Integer.toString(j), QoS);
 
-                    System.out.print("connected: " + Integer.toString(i * 500 + j) + "\r");
+                    System.out.print("connected: " + Integer.toString(i * batchSize + j+1) + "\r");
                 }
 
-                Thread.sleep(1000);
-
-                for (j=0; j<500; j++) {
+                for (j=0; j<batchSize; j++) {
 
                     MqttAsyncClient client = clients.get(j);
 
                     client.disconnect();
 
-                    while(client.isConnected())
-                        Thread.sleep(10);
-
-                    System.out.print("disconnected: " + Integer.toString(i * 500 + j) + "\r");
+                    System.out.print("disconnected: " + Integer.toString(i * batchSize + j+1) + "\r");
                 }
 
 

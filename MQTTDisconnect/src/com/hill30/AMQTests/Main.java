@@ -47,18 +47,18 @@ public class Main {
                     if (QoS >= 0)
                         client.subscribe(topicName, QoS);
 
-                    Thread.sleep(10);
-
                     client.disconnect();
 
                 } catch (MqttException e) {
                     e.printStackTrace();
                 }
 
-                System.out.print("disconnected " + Integer.toString(i) + "\r");
+                // disconnect takes some time on the server, but the isConnected() returns false right away
+                // let us wait until the connection is really closed before we try to reconnect
+                Thread.sleep(10); // the 10ms is completely off the wall - no idea how to be sure that the disconnect really happened
 
-                while(client.isConnected())
-                    Thread.sleep(10);
+                System.out.print("disconnected " + Integer.toString(i+1) + "\r");
+
             }
 
         } catch (MqttException e) {
