@@ -1,0 +1,117 @@
+mqttConnector:  <transportConnector name="mqtt" uri="mqtt://0.0.0.0:1883?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+
+single
+started: 2015-06-19T11:12:32.536
+clientID: Client01, Topic: Topic01, QoS: none
+disconnected 4999
+finished: 2015-06-19T11:14:37.444
+
+connection stealing - once
+threads 45 memory 1.9G CPU below 5%
+
+single
+started: 2015-06-19T11:21:19.522
+clientID: Client01, Topic: Topic01, QoS: none
+disconnected 5000
+finished: 2015-06-19T11:23:18.988
+
+connection stealing - 3
+threads 45 memory 2.0G CPU below 5%
+
+single
+started: 2015-06-19T11:24:55.699
+clientID: Client01, Topic: Topic01, QoS: none
+disconnected 5000
+finished: 2015-06-19T11:27:00.758
+
+connection stealing - once
+threads 46 memory 2.2G CPU below 5%
+
+single
+started: 2015-06-19T11:24:55.699
+clientID: Client01, Topic: Topic01, QoS: none
+disconnected 5000
+finished: 2015-06-19T11:27:00.758
+
+connection stealing - once
+threads 46 memory 2.4G CPU below 5%
+
+179
+
+single
+started: 2015-06-19T12:31:34.503
+clientID: Client01, Topic: Topic01, QoS: none
+disconnected 5000
+finished: 2015-06-19T12:33:33.446
+
+connection stealing - none
+threads 44 memory 17M CPU below 5%
+
+single
+started: 2015-06-19T12:35:12.794
+clientID: Client01, Topic: Topic01, QoS: none
+disconnected 5000
+finished: 2015-06-19T12:37:11.623
+
+connection stealing - none
+threads 44 memory 17M CPU below 5%
+
+single
+started: 2015-06-19T12:38:49.373
+clientID: Client01, Topic: Topic01, QoS: none
+disconnected 5000
+finished: 2015-06-19T12:40:48.248
+
+connection stealing - none
+threads 44 memory 17M CPU below 5%
+
+mqttConnector:  <transportConnector name="mqtt+nio" uri="mqtt+nio://0.0.0.0:1883?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+
+
+single
+started: 2015-06-19T11:35:21.323
+clientID: Client01, Topic: Topic01, QoS: none
+disconnected 5000
+finished: 2015-06-19T11:37:22.934
+
+connection stealing - 2
+threads 45 memory 0.22G CPU below 5%
+
+single
+started: 2015-06-19T11:39:25.104
+clientID: Client01, Topic: Topic01, QoS: none
+disconnected 5000
+finished: 2015-06-19T11:41:26.042
+
+connection stealing - 2
+threads 45 memory 0.4G CPU below 5%
+
+179
+
+single
+started: 2015-06-19T12:44:43.318
+clientID: Client01, Topic: Topic01, QoS: none
+disconnected 5000
+finished: 2015-06-19T12:46:42.110
+
+connection stealing - none
+threads 44 memory 24M CPU below 5%
+
+single
+started: 2015-06-19T12:48:20.364
+clientID: Client01, Topic: Topic01, QoS: none
+disconnected 5000
+finished: 2015-06-19T12:50:19.561
+
+connection stealing - none
+threads 44 memory 16M CPU below 5%
+
+single
+started: 2015-06-19T12:51:16.159
+clientID: Client01, Topic: Topic01, QoS: none
+disconnected 5000
+finished: 2015-06-19T12:53:15.106
+
+connection stealing - none
+threads 44 memory 16M CPU below 5%
+
