@@ -10,11 +10,13 @@ public class Main {
     public static void main(String[] args) {
 
         args = new String[]{"01", "none"};
+//        String ip = "10.37.129.2";
+        String ip = "localhost";
 
         String clientID = "Client" + args[0];
         String topicName = "Topic" + args[0];
 
-        int batchSize = 500;
+        int batchSize = 10000;
 
         int QoS = -1;
         switch (args[1]) {
@@ -23,7 +25,7 @@ public class Main {
             case "2": QoS = 2; break;
         }
 
-        String brokerUrl = "tcp://localhost:1883";
+        String brokerUrl = "tcp://"+ip+":1883";
 
         if (args.length > 2)
             brokerUrl = args[2];
@@ -38,23 +40,27 @@ public class Main {
         try {
 
             int i;
-            for (i=0; i<10; i++) {
+            for (i=0; i<1; i++) {
 
                 ArrayList<MqttAsyncClient> clients = new ArrayList<>();
 
                 int j;
                 for (j=0; j<batchSize; j++) {
                     MqttAsyncClient client = new MqttAsyncClient(brokerUrl, clientID + "j" + Integer.toString(j), null);
-                    client.connect(options);
-                    clients.add(client);
 
-                    while(!client.isConnected())
-                        Thread.sleep(10);
+                    try {
+                        client.connect(options).waitForCompletion();
+                    } catch (MqttException e) {
+                        System.out.println("\nConnect for " + clientID + "j" + Integer.toString(j)+ " failed " + e.toString() + "\n");
+                        continue;
+                    }
+
+                    clients.add(client);
 
                     if (QoS >= 0)
                         client.subscribe(topicName + "j" + Integer.toString(j), QoS);
 
-                    System.out.print("connected: " + Integer.toString(i * batchSize + j+1) + "\r");
+                    System.out.printf("connected: pass %2d #%4d\r",i+1 ,j+1);
                 }
 
                 for (j=0; j<batchSize; j++) {
@@ -63,15 +69,13 @@ public class Main {
 
                     client.disconnect();
 
-                    System.out.print("disconnected: " + Integer.toString(i * batchSize + j+1) + "\r");
+                    System.out.printf("disconnected: pass %2d #%4d\r", i+1, j+1);
                 }
 
 
             }
 
         } catch (MqttException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
