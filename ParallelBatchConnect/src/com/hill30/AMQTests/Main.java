@@ -4,6 +4,7 @@ import org.eclipse.paho.client.mqttv3.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Main {
 
@@ -14,7 +15,7 @@ public class Main {
         String clientID = "Client" + args[0];
         String topicName = "Topic" + args[0];
 
-        int batchSize = 500;
+        int batchSize = 10000;
 
         int QoS = -1;
         switch (args[1]) {
@@ -38,8 +39,9 @@ public class Main {
         try {
 
             int i;
-            for (i=0; i<100; i++) {
+            for (i=0; i<1; i++) {
 
+                Date start = new Date();
                 ArrayList<ConnectionAdapter> adapters = new ArrayList<>();
                 int j;
                 for (j=0; j<batchSize; j++) {
@@ -54,13 +56,18 @@ public class Main {
 
                 for (j=0; j<batchSize; j++) {
                     adapters.get(j).Connect();
-                    System.out.print("Connection count " + (j+1) + "\r");
+                    System.out.printf("Connected %d\r", (j + 1));
                 }
 //                    //System.out.print("connected: " + Integer.toString(i * batchSize + j + 1) + "\r");
+
+                System.out.printf("\nConnects initiated in %d msec\n", new Date().getTime() - start.getTime());
+
+                start = new Date();
 
                 boolean connected = true;
                 while (!connected) {
                     for (j=0; j<batchSize; j++) {
+                        Thread.sleep(100);
                         connected = adapters.get(j).IsConnected();
                         if (!connected)
                             break;
@@ -71,9 +78,12 @@ public class Main {
 
                 }
 
+                System.out.printf("Waiting for pending connects... - done in %d msec\n", new Date().getTime() - start.getTime());
+
                 for (j=0; j<batchSize; j++) {
+                    Thread.sleep(10);
                     adapters.get(j).Disconnect();
-                    System.out.print("Connection count " + (batchSize - j - 1) + "\r");
+                    System.out.printf("Disconnected %d\r", j + 1);
                     //System.out.print("disconnected: " + Integer.toString(i * batchSize + j + 1) + "\r");
                 }
 
