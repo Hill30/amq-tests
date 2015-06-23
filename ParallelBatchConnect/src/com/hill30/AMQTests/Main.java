@@ -64,17 +64,18 @@ public class Main {
 
                 start = new Date();
 
-                boolean connected = true;
-                while (!connected) {
+                boolean checked = false;
+                while (!checked) {
                     for (j=0; j<batchSize; j++) {
-                        Thread.sleep(100);
-                        connected = adapters.get(j).IsConnected();
-                        if (!connected)
+                        checked = adapters.get(j).IsConnected() || adapters.get(j).IsDisconnected();
+                        if (!checked)
                             break;
                     }
-                    if (connected)
-                        break;
-                    Thread.sleep(10);
+                    if (!checked) {
+                        Thread.sleep(10);
+                        continue;
+                    }
+                    break;
 
                 }
 

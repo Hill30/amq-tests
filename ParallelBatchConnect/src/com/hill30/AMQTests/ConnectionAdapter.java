@@ -16,6 +16,7 @@ public class ConnectionAdapter implements Runnable {
     private MqttAsyncClient client;
     private Thread thread;
     private boolean connected = false;
+    private boolean disconnected = false;
 
     public ConnectionAdapter(String brokerUrl, String clientID, String topicName, int QoS, MqttConnectOptions options) {
         this.brokerUrl = brokerUrl;
@@ -29,11 +30,27 @@ public class ConnectionAdapter implements Runnable {
 
     public void Connect() throws MqttException {
         client = new MqttAsyncClient(brokerUrl, clientID, null);
+/*
+        client.connect(options, null, new IMqttActionListener() {
+            @Override
+            public void onSuccess(IMqttToken iMqttToken) {
+                ConnectionAdapter.this.connected = true;
+            }
+
+            @Override
+            public void onFailure(IMqttToken iMqttToken, Throwable throwable) {
+                System.out.println("\nConnect for " + clientID + " failed: " + throwable.toString());
+                ConnectionAdapter.this.disconnected = true;
+            }
+        });
+*/
+
+//*
         while (true) {
             try {
                 client.connect(options).waitForCompletion();
             } catch (MqttException e) {
-                System.out.println("\nConnect for " + clientID + " failed " + e.toString() + "\nRetrying...");
+                System.out.println("\nConnect for " + clientID + " failed: " + e.toString() + "\nRetrying...");
                 continue;
             }
 
@@ -45,10 +62,14 @@ public class ConnectionAdapter implements Runnable {
             //    client.subscribe(topicName, QoS);
             break;
         }
-
+//*/
     }
 
     public boolean IsConnected() {
+        return connected;
+    }
+
+    public boolean IsDisconnected() {
         return connected;
     }
 
