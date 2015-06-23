@@ -63,11 +63,10 @@ public class Main {
                 System.out.printf("\nConnects initiated in %d msec\n", new Date().getTime() - start.getTime());
 
                 start = new Date();
-
                 boolean checked = false;
                 while (!checked) {
                     for (j=0; j<batchSize; j++) {
-                        checked = adapters.get(j).IsConnected() || adapters.get(j).IsDisconnected();
+                        checked = adapters.get(j).IsConnected() || adapters.get(j).IsAborted();
                         if (!checked)
                             break;
                     }
@@ -76,17 +75,35 @@ public class Main {
                         continue;
                     }
                     break;
-
                 }
 
                 System.out.printf("Waiting for pending connects... - done in %d msec\n", new Date().getTime() - start.getTime());
 
+                start = new Date();
                 for (j=0; j<batchSize; j++) {
                     Thread.sleep(10);
                     adapters.get(j).Disconnect();
                     System.out.printf("Disconnected %d\r", j + 1);
                     //System.out.print("disconnected: " + Integer.toString(i * batchSize + j + 1) + "\r");
                 }
+                System.out.printf("\nDisconnects initiated in %d msec\n", new Date().getTime() - start.getTime());
+
+                start = new Date();
+                boolean disconnected = false;
+                while (!disconnected) {
+                    for (j=0; j<batchSize; j++) {
+                        disconnected = !adapters.get(j).IsConnected();
+                        if (!disconnected)
+                            break;
+                    }
+                    if (!disconnected) {
+                        Thread.sleep(10);
+                        continue;
+                    }
+                    break;
+                }
+
+                System.out.printf("Waiting for pending disconnects... - done in %d msec\n", new Date().getTime() - start.getTime());
 
             }
 

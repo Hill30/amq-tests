@@ -16,7 +16,7 @@ public class ConnectionAdapter implements Runnable {
     private MqttAsyncClient client;
     private Thread thread;
     private boolean connected = false;
-    private boolean disconnected = false;
+    private boolean aborted = false;
 
     public ConnectionAdapter(String brokerUrl, String clientID, String topicName, int QoS, MqttConnectOptions options) {
         this.brokerUrl = brokerUrl;
@@ -30,22 +30,27 @@ public class ConnectionAdapter implements Runnable {
 
     public void Connect() throws MqttException {
         client = new MqttAsyncClient(brokerUrl, clientID, null);
-/*
-        client.connect(options, null, new IMqttActionListener() {
-            @Override
-            public void onSuccess(IMqttToken iMqttToken) {
-                ConnectionAdapter.this.connected = true;
-            }
-
-            @Override
-            public void onFailure(IMqttToken iMqttToken, Throwable throwable) {
-                System.out.println("\nConnect for " + clientID + " failed: " + throwable.toString());
-                ConnectionAdapter.this.disconnected = true;
-            }
-        });
-*/
-
 //*
+        try {
+            client.connect(options, new IMqttActionListener() {
+                @Override
+                public void onSuccess(IMqttToken iMqttToken) {
+                    ConnectionAdapter.this.connected = true;
+                }
+
+                @Override
+                public void onFailure(IMqttToken iMqttToken, Throwable throwable) {
+                    System.out.println("\nConnect for " + clientID + " failed: " + throwable.toString());
+                    ConnectionAdapter.this.aborted = true;
+                }
+            });
+        } catch (MqttException e) {
+            System.out.println("\nConnect for " + clientID + " failed: " + e.toString());
+            ConnectionAdapter.this.aborted = true;
+        }
+//*/
+
+/*
         while (true) {
             try {
                 client.connect(options).waitForCompletion();
@@ -69,20 +74,36 @@ public class ConnectionAdapter implements Runnable {
         return connected;
     }
 
-    public boolean IsDisconnected() {
-        return connected;
+    public boolean IsAborted() {
+        return aborted;
     }
 
     public void Disconnect() throws MqttException {
 
         if (connected) {
+            client.disconnect(0, null, new IMqttActionListener() {
+                @Override
+                public void onSuccess(IMqttToken iMqttToken) {
+                    ConnectionAdapter.this.connected = false;
+                }
+
+                @Override
+                public void onFailure(IMqttToken iMqttToken, Throwable throwable) {
+                    System.out.println("Disconnect for " + clientID + " failed " + throwable.toString());
+                    ConnectionAdapter.this.connected = false;
+                }
+            });
+
+/*
             try {
                 client.disconnect().waitForCompletion();
-                //System.out.print("disconnected: " + clientID + "\r");
+                //System.out.print("aborted: " + clientID + "\r");
+                ConnectionAdapter.this.connected = false;
             } catch (MqttException e) {
                 System.out.println("Disconnect for " + clientID + " failed " + e.toString());
+                ConnectionAdapter.this.connected = false;
             }
-
+*/
         }
     }
 

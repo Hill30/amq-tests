@@ -1,0 +1,88 @@
+batch size 10000
+started: 2015-06-23T10:59:13.160
+clientID: Client01, Topic: Topic01, QoS: none
+Connected 10000
+Connects initiated in 88675 msec
+Waiting for pending connects... - done in 2 msec
+Disconnected 10000
+finished: 2015-06-23T11:02:58.509
+
+batch size 10000
+started: 2015-06-23T11:04:40.365
+clientID: Client01, Topic: Topic01, QoS: none
+Connected 10000
+Connects initiated in 69294 msec
+Waiting for pending connects... - done in 6 msec
+Disconnected 10000
+finished: 2015-06-23T11:07:58.557
+
+batch size 10000
+started: 2015-06-23T11:09:47.756
+clientID: Client01, Topic: Topic01, QoS: none
+Connected 10000
+Connects initiated in 69982 msec
+Waiting for pending connects... - done in 1 msec
+Disconnected 10000
+finished: 2015-06-23T11:13:05.936
+
+Threads <100 Memory peak 900M GC 22M CPU peak 35%
+
+batch size 10000
+started: 2015-06-23T12:37:40.184
+clientID: Client01, Topic: Topic01, QoS: none
+Connected 10000
+Connects initiated in 44642 msec
+Waiting for pending connects... - done in 126 msec
+Disconnected 10000
+Disconnects initiated in 115758 msec
+Waiting for pending disconnects... - done in 11 msec
+
+batch size 10000
+started: 2015-06-23T12:41:12.239
+clientID: Client01, Topic: Topic01, QoS: none
+Connected 7697
+Connect for Client01j5507 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j5612 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j5552 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j5510 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j5759 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j5793 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j5850 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j5808 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j5719 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j5799 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j5888 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j5805 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j5745 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j6037 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j5639 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+Connected 7702
+Connect for Client01j6817 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j6970 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j7112 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+
+Connect for Client01j6722 failed: Unable to connect to server (32103) - java.net.ConnectException: Connection refused: connect
+Connected 10000
+Connects initiated in 47749 msec
+Waiting for pending connects... - done in 348 msec
+Disconnected 10000
+Disconnects initiated in 114424 msec
+Waiting for pending disconnects... - done in 10 msec
+
+finished: 2015-06-23T12:43:54.888
