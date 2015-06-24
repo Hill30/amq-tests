@@ -17,7 +17,7 @@ public class Main {
 
         int batchSize = 10000;
 
-        int QoS = -1;
+        int QoS = 2;
         switch (args[1]) {
             case "0": QoS = 0; break;
             case "1": QoS = 1; break;

@@ -81,7 +81,7 @@ public class ConnectionAdapter implements Runnable {
     public void Disconnect() throws MqttException {
 
         if (connected) {
-            client.disconnect(0, null, new IMqttActionListener() {
+            client.disconnect(100, null, new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken iMqttToken) {
                     ConnectionAdapter.this.connected = false;
@@ -115,11 +115,19 @@ public class ConnectionAdapter implements Runnable {
             e.printStackTrace();
         }
 
-        while (client != null)
+        while(!connected)
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        while(connected)
             try {
-                Thread.sleep(10);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
     }
 }
