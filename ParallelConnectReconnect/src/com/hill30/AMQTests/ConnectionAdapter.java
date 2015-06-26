@@ -62,6 +62,22 @@ public class ConnectionAdapter {
         try {
             client.connect(options).waitForCompletion(1000);
             connected = true;
+            client.setCallback(new MqttCallback() {
+                @Override
+                public void connectionLost(Throwable throwable) {
+                    ConnectionAdapter.this.connected = false;
+                }
+
+                @Override
+                public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
+
+                }
+
+                @Override
+                public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
+
+                }
+            });
         } catch (MqttException e) {
             System.out.println("\nConnect for " + clientID + " failed: " + e.toString());
             aborted = true;

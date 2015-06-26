@@ -28,7 +28,7 @@ public class Main {
             case "2": QoS = 2; break;
         }
 
-        String brokerUrl = "tcp://localhost:1883";
+        String brokerUrl = "tcp://10.211.55.5:1883";
 
         if (args.length > 2)
             brokerUrl = args[2];

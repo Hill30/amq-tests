@@ -30,17 +30,18 @@ public class Runner implements Runnable {
         Start();
         while (!stop)
             try {
+                Reconnect();
                 if (command != "")
                     Execute(command);
                 command = "";
-                Thread.sleep(10);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         stop = false;
     }
 
-    public void Start() {
+    private void Start() {
 
         Date start = new Date();
         int j;
@@ -82,6 +83,14 @@ public class Runner implements Runnable {
 
     }
 
+    private void Reconnect() {
+        int j;
+        for (j = 0; j < batchSize; j++) {
+            if (!adapters.get(j).IsConnected())
+                adapters.get(j).Connect();
+        }
+    }
+
     public void Quit() {
         stop = true;
     }
@@ -90,14 +99,14 @@ public class Runner implements Runnable {
         this.command = command;
     }
 
-    public void Execute(String command) {
+    private void Execute(String command) {
         switch(command) {
             case("disconnect") : Disconnect();
                 break;
-            case("start") : Disconnect(); Start();
+            case("restart") : Disconnect(); Start();
                 break;
             default:
-                System.out.println("unknown command: " + command);
+                System.out.println("unknown command: >" + command + "<");
                 break;
         }
     }
