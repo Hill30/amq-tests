@@ -24,7 +24,7 @@ The MQTT client library used in tests is [PAHO](http://www.eclipse.org/paho/) v 
 
 ## Test cases
 
-### 1. Basic [connect/disconnect](Disconnect/) test
+### 1. Basic [connect/disconnect](amq-tests/Disconnect/) test
 
 ####Test case description:
 
