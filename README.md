@@ -1,4 +1,4 @@
-# A collection of ActiveMQ MQTT connector throughput/capacity tests
+#ActiveMQ MQTT connector throughput/capacity tests
 
 ## Use case
 
