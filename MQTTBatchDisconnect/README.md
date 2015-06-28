@@ -20,5 +20,5 @@ The test is repeated the requested number of times.
 
 ####Running instructions
  * Load the source code in the IDE (JetBrains Idea Community edition worked for me)
- * Set the parameters listed above to the desired values. I ran the test for 10000 repetitions
+ * Set the parameters listed above to the desired values. I ran the test for 2 repetitions with the batch size of 10000
 
