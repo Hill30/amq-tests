@@ -7,7 +7,7 @@ The use case requires guaraneed message delivery to a big number of clients over
  * number of clients tens of thousands (currenlty requested up to 20000)
  * Quality of Service: Exactly Once
  * network traffic: moderate. Expected number of messages per client less than 1000 per day
- * acceptable delivery latency: pretty lax. It is ok if the delay is even a minute or more even if the network is connectet at the moment.
+ * acceptable delivery latency: pretty lax. It is ok if the delay is even a minute or more even if the network is connected at the moment.
 
 ## The Environmnet
 
