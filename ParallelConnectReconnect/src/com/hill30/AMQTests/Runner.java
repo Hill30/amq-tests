@@ -51,7 +51,8 @@ public class Runner implements Runnable {
                             brokerUrl,
                             clientID + "j" + Integer.toString(j),
                             topicName + "j" + Integer.toString(j),
-                            QoS
+                            QoS,
+                            System.err
                     ));
         }
 

@@ -2,12 +2,15 @@ package com.hill30.AMQTests;
 
 import org.eclipse.paho.client.mqttv3.*;
 
+import java.io.PrintStream;
+
 /**
  * Created by michaelfeingold on 6/19/15.
  */
 public class ConnectionAdapter {
 
 
+    private final PrintStream log;
     private String brokerUrl;
     private String clientID;
     private String topicName;
@@ -16,11 +19,12 @@ public class ConnectionAdapter {
     private boolean connected = false;
     private boolean aborted = false;
 
-    public ConnectionAdapter(String brokerUrl, String clientID, String topicName, int QoS) {
+    public ConnectionAdapter(String brokerUrl, String clientID, String topicName, int QoS, PrintStream log) {
         this.brokerUrl = brokerUrl;
         this.clientID = clientID;
         this.topicName = topicName;
         this.QoS = QoS;
+        this.log = log;
     }
 
     public void Connect() {
@@ -31,7 +35,7 @@ public class ConnectionAdapter {
         try {
             client = new MqttAsyncClient(brokerUrl, clientID, null);
         } catch (MqttException e) {
-            System.out.println("\nCould not create client for " + clientID + " : " + e.toString());
+            log.println("\nCould not create client for " + clientID + " : " + e.toString());
             aborted = true;
         }
 
@@ -48,12 +52,12 @@ public class ConnectionAdapter {
 
                 @Override
                 public void onFailure(IMqttToken iMqttToken, Throwable throwable) {
-                    System.out.println("\nConnect for " + clientID + " failed: " + throwable.toString());
+                    System.log.println("\nConnect for " + clientID + " failed: " + throwable.toString());
                     ConnectionAdapter.this.aborted = true;
                 }
             });
         } catch (MqttException e) {
-            System.out.println("\nConnect for " + clientID + " failed: " + e.toString());
+            System.log.println("\nConnect for " + clientID + " failed: " + e.toString());
             ConnectionAdapter.this.aborted = true;
         }
 //*/
@@ -79,7 +83,7 @@ public class ConnectionAdapter {
                 }
             });
         } catch (MqttException e) {
-            System.out.println("\nConnect for " + clientID + " failed: " + e.toString());
+            log.println("\nConnect for " + clientID + " failed: " + e.toString());
             aborted = true;
         }
 
@@ -108,22 +112,22 @@ public class ConnectionAdapter {
 
                     @Override
                     public void onFailure(IMqttToken iMqttToken, Throwable throwable) {
-                        System.out.println("Disconnect for " + clientID + " failed " + throwable.toString());
+                        log.println("Disconnect for " + clientID + " failed " + throwable.toString());
                         ConnectionAdapter.this.aborted = true;
                     }
                 });
             } catch (MqttException e) {
-                System.out.println("Disconnect for " + clientID + " failed " + e.toString());
+                log.println("Disconnect for " + clientID + " failed " + e.toString());
                 ConnectionAdapter.this.aborted = true;
             }
 
 /*
             try {
                 client.disconnect().waitForCompletion();
-                //System.out.print("aborted: " + clientID + "\r");
+                //System.log.print("aborted: " + clientID + "\r");
                 ConnectionAdapter.this.connected = false;
             } catch (MqttException e) {
-                System.out.println("Disconnect for " + clientID + " failed " + e.toString());
+                System.log.println("Disconnect for " + clientID + " failed " + e.toString());
                 ConnectionAdapter.this.connected = false;
             }
 */

@@ -8,34 +8,41 @@ public class Main {
 
     public static void main(String[] args) {
 
-        args = new String[]{"01", "none"};
 
-        String clientID = "Client" + args[0];
-        String topicName = "Topic" + args[0];
+        /**********************************************
+         * Assign test parameter values to the variables below
+         */
 
-        int QoS = -1;
-        switch (args[1]) {
-            case "0": QoS = 0; break;
-            case "1": QoS = 1; break;
-            case "2": QoS = 2; break;
-        }
+            String brokerUrl = "tcp://10.211.55.5:1883";
+            //String brokerUrl = "tcp://localhost:1883";
 
-        String brokerUrl = "tcp://localhost:1883";
+            String clientID = "Client01";
+            String topicName = "Topic01";
 
-        if (args.length > 2)
-            brokerUrl = args[2];
+            // Quality of Service
+            int QoS = -1;
+            // Quality of Service values:
+            // 0 - at most once
+            // 1 - at least once
+            // 2 - exactly once
+            // if QoS is set to -1, subscribe will be skipped
+
+            int batchSize = 5000;
+
+        /*
+         **********************************************/
+
 
         MqttConnectOptions options = new MqttConnectOptions();
         options.setCleanSession(false);
 
         System.out.printf("single\nstarted: %s%n", LocalDateTime.now());
-        System.out.printf("clientID: %s, Topic: %s, QoS: %s\n", clientID, topicName, args[1]);
-
+        System.out.printf("clientID: %s, Topic: %s, QoS: %d\n", clientID, topicName, QoS);
 
         try {
 
             int i;
-            for (i=0; i<5000; i++) {
+            for (i=0; i<batchSize; i++) {
 
                 MqttAsyncClient client = new MqttAsyncClient(brokerUrl, clientID, null);
                 client.connect(options);
