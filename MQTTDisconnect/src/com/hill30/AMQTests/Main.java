@@ -27,7 +27,7 @@ public class Main {
             // 2 - exactly once
             // if QoS is set to -1, subscribe will be skipped
 
-            int batchSize = 5000;
+            int repetitions = 10000;
 
         /*
          **********************************************/
@@ -42,7 +42,7 @@ public class Main {
         try {
 
             int i;
-            for (i=0; i<batchSize; i++) {
+            for (i=0; i<repetitions; i++) {
 
                 MqttAsyncClient client = new MqttAsyncClient(brokerUrl, clientID, null);
                 client.connect(options);

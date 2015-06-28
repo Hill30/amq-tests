@@ -9,38 +9,41 @@ public class Main {
 
     public static void main(String[] args) {
 
-        args = new String[]{"01", "none"};
-//        String ip = "10.37.129.2";
-        String ip = "localhost";
+        /**********************************************
+         * Assign test parameter values to the variables below
+         */
 
-        String clientID = "Client" + args[0];
-        String topicName = "Topic" + args[0];
+        String brokerUrl = "tcp://10.211.55.5:1883";
+        //String brokerUrl = "tcp://localhost:1883";
+
+        String clientID = "Client01";
+        String topicName = "Topic01";
+
+        // Quality of Service
+        int QoS = -1;
+        // Quality of Service values:
+        // 0 - at most once
+        // 1 - at least once
+        // 2 - exactly once
+        // if QoS is set to -1, subscribe will be skipped
 
         int batchSize = 10000;
+        int repetitions = 1;
 
-        int QoS = -1;
-        switch (args[1]) {
-            case "0": QoS = 0; break;
-            case "1": QoS = 1; break;
-            case "2": QoS = 2; break;
-        }
-
-        String brokerUrl = "tcp://"+ip+":1883";
-
-        if (args.length > 2)
-            brokerUrl = args[2];
+        /*
+         **********************************************/
 
         MqttConnectOptions options = new MqttConnectOptions();
         options.setCleanSession(false);
 
         System.out.printf("batch size %d\nstarted: %s%n", batchSize, LocalDateTime.now());
-        System.out.printf("clientID: %s, Topic: %s, QoS: %s\n", clientID, topicName, args[1]);
+        System.out.printf("clientID: %s, Topic: %s, QoS: %d\n", clientID, topicName, QoS);
 
 
         try {
 
             int i;
-            for (i=0; i<1; i++) {
+            for (i=0; i<repetitions; i++) {
 
                 ArrayList<MqttAsyncClient> clients = new ArrayList<>();
 
