@@ -2,9 +2,6 @@ package com.hill30.AMQTests;
 
 import org.eclipse.paho.client.mqttv3.*;
 
-/**
- * Created by michaelfeingold on 6/19/15.
- */
 public class ConnectionAdapter implements Runnable {
 
 
