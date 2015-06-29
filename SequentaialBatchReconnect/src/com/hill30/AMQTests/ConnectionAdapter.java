@@ -66,6 +66,9 @@ public class ConnectionAdapter {
         try {
             client.connect(options).waitForCompletion(1000);
             connected = true;
+            if (QoS > 0)
+                client.subscribe(topicName, QoS);
+
             client.setCallback(new MqttCallback() {
                 @Override
                 public void connectionLost(Throwable throwable) {

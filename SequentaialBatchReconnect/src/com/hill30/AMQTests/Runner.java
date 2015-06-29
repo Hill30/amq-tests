@@ -86,13 +86,14 @@ public class Runner implements Runnable {
 
     private void Reconnect() {
         int j;
-        for (j = 0; j < batchSize; j++) {
+        for (j = 0; j < adapters.size(); j++) {
             if (!adapters.get(j).IsConnected())
                 adapters.get(j).Connect();
         }
     }
 
-    public void Quit() {
+    public void stop() {
+        Disconnect();
         stop = true;
     }
 
@@ -115,7 +116,7 @@ public class Runner implements Runnable {
     private void Disconnect() {
         Date start = new Date();
         int j;
-        for (j=0; j<batchSize; j++) {
+        for (j=0; j<adapters.size(); j++) {
             adapters.get(0).Disconnect();
             adapters.remove(0);
             System.out.printf("Disconnected %d\r", j + 1);
