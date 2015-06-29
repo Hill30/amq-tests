@@ -30,11 +30,11 @@ public class Runner implements Runnable {
         Start();
         while (!stop)
             try {
+                Thread.sleep(1000);
                 Reconnect();
                 if (command != "")
                     Execute(command);
                 command = "";
-                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -115,11 +115,10 @@ public class Runner implements Runnable {
 
     private void Disconnect() {
         Date start = new Date();
-        int j;
-        for (j=0; j<adapters.size(); j++) {
+        while (adapters.size() > 0) {
             adapters.get(0).Disconnect();
             adapters.remove(0);
-            System.out.printf("Disconnected %d\r", j + 1);
+            System.out.printf("Disconnected %d\r", batchSize - adapters.size());
         }
 
         System.out.printf("\nDisconnects initiated in %d msec\n", new Date().getTime() - start.getTime());
