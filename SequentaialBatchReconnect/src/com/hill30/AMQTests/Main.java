@@ -48,7 +48,6 @@ public class Main {
             String input;
 
             while((input=br.readLine())!=null){
-                System.out.println("Executing " + input);
                 runner.Submit(input);
             }
 
