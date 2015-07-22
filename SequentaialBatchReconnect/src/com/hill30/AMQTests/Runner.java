@@ -46,8 +46,9 @@ public class Runner implements Runnable {
         while (!stop)
             try {
                 Thread.sleep(1000);
-                if (!disconnecting)
-                    Reconnect();
+                //if (!disconnecting)
+                    //y
+                    // Reconnect();
                 if (!Objects.equals(command, ""))
                     System.out.printf("Executing %s", command);
                     Execute(command);

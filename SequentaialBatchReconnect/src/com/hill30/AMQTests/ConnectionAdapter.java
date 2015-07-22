@@ -16,7 +16,6 @@ public class ConnectionAdapter {
     private int QoS;
     private MqttAsyncClient client;
     private boolean connected = false;
-    private boolean aborted = false;
 
     public ConnectionAdapter(Runner runner, String clientID, String topicName) {
         this.runner = runner;
@@ -29,39 +28,18 @@ public class ConnectionAdapter {
 
     public void Connect() {
 
-        aborted = false;
-        connected = false;
+        if (connected)
+            return;
 
         try {
             client = new MqttAsyncClient(brokerUrl, clientID, null);
         } catch (MqttException e) {
             log.printf("%s: Could not create client for %s : %s\r\n", new Date().toString(), clientID, e.toString());
             runner.reportConnectionError();
-            aborted = true;
         }
 
         MqttConnectOptions options = new MqttConnectOptions();
         options.setCleanSession(false);
-
-/*
-        try {
-            client.connect(options, new IMqttActionListener() {
-                @Override
-                public void onSuccess(IMqttToken iMqttToken) {
-                    ConnectionAdapter.this.connected = true;
-                }
-
-                @Override
-                public void onFailure(IMqttToken iMqttToken, Throwable throwable) {
-                    System.log.println("\nConnect for " + clientID + " failed: " + throwable.toString());
-                    ConnectionAdapter.this.aborted = true;
-                }
-            });
-        } catch (MqttException e) {
-            System.log.println("\nConnect for " + clientID + " failed: " + e.toString());
-            ConnectionAdapter.this.aborted = true;
-        }
-//*/
 
 //*
         try {
@@ -72,9 +50,8 @@ public class ConnectionAdapter {
                 try {
                     client.subscribe(topicName, QoS);
                 } catch (MqttException e) {
-                    log.printf("%s: Subsribe for %s failed %s\r\n",new Date().toString(), clientID, e.toString());
+                    log.printf("%s: Subscribe for %s failed %s\r\n", new Date().toString(), clientID, e.toString());
                     runner.reportSubscribeError();
-                    aborted = true;
                 }
             client.setCallback(new MqttCallback() {
                 @Override
@@ -94,23 +71,14 @@ public class ConnectionAdapter {
                 }
             });
         } catch (MqttException e) {
-            log.printf("%s: Connect for %s failed %s\r\n",new Date().toString(), clientID, e.toString());
+            log.printf("%s: Connect for %s failed %s\r\n", new Date().toString(), clientID, e.toString());
             runner.reportConnectionError();
-            aborted = true;
         }
 
 //*/
     }
 
     public boolean IsConnected() { return connected; }
-
-    public boolean IsAborted() {
-        return aborted;
-    }
-
-    public void Run() {
-
-    }
 
     public void Disconnect() {
 
@@ -127,27 +95,15 @@ public class ConnectionAdapter {
                     public void onFailure(IMqttToken iMqttToken, Throwable throwable) {
                         log.printf("%s: Disconnect for %s failed : %S\r\n", new Date().toString(), clientID, throwable.toString());
                         runner.reportDisconnectionError();
-                        ConnectionAdapter.this.aborted = true;
                     }
                 });
             } catch (MqttException e) {
                 log.printf("%s: Disconnect for %s failed : %S\r\n", new Date().toString(), clientID, e.toString());
                 runner.reportDisconnectionError();
-                ConnectionAdapter.this.aborted = true;
             }
 
-/*
-            try {
-                client.disconnect().waitForCompletion();
-                //System.log.print("aborted: " + clientID + "\r");
-                ConnectionAdapter.this.connected = false;
-            } catch (MqttException e) {
-                System.log.println("Disconnect for " + clientID + " failed " + e.toString());
-                ConnectionAdapter.this.connected = false;
-            }
-*/
         } else
-            log.printf("already disconnected");
+            log.printf("%s: %s Already disconnected\r\n", new Date().toString(), clientID);
     }
 
 }
