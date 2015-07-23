@@ -57,7 +57,7 @@ public class ConnectionAdapter {
                 @Override
                 public void connectionLost(Throwable throwable) {
                     ConnectionAdapter.this.connected = false;
-                    runner.reportDisconnect(ConnectionAdapter.this);
+                    runner.reportDisconnect(null);
                 }
 
                 @Override

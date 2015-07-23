@@ -46,9 +46,8 @@ public class Runner implements Runnable {
         while (!stop)
             try {
                 Thread.sleep(1000);
-                //if (!disconnecting)
-                    //y
-                    // Reconnect();
+                if (!disconnecting)
+                    Reconnect();
                 if (!Objects.equals(command, ""))
                     System.out.printf("Executing %s", command);
                     Execute(command);
@@ -167,7 +166,8 @@ public class Runner implements Runnable {
     }
 
     public synchronized void reportDisconnect(ConnectionAdapter adapter) {
-        adapters.remove(adapter);
+        if (adapter != null)
+            adapters.remove(adapter);
         connections--;
         report();
         if (connections == 0)
