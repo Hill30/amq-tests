@@ -28,7 +28,3 @@
 ####Running instructions
  * Load the source code in the IDE (JetBrains Idea Community edition worked for me)
  * Set the parameters listed above to the desired values. I ran the test with the batch size of 10000
- * Wait for the connect process to complete
- * Cut off access to the broker i.e. using firewall. Watch the connection count on the broker to run down to 0
- * Restore access to broker. Watch the connection count to go back up to 10000
-
