@@ -41,23 +41,6 @@ public class Main {
         Thread runnerThread = new Thread(runner);
         runnerThread.start();
 
-        try{
-            BufferedReader br =
-                    new BufferedReader(new InputStreamReader(System.in));
-
-            String input;
-
-            while((input=br.readLine())!=null){
-                runner.Submit(input);
-            }
-
-            runner.stop();
-
-        }catch(IOException io){
-            io.printStackTrace();
-        }
-
-
         System.out.printf("\nfinished: %s%n", LocalDateTime.now());
     }
 }

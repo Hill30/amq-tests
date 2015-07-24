@@ -15,7 +15,6 @@ public class Runner implements Runnable {
     private String topicName;
     private int QoS;
     private boolean stop = false;
-    private String command = "";
     ArrayList<ConnectionAdapter> adapters = new ArrayList<>();
     private PrintStream log = null;
     private int connectionErrors = 0;
@@ -41,22 +40,28 @@ public class Runner implements Runnable {
 
     @Override
     public void run() {
+
         Start();
         verb = "Monitoring";
-        while (!stop)
-            try {
-                Thread.sleep(1000);
-                //if (!disconnecting)
-                    //y
-                    // Reconnect();
-                if (!Objects.equals(command, ""))
+
+        try{
+            BufferedReader br =
+                    new BufferedReader(new InputStreamReader(System.in));
+
+            String command;
+
+            while((command=br.readLine())!=null){
+                if (!command.trim().isEmpty())
                     System.out.printf("Executing %s", command);
-                    Execute(command);
-                command = "";
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                Execute(command);
             }
-        stop = false;
+
+            stop();
+
+        }catch(IOException io){
+            io.printStackTrace();
+        }
+
     }
 
     private void Start() {
@@ -90,11 +95,6 @@ public class Runner implements Runnable {
 
     public void stop() {
         Disconnect();
-        stop = true;
-    }
-
-    public void Submit(String command) {
-        this.command = command;
     }
 
     private void Execute(String command) {
