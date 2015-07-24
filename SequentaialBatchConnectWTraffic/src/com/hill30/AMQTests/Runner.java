@@ -3,9 +3,6 @@ package com.hill30.AMQTests;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
-import java.util.Objects;
-import java.util.function.Consumer;
 
 public class Runner implements Runnable {
 
@@ -14,13 +11,13 @@ public class Runner implements Runnable {
     private String clientID;
     private String topicName;
     private int QoS;
+    private int messagesPerDay;
     ArrayList<ConnectionAdapter> adapters = new ArrayList<>();
     private PrintStream log = null;
     private int connectionErrors = 0;
     private int connections = 0;
     private int disconnectionErrors = 0;
     private int subscribeErrors = 0;
-    private boolean disconnecting;
     private String verb="";
     private Publisher publisher;
     private int sent = 0;
@@ -28,12 +25,13 @@ public class Runner implements Runnable {
     private int lost = 0;
     private int dups = 0;
 
-    public Runner(int batchSize, String brokerUrl, String clientID, String topicName, int qoS) {
+    public Runner(int batchSize, String brokerUrl, String clientID, String topicName, int qoS, int messagesPerDay) {
         this.batchSize = batchSize;
         this.brokerUrl = brokerUrl;
         this.clientID = clientID;
         this.topicName = topicName;
         QoS = qoS;
+        this.messagesPerDay = messagesPerDay;
 
         try {
             log = new PrintStream("Exceptions.log");
@@ -47,7 +45,7 @@ public class Runner implements Runnable {
 
         Start();
 
-        publisher = new Publisher(this, adapters, 100);
+        publisher = new Publisher(this, adapters, messagesPerDay);
 
         verb = "Monitoring";
 
@@ -76,7 +74,6 @@ public class Runner implements Runnable {
         connectionErrors = 0;
         subscribeErrors = 0;
         disconnectionErrors = 0;
-        disconnecting = false;
 
         verb = "Connecting";
 
@@ -129,7 +126,6 @@ public class Runner implements Runnable {
     private void Disconnect() {
         verb = "Disconnecting";
         publisher.stop();
-        disconnecting = true;
         Date start = new Date();
         Iterable<ConnectionAdapter> a = (Iterable<ConnectionAdapter>)adapters.clone();
         final int[] count = {0};

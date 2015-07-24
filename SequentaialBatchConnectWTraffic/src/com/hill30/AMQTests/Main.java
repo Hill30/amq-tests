@@ -29,13 +29,14 @@ public class Main {
 
         int batchSize = 10000;
 
+        int messagesPerDay = 200;
         /*
          **********************************************/
 
         System.out.printf("batch size %d\nstarted: %s%n", batchSize, LocalDateTime.now());
         System.out.printf("clientID: %s, Topic: %s, QoS: %d\n", clientID, topicName, QoS);
 
-        Runner runner = new Runner(batchSize, brokerUrl, clientID, topicName, QoS);
+        Runner runner = new Runner(batchSize, brokerUrl, clientID, topicName, QoS, messagesPerDay);
 
         Thread runnerThread = new Thread(runner);
         runnerThread.start();
