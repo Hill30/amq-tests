@@ -20,7 +20,7 @@ public class Publisher {
         this.adapters = adapters;
         log = runner.getlog();
         start();
-        messageFrequency = 10000;// 24*60*60*1000/interval;
+        messageFrequency = 24*60*60*1000/interval;
     }
 
     public void start() {
@@ -34,6 +34,16 @@ public class Publisher {
         adapters.forEach(adapter -> {
             schedulePublish(adapter);
         });
+    }
+
+    public void stop() {
+        timer.cancel();
+        if (client.isConnected())
+            try {
+                client.disconnect();
+            } catch (MqttException e) {
+                log.printf("%s: Error disconnecting %s : %s\r\n", new Date().toString(), "publisher", e.toString());
+            }
     }
 
     private void schedulePublish(ConnectionAdapter adapter) {

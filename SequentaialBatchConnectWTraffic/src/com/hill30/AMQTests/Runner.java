@@ -14,8 +14,6 @@ public class Runner implements Runnable {
     private String clientID;
     private String topicName;
     private int QoS;
-    private boolean stop = false;
-    private String command = "";
     ArrayList<ConnectionAdapter> adapters = new ArrayList<>();
     private PrintStream log = null;
     private int connectionErrors = 0;
@@ -46,24 +44,31 @@ public class Runner implements Runnable {
 
     @Override
     public void run() {
+
         Start();
 
         publisher = new Publisher(this, adapters, 100);
 
         verb = "Monitoring";
-        while (!stop)
-            try {
-                Thread.sleep(1000);
-                if (!disconnecting)
-                    Reconnect();
-                if (!Objects.equals(command, ""))
-                    System.out.printf("Executing %s", command);
+
+
+        try{
+            BufferedReader br =
+                    new BufferedReader(new InputStreamReader(System.in));
+
+            String command;
+
+            while((command=br.readLine())!=null){
+                if (!command.trim().isEmpty())
                     Execute(command);
-                command = "";
-            } catch (InterruptedException e) {
-                e.printStackTrace();
             }
-        stop = false;
+
+            Disconnect();
+
+        }catch(IOException io){
+            io.printStackTrace();
+        }
+
     }
 
     private void Start() {
@@ -103,16 +108,8 @@ public class Runner implements Runnable {
         }
     }
 
-    public void stop() {
-        Disconnect();
-        stop = true;
-    }
-
-    public void Submit(String command) {
-        this.command = command;
-    }
-
     private void Execute(String command) {
+        System.out.println("Execute command " + command);
         switch(command) {
             case("disconnect") : Disconnect();
                 break;
@@ -123,8 +120,6 @@ public class Runner implements Runnable {
             case("?"):
                 report();
                 break;
-            case(""):
-                break;
             default:
                 System.out.println("unknown command: >" + command + "<");
                 break;
@@ -133,6 +128,7 @@ public class Runner implements Runnable {
 
     private void Disconnect() {
         verb = "Disconnecting";
+        publisher.stop();
         disconnecting = true;
         Date start = new Date();
         Iterable<ConnectionAdapter> a = (Iterable<ConnectionAdapter>)adapters.clone();

@@ -27,8 +27,7 @@ public class Main {
         // 2 - exactly once
         // if QoS is set to -1, subscribe will be skipped
 
-        //int repetitions = 10000;
-        int batchSize = 100;
+        int batchSize = 10000;
 
         /*
          **********************************************/
@@ -41,22 +40,11 @@ public class Main {
         Thread runnerThread = new Thread(runner);
         runnerThread.start();
 
-        try{
-            BufferedReader br =
-                    new BufferedReader(new InputStreamReader(System.in));
-
-            String input;
-
-            while((input=br.readLine())!=null){
-                runner.Submit(input);
-            }
-
-            runner.stop();
-
-        }catch(IOException io){
-            io.printStackTrace();
+        try {
+            runnerThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-
 
         System.out.printf("\nfinished: %s%n", LocalDateTime.now());
     }
