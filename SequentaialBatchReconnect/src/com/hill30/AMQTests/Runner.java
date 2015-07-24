@@ -162,7 +162,7 @@ public class Runner implements Runnable {
         connections++;
         report();
         if (connections == batchSize)
-            System.out.printf("\n%s All of %d connections successfully connected", new Date().toString(), connections);
+            System.out.printf("\n%s All of %d connections successfully connected\n", new Date().toString(), connections);
     }
 
     public synchronized void reportDisconnect(ConnectionAdapter adapter) {
@@ -171,7 +171,7 @@ public class Runner implements Runnable {
         connections--;
         report();
         if (connections == 0)
-            System.out.printf("\n%s All of %d connections successfully disconnected", new Date().toString(), batchSize);
+            System.out.printf("\n%s All of %d connections successfully disconnected\n", new Date().toString(), batchSize);
     }
 
     public synchronized void reportConnectionError() {
@@ -181,9 +181,11 @@ public class Runner implements Runnable {
 
     public synchronized void reportDisconnectionError() {
         disconnectionErrors++;
+        report();
     }
 
     public synchronized void reportSubscribeError() {
         subscribeErrors++;
+        report();
     }
 }
