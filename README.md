@@ -27,5 +27,6 @@ The MQTT client library used in tests is [PAHO](http://www.eclipse.org/paho/) v 
  1. [Basic](MQTTDisconnect)  connect/disconnect test
  2. [Batch sequential](MQTTBatchDisconnect) connect/disconnect test
  3. [Batch parallel](ParallelBatchConnect) connect/disconnect test
- 4. [Reconnect sequential](ParallelBatchConnect) test
+ 4. [Reconnect sequential](SequentaialBatchReconnect) test
+ 5. [Reconnect sequential w/traffic](SequentaialBatchConnectWTraffic) test
 
