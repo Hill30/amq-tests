@@ -24,6 +24,7 @@ public class Runner implements Runnable {
     private int received = 0;
     private int lost = 0;
     private int dups = 0;
+    private int publishErrors = 0;
 
     public Runner(int batchSize, String brokerUrl, String clientID, String topicName, int qoS, int messagesPerDay) {
         this.batchSize = batchSize;
@@ -74,6 +75,7 @@ public class Runner implements Runnable {
         connectionErrors = 0;
         subscribeErrors = 0;
         disconnectionErrors = 0;
+        publishErrors = 0;
 
         verb = "Connecting";
 
@@ -154,9 +156,9 @@ public class Runner implements Runnable {
 
     public void report() {
         System.out.printf(
-                "%s... Connections: %d; Messages sent: %d received %d lost %d dups %d; Errors connect: %d subscribe %d, disconnect: %d \r",
+                "%s... Connections: %d; Messages sent %d received %d lost %d dups %d; Errors connect: %d subscribe %d publish: %d disconnect: %d \r",
                 verb, connections, sent, received, lost, dups,
-                connectionErrors, subscribeErrors, disconnectionErrors);
+                connectionErrors, subscribeErrors, publishErrors, disconnectionErrors);
     }
 
     public synchronized void reportConnect() {
@@ -200,5 +202,9 @@ public class Runner implements Runnable {
         this.lost += lost;
         this.dups += dups;
         report();
+    }
+
+    public synchronized void reportPublishError() {
+        publishErrors++;
     }
 }

@@ -117,6 +117,7 @@ public class ConnectionAdapter {
             runner.reportPublish();
         } catch (MqttException e) {
             log.printf("%s: Publish #%d for %s failed %s\r\n", new Date().toString(), countSent, clientID, e.toString());
+            runner.reportPublishError();
         }
     }
 
