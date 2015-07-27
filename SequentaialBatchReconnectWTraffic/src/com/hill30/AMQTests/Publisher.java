@@ -1,7 +1,7 @@
 package com.hill30.AMQTests;
 
-import org.eclipse.paho.client.mqttv3.MqttAsyncClient;
-import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.*;
+import org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence;
 
 import java.io.PrintStream;
 import java.util.*;
@@ -14,8 +14,10 @@ public class Publisher {
     private PrintStream log;
     Random randomizer = new Random();
     private int messageFrequency;
+    private Runner runner;
 
     public Publisher(Runner runner, ArrayList<ConnectionAdapter> adapters, int interval) {
+        this.runner = runner;
         brokerUrl = runner.getBrokerUrl();
         this.adapters = adapters;
         log = runner.getlog();
@@ -25,10 +27,30 @@ public class Publisher {
 
     public void start() {
         try {
-            client = new MqttAsyncClient(brokerUrl, "publisher", null);
-            client.connect().waitForCompletion();
+            client = new MqttAsyncClient(brokerUrl, "publisher", new MqttDefaultFilePersistence("./Storage"));
+
+            MqttConnectOptions options = new MqttConnectOptions();
+            options.setCleanSession(false);
+            client.connect(options).waitForCompletion();
+            client.setCallback(new MqttCallback() {
+                @Override
+                public void connectionLost(Throwable throwable) {
+                    runner.schedulePublisherRestart();
+                }
+
+                @Override
+                public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
+
+                }
+
+                @Override
+                public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
+
+                }
+            });
         } catch (MqttException e) {
             log.printf("%s: Could not create client for %s : %s\r\n", new Date().toString(), "publisher", e.toString());
+            runner.schedulePublisherRestart();
         }
 
         adapters.forEach(adapter -> {
@@ -46,6 +68,8 @@ public class Publisher {
             } catch (MqttException e) {
                 log.printf("%s: Error disconnecting %s : %s\r\n", new Date().toString(), "publisher", e.toString());
             }
+
+        //System.out.printf("Messages sent %d received %d over %d sec. (%f messages per sec)", );
     }
 
     private void schedulePublish(ConnectionAdapter adapter) {

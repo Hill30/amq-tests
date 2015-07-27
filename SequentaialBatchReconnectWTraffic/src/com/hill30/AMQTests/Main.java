@@ -29,7 +29,7 @@ public class Main {
 
         int batchSize = 10000;
 
-        int messagesPerDay = 200;
+        int messagesPerDay = 2000;
         /*
          **********************************************/
 

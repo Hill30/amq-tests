@@ -48,18 +48,12 @@ public class ConnectionAdapter {
             client.connect(options).waitForCompletion(1000);
             connected = true;
             runner.reportConnect();
-            if (QoS > 0)
-                try {
-                    client.subscribe(topicName, QoS);
-                } catch (MqttException e) {
-                    log.printf("%s: Subscribe for %s failed %s\r\n", new Date().toString(), clientID, e.toString());
-                    runner.reportSubscribeError();
-                }
             client.setCallback(new MqttCallback() {
                 @Override
                 public void connectionLost(Throwable throwable) {
                     ConnectionAdapter.this.connected = false;
                     runner.reportDisconnect(null);
+                    runner.scheduleReconnect(ConnectionAdapter.this);
                 }
 
                 @Override
@@ -72,9 +66,17 @@ public class ConnectionAdapter {
 
                 }
             });
+            if (QoS > 0)
+                try {
+                    client.subscribe(topicName, QoS);
+                } catch (MqttException e) {
+                    log.printf("%s: Subscribe for %s failed %s\r\n", new Date().toString(), clientID, e.toString());
+                    runner.reportSubscribeError();
+                }
         } catch (MqttException e) {
             log.printf("%s: Connect for %s failed %s\r\n", new Date().toString(), clientID, e.toString());
             runner.reportConnectionError();
+            runner.scheduleReconnect(this);
         }
 
 //*/
@@ -120,7 +122,9 @@ public class ConnectionAdapter {
         try {
             ByteBuffer message = ByteBuffer.allocate(clientID.getBytes().length+4);
             message.putInt(countSent).put(clientID.getBytes());
-            client.publish(topicName, new MqttMessage(message.array()));
+            MqttMessage mqttMessage = new MqttMessage(message.array());
+            mqttMessage.setQos(runner.getQoS());
+            client.publish(topicName, mqttMessage);
             countSent++;
             runner.reportPublish();
         } catch (MqttException e) {

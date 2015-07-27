@@ -1,8 +1,12 @@
 package com.hill30.AMQTests;
 
+import org.eclipse.paho.client.mqttv3.MqttCallback;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Runner implements Runnable {
 
@@ -26,6 +30,7 @@ public class Runner implements Runnable {
     private int dups = 0;
     private int publishErrors = 0;
     private int destinationErrors = 0;
+    private Timer scheduler = null;
 
     public Runner(int batchSize, String brokerUrl, String clientID, String topicName, int qoS, int messagesPerDay) {
         this.batchSize = batchSize;
@@ -86,6 +91,7 @@ public class Runner implements Runnable {
         disconnectionErrors = 0;
         publishErrors = 0;
         destinationErrors = 0;
+        scheduler = new Timer();
 
         verb = "Connecting";
 
@@ -109,22 +115,12 @@ public class Runner implements Runnable {
 
     }
 
-    private void Reconnect() {
-        int j;
-        for (j = 0; j < adapters.size(); j++) {
-            if (!adapters.get(j).IsConnected())
-                adapters.get(j).Connect();
-        }
-    }
-
     private void Execute(String command) {
         System.out.println("Execute command " + command);
         switch(command) {
             case("disconnect") : Disconnect();
                 break;
             case("restart") : Disconnect(); Start();
-                break;
-            case("reconnect") : Reconnect();
                 break;
             case("?"):
                 report();
@@ -138,6 +134,7 @@ public class Runner implements Runnable {
     private void Disconnect() {
         verb = "Disconnecting";
         publisher.stop();
+        scheduler.cancel();
         Date start = new Date();
         Iterable<ConnectionAdapter> a = (Iterable<ConnectionAdapter>)adapters.clone();
         final int[] count = {0};
@@ -224,5 +221,23 @@ public class Runner implements Runnable {
     public synchronized void reportDestinationError() {
         destinationErrors++;
         report();
+    }
+
+    public void scheduleReconnect(ConnectionAdapter adapter) {
+        scheduler.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                adapter.Connect();
+            }
+        }, 10000);
+    }
+
+    public void schedulePublisherRestart() {
+        scheduler.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                publisher.start();
+            }
+        }, 10000);
     }
 }
