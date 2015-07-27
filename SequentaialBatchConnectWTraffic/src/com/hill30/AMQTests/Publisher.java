@@ -37,7 +37,9 @@ public class Publisher {
     }
 
     public void stop() {
-        timer.cancel();
+        if (timer != null)
+            timer.cancel();
+        timer = null;
         if (client.isConnected())
             try {
                 client.disconnect();
@@ -47,12 +49,13 @@ public class Publisher {
     }
 
     private void schedulePublish(ConnectionAdapter adapter) {
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                adapter.publish(client);
-                schedulePublish(adapter);
-            }
-        }, randomizer.nextInt(messageFrequency + 1));
+        if (timer != null)
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    adapter.publish(client);
+                    schedulePublish(adapter);
+                }
+            }, randomizer.nextInt(messageFrequency + 1));
     }
 }

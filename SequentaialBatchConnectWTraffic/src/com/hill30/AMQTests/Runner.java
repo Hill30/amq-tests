@@ -25,6 +25,7 @@ public class Runner implements Runnable {
     private int lost = 0;
     private int dups = 0;
     private int publishErrors = 0;
+    private int destinationErrors = 0;
 
     public Runner(int batchSize, String brokerUrl, String clientID, String topicName, int qoS, int messagesPerDay) {
         this.batchSize = batchSize;
@@ -64,6 +65,14 @@ public class Runner implements Runnable {
 
             Disconnect();
 
+            synchronized (this) {
+                try {
+                    this.wait();  // wait for connections to become 0 see reportDisconnect
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
         }catch(IOException io){
             io.printStackTrace();
         }
@@ -76,6 +85,7 @@ public class Runner implements Runnable {
         subscribeErrors = 0;
         disconnectionErrors = 0;
         publishErrors = 0;
+        destinationErrors = 0;
 
         verb = "Connecting";
 
@@ -156,9 +166,9 @@ public class Runner implements Runnable {
 
     public void report() {
         System.out.printf(
-                "%s... Connections: %d; Messages sent %d received %d lost %d dups %d; Errors connect: %d subscribe %d publish: %d disconnect: %d \r",
+                "%s... Connections: %d; Messages sent %d received %d lost %d dups %d; Errors connect %d subscribe %d publish %d destination %d disconnect %d \r",
                 verb, connections, sent, received, lost, dups,
-                connectionErrors, subscribeErrors, publishErrors, disconnectionErrors);
+                connectionErrors, subscribeErrors, publishErrors, destinationErrors, disconnectionErrors);
     }
 
     public synchronized void reportConnect() {
@@ -173,8 +183,10 @@ public class Runner implements Runnable {
             adapters.remove(adapter);
         connections--;
         report();
-        if (connections == 0)
+        if (connections == 0) {
             System.out.printf("\n%s All of %d connections successfully disconnected\n", new Date().toString(), batchSize);
+            this.notify();
+        }
     }
 
     public synchronized void reportConnectionError() {
@@ -206,5 +218,11 @@ public class Runner implements Runnable {
 
     public synchronized void reportPublishError() {
         publishErrors++;
+        report();
+    }
+
+    public synchronized void reportDestinationError() {
+        destinationErrors++;
+        report();
     }
 }
