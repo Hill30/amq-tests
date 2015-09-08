@@ -3,6 +3,8 @@ package com.hill30.amqtests.mqtt.subscriber;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
 
 import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static java.lang.Thread.sleep;
@@ -34,6 +36,7 @@ public class Runner implements Runnable {
     private Timer scheduler = null;
     private boolean isPublisher;
     private int pubIndex;
+    private  String dirName;
     public Runner(int batchSize, String brokerUrl, String clientID, String topicName, int qoS, int messagesPerDay, boolean isPublisher, int pubIndex) {
 
         this.batchSize = batchSize;
@@ -55,11 +58,7 @@ public class Runner implements Runnable {
 
     @Override
     public void run() {
-
         Start();
-        if(isPublisher) {
-            //publisher = new Publisher(this, adapters, pubIndex);
-        }
 
         verb = "Monitoring";
 
@@ -102,6 +101,7 @@ public class Runner implements Runnable {
 
         Date start = new Date();
 
+        //makeDir();
 
         int offset = pubIndex*batchSize;
         int limit =  offset + batchSize;
@@ -132,10 +132,12 @@ public class Runner implements Runnable {
             case("dis") :
                 Disconnect();
                 break;
-            case("res") : Disconnect(); Start();
+            case("res") :
+                Disconnect();
+                Start();
                 break;
-            case("p"):
-                //publisher.startPublish();
+            case("log"):
+                report();
                 break;
             case("?"):
                 report();
@@ -176,29 +178,55 @@ public class Runner implements Runnable {
     }
 
     public void report() {
-
-        /*System.out.printf(
-                "%s... Connections: %d; Messages sent %d received %d lost %d dups %d; Errors connect %d subscribe %d publish %d destination %d disconnect %d receive %d; Total message receive entries: %d \r",
-                verb, connections, sent, received, lost, dups,
-                connectionErrors, subscribeErrors, publishErrors, destinationErrors, disconnectionErrors, messageReceiveErrors, messageReceiveEntries);
-        */
-
         PrintWriter writer = null;
 
         try {
-            writer = new PrintWriter("log" + pubIndex + ".txt", "UTF-8");
+            writer = new PrintWriter(dirName + pubIndex + ".log", "UTF-8");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
 
+
+        System.out.printf(
+                "Subscription %d) %s... Connections: %d; received %d; Errors connect %d subscribe %d;  \r",
+                pubIndex, verb, connections, received,
+                connectionErrors, subscribeErrors);
+
+
         writer.printf(
-                "Client %d) %s... Connections: %d; Messages sent %d received %d lost %d dups %d; Errors connect %d subscribe %d publish %d destination %d disconnect %d receive %d; Total message receive entries: %d \r",
-                pubIndex, verb, connections, sent, received, lost, dups,
-                connectionErrors, subscribeErrors, publishErrors, destinationErrors, disconnectionErrors, messageReceiveErrors, messageReceiveEntries);
+                "Subscription %d) %s... Connections: %d; received %d; Errors connect %d subscribe %d;  \r",
+                pubIndex, verb, connections, received,
+                connectionErrors, subscribeErrors);
 
         writer.close();
+    }
+
+
+    private void makeDir() {
+        DateFormat df = new SimpleDateFormat("MMddyyyyHHmmss");
+        Date today = Calendar.getInstance().getTime();
+        String reportDate = df.format(today);
+
+        dirName = "amq-tests-mqtt-subscriber" + reportDate;
+        File theDir = new File(dirName);
+
+        if (!theDir.exists()) {
+            System.out.println("creating directory: " + theDir.getName());
+            boolean result = false;
+
+            try{
+                theDir.mkdir();
+                result = true;
+            }
+            catch(SecurityException se){
+                //handle it
+            }
+            if(result) {
+                System.out.println("DIR created");
+            }
+        }
     }
 
     public synchronized void reportConnect() {
@@ -268,12 +296,13 @@ public class Runner implements Runnable {
     }
 
     public void scheduleReconnect(ConnectionAdapter adapter) {
+        int delay = randInt(60,90);
         scheduler.schedule(new TimerTask() {
             @Override
             public void run() {
                 adapter.Connect();
             }
-        }, 10000);
+        }, delay*1000);
     }
 
     public void schedulePublisherRestart() {
@@ -288,13 +317,22 @@ public class Runner implements Runnable {
 
     public final static void clearConsole()
     {
-
         try {
             Runtime.getRuntime().exec("cls");
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
+
+    public static int randInt(int min, int max) {
+        // NOTE: Usually this should be a field rather than a method
+        // variable so that it is not re-seeded every call.
+        Random rand = new Random();
+        // nextInt is normally exclusive of the top value,
+        // so add 1 to make it inclusive
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+        return randomNum;
     }
 
 }

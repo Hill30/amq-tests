@@ -4,3 +4,9 @@
 */.idea
 
 */out
+*/target
+*.log
+*/*.log
+
+.DS_Store
+*/.DS_Store

@@ -5,6 +5,7 @@ import org.eclipse.paho.client.mqttv3.*;
 import java.io.PrintStream;
 import java.nio.ByteBuffer;
 import java.util.Date;
+import java.util.Properties;
 
 public class ConnectionAdapter {
     private final PrintStream log;
@@ -15,7 +16,7 @@ public class ConnectionAdapter {
     private int QoS;
     private MqttAsyncClient client;
     private boolean connected = false;
-
+    private  Properties sslProps;
     public ConnectionAdapter(Runner runner, String clientID, String topicName) {
         this.runner = runner;
         brokerUrl = runner.getBrokerUrl();
@@ -23,6 +24,15 @@ public class ConnectionAdapter {
         this.topicName = topicName;
         QoS = runner.getQoS();
         log = runner.getlog();
+    }
+
+    public Properties getSSLSettings() {
+        final Properties properties = new Properties();
+        properties.setProperty("com.ibm.ssl.keyStore", "C:/Downloads/certs/client.ks");
+        properties.setProperty("com.ibm.ssl.keyStorePassword", "password");
+        properties.setProperty("com.ibm.ssl.trustStore", "C:/Downloads/certs/client.ts");
+        properties.setProperty("com.ibm.ssl.trustStorePassword", "password");
+        return properties;
     }
 
     public void Connect() {
@@ -35,13 +45,27 @@ public class ConnectionAdapter {
             runner.reportConnectionError();
         }
 
+
+        if (sslProps == null) {
+            sslProps = getSSLSettings();
+        }
+
         MqttConnectOptions options = new MqttConnectOptions();
+        options.setSSLProperties(sslProps);
         options.setCleanSession(false);
+        options.setUserName("admin");
+        options.setPassword("admin".toCharArray());
 
         try {
             client.connect(options).waitForCompletion(1000);
-            connected = true;
-            runner.reportConnect();
+
+            if (client.isConnected()) {
+                connected = true;
+                runner.reportConnect();
+            } else {
+                runner.scheduleReconnect(this);
+            }
+
             client.setCallback(new MqttCallback() {
                 @Override
                 public void connectionLost(Throwable throwable) {
@@ -82,7 +106,8 @@ public class ConnectionAdapter {
 
         if (connected) {
             try {
-                client.disconnect(1000, null, new IMqttActionListener() {
+                int timeout = 1;
+                client.disconnect(timeout*1000, null, new IMqttActionListener() {
                     @Override
                     public void onSuccess(IMqttToken iMqttToken) {
                         ConnectionAdapter.this.connected = false;

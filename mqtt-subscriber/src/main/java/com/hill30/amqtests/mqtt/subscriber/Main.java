@@ -35,11 +35,11 @@ public class Main {
             }
         }
 
-        String clientID = "Client" + index;
-        String topicName = "Topic/";
+        String clientID = "C"; // + index;
+        String topicName = "T/";
 
         // Quality of Service
-        int QoS = 2;
+        int QoS = 1;
         // Quality of Service values:
         // 0 - at most once
         // 1 - at least once
@@ -57,13 +57,10 @@ public class Main {
             System.out.printf("SUBSCRIBER\n", index);
         }
         System.out.printf("Broker URL: %s \n", brokerUrl);
-
         System.out.printf("Batch size %d\nstarted: %s%n", batchSize, LocalDateTime.now());
-
         System.out.printf("clientID: %s\n", clientID);
         System.out.printf("Topic: %s \n", topicName);
         System.out.printf("QoS: %s\n",  QoS);
-
 
         Runner runner = new Runner(batchSize, brokerUrl, clientID, topicName, QoS, 0, isPublisher, index);
 

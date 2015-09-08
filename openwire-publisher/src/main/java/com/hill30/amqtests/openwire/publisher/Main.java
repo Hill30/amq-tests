@@ -17,6 +17,7 @@
 package com.hill30.amqtests.openwire.publisher;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.activemq.ActiveMQSslConnectionFactory;
 
 import javax.jms.*;
 import java.io.BufferedReader;
@@ -28,22 +29,23 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
-
 public class Main {
-    private static final String BROKER_HOST = "tcp://localhost:%d";
-    private static final int BROKER_PORT = 61616;
+    private static final String BROKER_HOST = "ssl://10.0.1.103:%d";
+    private static final int BROKER_PORT = 62616;
     private static  String BROKER_URL = String.format(BROKER_HOST, BROKER_PORT);
     private static final Boolean NON_TRANSACTED = false;
 
     private static int NUM_MESSAGES_TO_SEND = 1;
-    private static int NUM_OF_THREADS = 3;
-    private static int NUM_OF_TOPICS = 200;
-    private static String TOPIC_NAME = "Topic";
+    private static int NUM_OF_THREADS = 10;
+    private static int NUM_OF_TOPICS = 10000;
+    private static String TOPIC_NAME = "T";
 
     private static int sent[] = new int[NUM_OF_THREADS];
-    private static int index = 0;
+    private static int index = 1;
 
     public static void main(String[] args) {
+
+
         if (args.length > 0) {
             BROKER_URL = args[0];
         }
@@ -72,7 +74,23 @@ public class Main {
         final int offset = NUM_OF_TOPICS*index; // 1 * 10000 = 10000
         final int limit = NUM_OF_TOPICS + offset; // 10000 + 10000
 
-        final ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("admin", "admin", BROKER_URL);
+
+        final ActiveMQSslConnectionFactory connectionFactory = new ActiveMQSslConnectionFactory(BROKER_URL);
+
+        connectionFactory.setUserName("admin");
+        connectionFactory.setPassword("admin");
+
+        connectionFactory.setKeyStore("file:///C:/Downloads/certs/client.ks");
+        connectionFactory.setKeyStorePassword("password");
+
+        connectionFactory.setTrustStore("file:///C:/Downloads/certs/client.ts");
+        connectionFactory.setTrustStorePassword("password");
+
+       // } else {
+            //final ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("admin", "admin", BROKER_URL);
+       // }
+
+
         ExecutorService es = Executors.newCachedThreadPool();
         long startTime = System.currentTimeMillis();
 
@@ -90,6 +108,7 @@ public class Main {
                             for (int i = 0; i < NUM_MESSAGES_TO_SEND; i++) {
                                 for (int j = offset; j < limit; j++) {
                                     publishToTopic(session, TOPIC_NAME + ".j" + j, "Message: " + j);
+                                    publishToQueue(session, "Total" + index + ".Topics." + NUM_OF_TOPICS + ".Messages." + NUM_MESSAGES_TO_SEND, String.valueOf(sent));
                                     sent++;
                                     printStats((int) threadId, sent);
                                 }
@@ -139,7 +158,12 @@ public class Main {
                 );
 
                 System.out.print("Execution time: " + executionTimeString);
-                System.out.print("BROKER: " + BROKER_URL + "\nTopic prefix: " +  TOPIC_NAME  + "\nThreads: " +  NUM_OF_THREADS +  "\nTopics: "  + NUM_OF_TOPICS  +  "\nMessages to send: "  +  NUM_MESSAGES_TO_SEND );
+                System.out.print("BROKER: " + BROKER_URL +
+                        "\nTopic prefix: " +  TOPIC_NAME  +
+                        "\nThreads: " +  NUM_OF_THREADS +
+                        "\nTopics: "  + NUM_OF_TOPICS  +
+                        "\nMessages to send: "  +  NUM_MESSAGES_TO_SEND );
+
                 System.out.print("\nSent: " + Arrays.toString(sent) + " = "  + getSum() +  "\n");
                 System.out.print("Throughput: " + (NUM_OF_TOPICS*NUM_OF_THREADS*NUM_MESSAGES_TO_SEND / seconds) + " messages/sec \n");
 
@@ -154,11 +178,13 @@ public class Main {
         try {
             Destination destination = session.createTopic(dest);
             MessageProducer producer = session.createProducer(destination);
+            producer.setDeliveryMode(DeliveryMode.PERSISTENT);
             TextMessage message = session.createTextMessage(msg);
             producer.send(message);
             producer.close();
         } catch (JMSException e) {
             e.printStackTrace();
+            publishToTopic(session, dest, msg);
         }
     }
 
@@ -166,11 +192,14 @@ public class Main {
         try {
             Destination destination = session.createQueue(dest);
             MessageProducer producer = session.createProducer(destination);
+            producer.setDeliveryMode(DeliveryMode.PERSISTENT);
             TextMessage message = session.createTextMessage(msg);
+
             producer.send(message);
             producer.close();
         } catch (JMSException e) {
             e.printStackTrace();
+            publishToQueue(session, dest, msg);
         }
     }
 
@@ -184,7 +213,7 @@ public class Main {
             callback.apply(session);
             session.close();
         } catch (Exception e) {
-            System.out.println("Caught exception!");
+            e.printStackTrace();
         } finally {
             if (connection != null) {
                 try {
