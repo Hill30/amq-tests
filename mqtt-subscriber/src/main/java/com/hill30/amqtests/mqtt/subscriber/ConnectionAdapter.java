@@ -1,13 +1,16 @@
 package com.hill30.amqtests.mqtt.subscriber;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
 import org.eclipse.paho.client.mqttv3.*;
 
 import java.io.PrintStream;
 import java.nio.ByteBuffer;
-import java.util.Date;
-import java.util.Properties;
+import java.util.*;
+
 
 public class ConnectionAdapter {
+    private Timer scheduler = null;
     private final PrintStream log;
     private final Runner runner;
     private String brokerUrl;
@@ -35,7 +38,7 @@ public class ConnectionAdapter {
         return properties;
     }
 
-    public void Connect() {
+   public void Connect() {
         if (connected)
             return;
         try {
@@ -44,7 +47,6 @@ public class ConnectionAdapter {
             log.printf("%s: Could not create client for %s : %s\r\n", new Date().toString(), clientID, e.toString());
             runner.reportConnectionError();
         }
-
 
         if (sslProps == null) {
             sslProps = getSSLSettings();
@@ -57,77 +59,127 @@ public class ConnectionAdapter {
         options.setPassword("admin".toCharArray());
 
         try {
-            client.connect(options).waitForCompletion(1000);
-
-            if (client.isConnected()) {
-                connected = true;
-                runner.reportConnect();
-            } else {
-                runner.scheduleReconnect(this);
-            }
-
             client.setCallback(new MqttCallback() {
                 @Override
                 public void connectionLost(Throwable throwable) {
                     ConnectionAdapter.this.connected = false;
                     runner.reportDisconnect(null);
-                    runner.scheduleReconnect(ConnectionAdapter.this);
+                    scheduleReconnect();
                 }
 
                 @Override
                 public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
-                    runner.reportMessageReceiveEntries();
-                    messageReceived(mqttMessage);
+                    DBObject modifier = new BasicDBObject("received", 1);
+                    DBObject incQuery = new BasicDBObject("$inc", modifier);
+                    BasicDBObject query = new BasicDBObject("clientId", clientID);
+                    runner.coll.update(query, incQuery);
                 }
 
                 @Override
-                public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
+                public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {}
+            });
+
+            client.connect(options, this, new IMqttActionListener() {
+                @Override
+                public void onSuccess(IMqttToken iMqttToken) {
+                    runner.reportConnect();
+                    connected = true;
+
+                    DBObject flag = new BasicDBObject("connected", 1);
+                    BasicDBObject query = new BasicDBObject("clientId", clientID);
+                    runner.coll.update(query, flag);
+
+                    if (QoS > 0) {
+                        try {
+                            client.subscribe(topicName, QoS);
+
+                            flag = new BasicDBObject("subscribed", 1);
+                            query = new BasicDBObject("clientId", clientID);
+                            runner.coll.update(query, flag);
+
+                        } catch (MqttException e) {
+
+                            log.printf("%s: Subscribe for %s failed %s\r\n", new Date().toString(), clientID, e.toString());
+                            runner.reportSubscribeError();
+
+                            flag = new BasicDBObject("subscribed", 0);
+                            query = new BasicDBObject("clientId", clientID);
+                            runner.coll.update(query, flag);
+
+                        }
+                    }
+                }
+
+                @Override
+                public void onFailure(IMqttToken iMqttToken, Throwable throwable) {
+
+                    DBObject flag = new BasicDBObject("connected", 0);
+                    BasicDBObject query = new BasicDBObject("clientId", clientID);
+                    runner.coll.update(query, flag);
+
+                    log.printf("%s: Connect for %s failed %s\r\n", new Date().toString(), clientID, throwable.toString());
+                    runner.reportConnectionError();
+                    scheduleReconnect();
 
                 }
             });
-            if (QoS > 0)
-                try {
-                    client.subscribe(topicName, QoS);
-                } catch (MqttException e) {
-                    log.printf("%s: Subscribe for %s failed %s\r\n", new Date().toString(), clientID, e.toString());
-                    runner.reportSubscribeError();
-                }
+
         } catch (MqttException e) {
+
+            DBObject flag = new BasicDBObject("connected", 0);
+            BasicDBObject query = new BasicDBObject("clientId", clientID);
+            runner.coll.update(query, flag);
+
             log.printf("%s: Connect for %s failed %s\r\n", new Date().toString(), clientID, e.toString());
             runner.reportConnectionError();
-            runner.scheduleReconnect(this);
-        }
+            scheduleReconnect();
 
+        }
     }
 
-    public boolean IsConnected() { return connected; }
+
+    public void scheduleReconnect() {
+        int delay = randInt(45,60);
+        scheduler.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Connect();
+            }
+        }, delay * 1000);
+    }
+
+
+   // public boolean IsConnected() { return connected; }
 
     public void Disconnect() {
 
         if (connected) {
             try {
-                int timeout = 1;
-                client.disconnect(timeout*1000, null, new IMqttActionListener() {
+                client.disconnect(1000, null, new IMqttActionListener() {
                     @Override
                     public void onSuccess(IMqttToken iMqttToken) {
                         ConnectionAdapter.this.connected = false;
                         runner.reportDisconnect(ConnectionAdapter.this);
+                        DBObject flag = new BasicDBObject("connected", 0);
+                        BasicDBObject query = new BasicDBObject("clientId", clientID);
+                        runner.coll.update(query, flag);
                     }
 
                     @Override
                     public void onFailure(IMqttToken iMqttToken, Throwable throwable) {
                         log.printf("%s: Disconnect for %s failed : %S\r\n", new Date().toString(), clientID, throwable.toString());
-                        if (((MqttException)throwable).getReasonCode() == 32102) {
+                        if (((MqttException) throwable).getReasonCode() == 32102) {
                             // 32102 means 'currently disconnecting' let us hope for the best
                             ConnectionAdapter.this.connected = false;
                             runner.reportDisconnect(ConnectionAdapter.this);
-                        } else
-                            runner.reportDisconnectionError();
+                        } else {
+                            //runner.reportDisconnectionError();
+                        }
                     }
                 });
             } catch (MqttException e) {
                 log.printf("%s: Disconnect for %s failed : %S\r\n", new Date().toString(), clientID, e.toString());
-                runner.reportDisconnectionError();
+                //runner.reportDisconnectionError();
             }
 
         } else {
@@ -144,13 +196,23 @@ public class ConnectionAdapter {
             mqttMessage.setQos(runner.getQoS());
             client.publish(topicName, mqttMessage);
 
-            runner.reportPublish();
+            //runner.reportPublish();
         } catch (MqttException e) {
-            runner.reportPublishError();
+            //runner.reportPublishError();
         }
     }
 
     private synchronized void messageReceived(MqttMessage s) {
-        runner.reportReceive(0, 0);
+        //runner.reportReceive(0, 0);
+    }
+
+    public static int randInt(int min, int max) {
+        // NOTE: Usually this should be a field rather than a method
+        // variable so that it is not re-seeded every call.
+        Random rand = new Random();
+        // nextInt is normally exclusive of the top value,
+        // so add 1 to make it inclusive
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+        return randomNum;
     }
 }

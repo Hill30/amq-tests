@@ -1,13 +1,10 @@
 package com.hill30.amqtests.mqtt.subscriber;
 
-import org.eclipse.paho.client.mqttv3.MqttCallback;
 
 import java.io.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.net.UnknownHostException;
 import java.util.*;
-
-import static java.lang.Thread.sleep;
+import com.mongodb.*;
 
 public class Runner implements Runnable {
 
@@ -16,38 +13,29 @@ public class Runner implements Runnable {
     private String clientID;
     private String topicName;
     private int QoS;
-    private int messagesPerDay;
     ArrayList<ConnectionAdapter> adapters = new ArrayList<>();
     private PrintStream log = null;
     private int connectionErrors = 0;
     private int connections = 0;
-    private int disconnectionErrors = 0;
     private int subscribeErrors = 0;
     private String verb="";
-    //private Publisher publisher;
-    private int sent = 0;
     private int received = 0;
-    private int lost = 0;
-    private int dups = 0;
-    private int publishErrors = 0;
-    private int destinationErrors = 0;
-    private int messageReceiveErrors = 0;
-    private int messageReceiveEntries = 0;
     private Timer scheduler = null;
-    private boolean isPublisher;
     private int pubIndex;
-    private  String dirName;
+
+    private MongoClient mongoClient;
+    private DB db;
+    public  DBCollection coll;
+
     public Runner(int batchSize, String brokerUrl, String clientID, String topicName, int qoS, int messagesPerDay, boolean isPublisher, int pubIndex) {
 
         this.batchSize = batchSize;
         this.brokerUrl = brokerUrl;
         this.clientID = clientID;
         this.topicName = topicName;
-        this.isPublisher = isPublisher;
         this.pubIndex = pubIndex;
+        this.QoS = qoS;
 
-        QoS = qoS;
-        this.messagesPerDay = messagesPerDay;
 
         try {
             log = new PrintStream("Exceptions.log");
@@ -58,10 +46,17 @@ public class Runner implements Runnable {
 
     @Override
     public void run() {
+        try {
+            mongoClient = new MongoClient();
+        } catch (MongoClientException e) {
+            e.printStackTrace();
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+
+
         Start();
-
         verb = "Monitoring";
-
         try{
             BufferedReader br =
                     new BufferedReader(new InputStreamReader(System.in));
@@ -92,32 +87,39 @@ public class Runner implements Runnable {
     private void Start() {
         connectionErrors = 0;
         subscribeErrors = 0;
-        disconnectionErrors = 0;
-        publishErrors = 0;
-        destinationErrors = 0;
+
         scheduler = new Timer();
 
         verb = "Connecting";
 
         Date start = new Date();
 
-        //makeDir();
-
         int offset = pubIndex*batchSize;
         int limit =  offset + batchSize;
+
+        db = mongoClient.getDB( "sub" );
+        coll = db.getCollection("clients");
+        //coll.drop();
+
+        BasicDBObject query = new BasicDBObject("clientId", 1).append("unique", true);
+        coll.createIndex(query);
+
         for (int j = offset; j < limit; j++) {
-            adapters.add(
-                    new ConnectionAdapter(
+            BasicDBObject doc = new BasicDBObject("clientId",  clientID + "j" + Integer.toString(j))
+                    .append("topicName",  topicName + "j" + Integer.toString(j));
+            coll.insert(doc);
+
+            ConnectionAdapter ca = new ConnectionAdapter(
                             this,
                             clientID + "j" + Integer.toString(j),
-                            topicName + "j" + Integer.toString(j)
-                    ));
-        }
+                            topicName + "j" + Integer.toString(j));
 
+            ca.Connect();
 
-        if (!isPublisher) {
-            for (int j = 0; j <  batchSize; j++) {
-                adapters.get(j).Connect();
+            try {
+                Thread.sleep(10);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
 
@@ -180,22 +182,7 @@ public class Runner implements Runnable {
     public void report() {
         PrintWriter writer = null;
 
-        try {
-            writer = new PrintWriter(dirName + pubIndex + ".log", "UTF-8");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-
-
         System.out.printf(
-                "Subscription %d) %s... Connections: %d; received %d; Errors connect %d subscribe %d;  \r",
-                pubIndex, verb, connections, received,
-                connectionErrors, subscribeErrors);
-
-
-        writer.printf(
                 "Subscription %d) %s... Connections: %d; received %d; Errors connect %d subscribe %d;  \r",
                 pubIndex, verb, connections, received,
                 connectionErrors, subscribeErrors);
@@ -203,37 +190,9 @@ public class Runner implements Runnable {
         writer.close();
     }
 
-
-    private void makeDir() {
-        DateFormat df = new SimpleDateFormat("MMddyyyyHHmmss");
-        Date today = Calendar.getInstance().getTime();
-        String reportDate = df.format(today);
-
-        dirName = "amq-tests-mqtt-subscriber" + reportDate;
-        File theDir = new File(dirName);
-
-        if (!theDir.exists()) {
-            System.out.println("creating directory: " + theDir.getName());
-            boolean result = false;
-
-            try{
-                theDir.mkdir();
-                result = true;
-            }
-            catch(SecurityException se){
-                //handle it
-            }
-            if(result) {
-                System.out.println("DIR created");
-            }
-        }
-    }
-
-    public synchronized void reportConnect() {
+    public void reportConnect() {
         connections++;
         report();
-        if (connections == batchSize)
-            System.out.printf("\n%s All of %d connections successfully connected\n", new Date().toString(), connections);
     }
 
     public synchronized void reportDisconnect(ConnectionAdapter adapter) {
@@ -247,73 +206,15 @@ public class Runner implements Runnable {
         }
     }
 
-    public synchronized void reportConnectionError() {
+    public void reportConnectionError() {
         connectionErrors++;
         report();
     }
 
-    public synchronized void reportDisconnectionError() {
-        disconnectionErrors++;
-        report();
-    }
-
-    public synchronized void reportSubscribeError() {
+    public  void reportSubscribeError() {
         subscribeErrors++;
         report();
     }
-
-    public synchronized void reportPublish() {
-        sent++;
-        report();
-    }
-
-    public synchronized void reportMessageReceiveError() {
-        messageReceiveErrors++;
-        report();
-    }
-
-    public synchronized void reportMessageReceiveEntries() {
-        messageReceiveEntries++;
-        report();
-    }
-
-
-    public synchronized void reportReceive(int lost, int dups) {
-        received++;
-        this.lost += lost;
-        this.dups += dups;
-        report();
-    }
-
-    public synchronized void reportPublishError() {
-        publishErrors++;
-        report();
-    }
-
-    public synchronized void reportDestinationError() {
-        destinationErrors++;
-        report();
-    }
-
-    public void scheduleReconnect(ConnectionAdapter adapter) {
-        int delay = randInt(60,90);
-        scheduler.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                adapter.Connect();
-            }
-        }, delay*1000);
-    }
-
-    public void schedulePublisherRestart() {
-        scheduler.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                //publisher.start();
-            }
-        }, 10000);
-    }
-
 
     public final static void clearConsole()
     {
@@ -324,15 +225,5 @@ public class Runner implements Runnable {
         }
     }
 
-
-    public static int randInt(int min, int max) {
-        // NOTE: Usually this should be a field rather than a method
-        // variable so that it is not re-seeded every call.
-        Random rand = new Random();
-        // nextInt is normally exclusive of the top value,
-        // so add 1 to make it inclusive
-        int randomNum = rand.nextInt((max - min) + 1) + min;
-        return randomNum;
-    }
 
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<mqtt-subscriber>
+    <mongodb host="localhost" port="27017"/>
+    <broker protocol="ssl" host="10.0.1.55" port="8883" topic="T" clientID="C" userName="admin" userPassword="admin"/>
+    <ssl keyStore="C:/Downloads/certs/client.ks" keyStorePwd="password" trustStore="C:/Downloads/certs/client.ts" trustStorePwd="password" />
+    <settings connections="20000" offset="0"/>
+</mqtt-subscriber>
