@@ -30,18 +30,18 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 public class Main {
-    private static final String BROKER_HOST = "ssl://10.0.1.103:%d";
+    private static final String BROKER_HOST = "ssl://10.0.1.55:%d";
     private static final int BROKER_PORT = 62616;
     private static  String BROKER_URL = String.format(BROKER_HOST, BROKER_PORT);
     private static final Boolean NON_TRANSACTED = false;
 
     private static int NUM_MESSAGES_TO_SEND = 1;
-    private static int NUM_OF_THREADS = 10;
-    private static int NUM_OF_TOPICS = 10000;
+    private static int NUM_OF_THREADS = 1;
+    private static int NUM_OF_TOPICS = 10;
     private static String TOPIC_NAME = "T";
 
     private static int sent[] = new int[NUM_OF_THREADS];
-    private static int index = 1;
+    private static int index = 2;
 
     public static void main(String[] args) {
 
@@ -71,8 +71,15 @@ public class Main {
             TOPIC_NAME = args[5];
         }
 
-        final int offset = NUM_OF_TOPICS*index; // 1 * 10000 = 10000
-        final int limit = NUM_OF_TOPICS + offset; // 10000 + 10000
+        if (index < 1) {
+            index = 1;
+        }
+
+        if (index > NUM_OF_TOPICS) {
+            index = NUM_OF_TOPICS;
+        }
+        final int offset = (index-1) * NUM_OF_TOPICS;
+        final int limit =  index * NUM_OF_TOPICS;
 
 
         final ActiveMQSslConnectionFactory connectionFactory = new ActiveMQSslConnectionFactory(BROKER_URL);
@@ -99,6 +106,8 @@ public class Main {
                 @Override
                 public void run() {
                     final long threadId = Thread.currentThread().getId()%NUM_OF_THREADS ;
+
+
                     connect(connectionFactory, new Function() {
                         @Override
                         public Object apply(Object o) {
@@ -111,6 +120,7 @@ public class Main {
                                     publishToQueue(session, "Total" + index + ".Topics." + NUM_OF_TOPICS + ".Messages." + NUM_MESSAGES_TO_SEND, String.valueOf(sent));
                                     sent++;
                                     printStats((int) threadId, sent);
+
                                 }
                             }
 
@@ -184,7 +194,7 @@ public class Main {
             producer.close();
         } catch (JMSException e) {
             e.printStackTrace();
-            publishToTopic(session, dest, msg);
+          //  publishToTopic(session, dest, msg);
         }
     }
 
@@ -199,7 +209,7 @@ public class Main {
             producer.close();
         } catch (JMSException e) {
             e.printStackTrace();
-            publishToQueue(session, dest, msg);
+           // publishToQueue(session, dest, msg);
         }
     }
 

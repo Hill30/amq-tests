@@ -86,16 +86,18 @@ public class ConnectionAdapter {
                     connected = true;
 
                     DBObject flag = new BasicDBObject("connected", 1);
+                    DBObject setQuery = new BasicDBObject("$set", flag);
                     BasicDBObject query = new BasicDBObject("clientId", clientID);
-                    runner.coll.update(query, flag);
+                    runner.coll.update(query, setQuery, false, false);
 
                     if (QoS > 0) {
                         try {
                             client.subscribe(topicName, QoS);
 
                             flag = new BasicDBObject("subscribed", 1);
+                            setQuery = new BasicDBObject("$set", flag);
                             query = new BasicDBObject("clientId", clientID);
-                            runner.coll.update(query, flag);
+                            runner.coll.update(query, setQuery, false, false);
 
                         } catch (MqttException e) {
 
@@ -103,8 +105,9 @@ public class ConnectionAdapter {
                             runner.reportSubscribeError();
 
                             flag = new BasicDBObject("subscribed", 0);
+                            setQuery = new BasicDBObject("$set", flag);
                             query = new BasicDBObject("clientId", clientID);
-                            runner.coll.update(query, flag);
+                            runner.coll.update(query, setQuery, false, false);
 
                         }
                     }
@@ -114,8 +117,9 @@ public class ConnectionAdapter {
                 public void onFailure(IMqttToken iMqttToken, Throwable throwable) {
 
                     DBObject flag = new BasicDBObject("connected", 0);
+                    DBObject setQuery = new BasicDBObject("$set", flag);
                     BasicDBObject query = new BasicDBObject("clientId", clientID);
-                    runner.coll.update(query, flag);
+                    runner.coll.update(query, setQuery, false, false);
 
                     log.printf("%s: Connect for %s failed %s\r\n", new Date().toString(), clientID, throwable.toString());
                     runner.reportConnectionError();
@@ -127,8 +131,9 @@ public class ConnectionAdapter {
         } catch (MqttException e) {
 
             DBObject flag = new BasicDBObject("connected", 0);
+            DBObject setQuery = new BasicDBObject("$set", flag);
             BasicDBObject query = new BasicDBObject("clientId", clientID);
-            runner.coll.update(query, flag);
+            runner.coll.update(query, setQuery, false, false);
 
             log.printf("%s: Connect for %s failed %s\r\n", new Date().toString(), clientID, e.toString());
             runner.reportConnectionError();
@@ -160,9 +165,12 @@ public class ConnectionAdapter {
                     public void onSuccess(IMqttToken iMqttToken) {
                         ConnectionAdapter.this.connected = false;
                         runner.reportDisconnect(ConnectionAdapter.this);
+
+
                         DBObject flag = new BasicDBObject("connected", 0);
+                        DBObject setQuery = new BasicDBObject("$set", flag);
                         BasicDBObject query = new BasicDBObject("clientId", clientID);
-                        runner.coll.update(query, flag);
+                        runner.coll.update(query, setQuery, false, false);
                     }
 
                     @Override

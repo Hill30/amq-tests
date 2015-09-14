@@ -17,10 +17,10 @@ public class Main {
          * Assign test parameter values to the variables below
          */
 
-        int batchSize = 10;
-        int index = 1;
-        String brokerUrl = "" ;
-        String clientID = "C"; // + index;
+        int batchSize = 10000;
+        int index = 2;
+        String brokerUrl = "ssl://10.0.1.55:8883" ;
+        String clientID = "C";
         String topicName = "T/";
 
 
@@ -54,10 +54,13 @@ public class Main {
                     Node mongoNode = doc.getElementsByTagName("mongodb").item(0);
                     if (mongoNode.getNodeType() == Node.ELEMENT_NODE) {
                         Element eElement = (Element) mongoNode;
-                        System.out.println("Mongo Host: " + eElement.getAttribute("host"));
-                        System.out.println("Mongo Port: " + eElement.getAttribute("port"));
 
-                        props.setProperty("")
+
+                        props.setProperty("mongoHost", eElement.getAttribute("host"));
+                        props.setProperty("mongoPort", eElement.getAttribute("port"));
+
+                        System.out.println(props.getProperty("mongoHost"));
+                        System.out.println(props.getProperty("mongoPort"));
 
                     }
                 }
@@ -110,16 +113,13 @@ public class Main {
             return;
         }
 
-
-
-
-        Runner runner = new Runner(batchSize, brokerUrl, clientID, topicName, QoS, 0, isPublisher, index);
+        Runner runner = new Runner(batchSize, brokerUrl, clientID, topicName, QoS, 0, false, index);
 
         Thread runnerThread = new Thread(runner);
         runnerThread.start();
 
         try {
-            //runnerThread.join();
+            runnerThread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

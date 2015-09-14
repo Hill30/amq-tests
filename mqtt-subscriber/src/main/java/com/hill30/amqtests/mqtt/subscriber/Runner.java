@@ -94,20 +94,39 @@ public class Runner implements Runnable {
 
         Date start = new Date();
 
-        int offset = pubIndex*batchSize;
-        int limit =  offset + batchSize;
 
-        db = mongoClient.getDB( "sub" );
-        coll = db.getCollection("clients");
-        //coll.drop();
+        if (pubIndex < 1) {
+            pubIndex = 1;
+        }
 
-        BasicDBObject query = new BasicDBObject("clientId", 1).append("unique", true);
-        coll.createIndex(query);
+        if (pubIndex > batchSize) {
+            pubIndex = batchSize;
+        }
+        int offset = (pubIndex-1) * batchSize;
+        int limit =  pubIndex * batchSize;
 
-        for (int j = offset; j < limit; j++) {
+        db = mongoClient.getDB("sub");
+        coll = db.getCollection("connects");
+
+        coll.createIndex(new BasicDBObject("clientId", 1),  new BasicDBObject("unique", true));
+        coll.createIndex(new BasicDBObject("received", 1));
+
+        for (int j = offset; j <= limit-1; j++) {
             BasicDBObject doc = new BasicDBObject("clientId",  clientID + "j" + Integer.toString(j))
                     .append("topicName",  topicName + "j" + Integer.toString(j));
-            coll.insert(doc);
+
+            // skip duplicate exceptions
+            try {
+                coll.insert(doc);
+            } catch (DuplicateKeyException e) {
+
+            }
+
+            try {
+                Thread.sleep(10);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
             ConnectionAdapter ca = new ConnectionAdapter(
                             this,
@@ -116,11 +135,6 @@ public class Runner implements Runnable {
 
             ca.Connect();
 
-            try {
-                Thread.sleep(10);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
 
         System.out.printf("\n%s %d Connects initiated in %d msec\n",
@@ -180,17 +194,15 @@ public class Runner implements Runnable {
     }
 
     public void report() {
-        PrintWriter writer = null;
 
         System.out.printf(
                 "Subscription %d) %s... Connections: %d; received %d; Errors connect %d subscribe %d;  \r",
                 pubIndex, verb, connections, received,
                 connectionErrors, subscribeErrors);
 
-        writer.close();
     }
 
-    public void reportConnect() {
+    public synchronized void reportConnect() {
         connections++;
         report();
     }
