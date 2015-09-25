@@ -17,12 +17,11 @@ public class Main {
          * Assign test parameter values to the variables below
          */
 
-        int batchSize = 10000;
-        int index = 2;
+        int batchSize = 20000;
+        int index = 1;
         String brokerUrl = "ssl://10.0.1.55:8883" ;
-        String clientID = "C";
-        String topicName = "T/";
-
+        String clientID = "Client";
+        String topicName = "Topic/";
 
         Properties props = new Properties();
 

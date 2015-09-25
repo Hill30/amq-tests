@@ -17,6 +17,7 @@ public class Runner implements Runnable {
     private PrintStream log = null;
     private int connectionErrors = 0;
     private int connections = 0;
+    private int c = 0;
     private int subscribeErrors = 0;
     private String verb="";
     private int received = 0;
@@ -132,13 +133,13 @@ public class Runner implements Runnable {
                             this,
                             clientID + "j" + Integer.toString(j),
                             topicName + "j" + Integer.toString(j));
-
+            adapters.add(j, ca);
             ca.Connect();
 
         }
 
-        System.out.printf("\n%s %d Connects initiated in %d msec\n",
-                new Date().toString(), batchSize, new Date().getTime() - start.getTime());
+        //System.out.printf("\n%s %d Connects initiated in %d msec\n",
+                //new Date().toString(), batchSize, new Date().getTime() - start.getTime());
 
     }
 
@@ -194,36 +195,42 @@ public class Runner implements Runnable {
     }
 
     public void report() {
+        c = 0;
+        adapters.forEach(a -> {
+            if (a.isConnected()) {
+                c++;
+            }
+        });
 
         System.out.printf(
                 "Subscription %d) %s... Connections: %d; received %d; Errors connect %d subscribe %d;  \r",
-                pubIndex, verb, connections, received,
+                pubIndex, verb, c, received,
                 connectionErrors, subscribeErrors);
 
     }
 
     public synchronized void reportConnect() {
-        connections++;
+
         report();
     }
 
     public synchronized void reportDisconnect(ConnectionAdapter adapter) {
         if (adapter != null)
-            adapters.remove(adapter);
-        connections--;
+            //adapters.remove(adapter);
+        //connections--;
         report();
-        if (connections == 0) {
-            System.out.printf("\n%s All of %d connections successfully disconnected\n", new Date().toString(), batchSize);
-            this.notify();
-        }
+       // if (connections == 0) {
+       //     System.out.printf("\n%s All of %d connections successfully disconnected\n", new Date().toString(), batchSize);
+       //     this.notify();
+       // }
     }
 
-    public void reportConnectionError() {
+    public synchronized void reportConnectionError() {
         connectionErrors++;
         report();
     }
 
-    public  void reportSubscribeError() {
+    public  synchronized void reportSubscribeError() {
         subscribeErrors++;
         report();
     }

@@ -10,7 +10,7 @@ import java.util.*;
 
 
 public class ConnectionAdapter {
-    private Timer scheduler = null;
+    private static Timer scheduler = new Timer();
     private final PrintStream log;
     private final Runner runner;
     private String brokerUrl;
@@ -92,6 +92,7 @@ public class ConnectionAdapter {
 
                     if (QoS > 0) {
                         try {
+
                             client.subscribe(topicName, QoS);
 
                             flag = new BasicDBObject("subscribed", 1);
@@ -115,13 +116,13 @@ public class ConnectionAdapter {
 
                 @Override
                 public void onFailure(IMqttToken iMqttToken, Throwable throwable) {
-
-                    DBObject flag = new BasicDBObject("connected", 0);
+                    /*DBObject flag = new BasicDBObject("connected", 0);
                     DBObject setQuery = new BasicDBObject("$set", flag);
                     BasicDBObject query = new BasicDBObject("clientId", clientID);
                     runner.coll.update(query, setQuery, false, false);
 
                     log.printf("%s: Connect for %s failed %s\r\n", new Date().toString(), clientID, throwable.toString());
+                    */
                     runner.reportConnectionError();
                     scheduleReconnect();
 
@@ -142,15 +143,18 @@ public class ConnectionAdapter {
         }
     }
 
+    public boolean isConnected() {
+        return client.isConnected();
+    }
 
     public void scheduleReconnect() {
-        int delay = randInt(45,60);
+        int delay = randInt(1,10);
         scheduler.schedule(new TimerTask() {
             @Override
             public void run() {
                 Connect();
             }
-        }, delay * 1000);
+        }, delay*1000);
     }
 
 

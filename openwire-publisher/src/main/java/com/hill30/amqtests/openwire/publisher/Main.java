@@ -1,50 +1,71 @@
-/**
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.hill30.amqtests.openwire.publisher;
 
-import org.apache.activemq.ActiveMQConnectionFactory;
-import org.apache.activemq.ActiveMQSslConnectionFactory;
-
-import javax.jms.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
+import java.util.ArrayList;
 
 public class Main {
-    private static final String BROKER_HOST = "ssl://10.0.1.55:%d";
+
+    public static void main(String[] args) {
+
+        ArrayList<Thread> threads = new ArrayList<Thread>();
+        ArrayList<SyncPublisher> publishers = new ArrayList<SyncPublisher>();
+
+        for (int i=0; i < 100; i++) {
+            SyncPublisher sp = new SyncPublisher();
+            publishers.add(sp);
+
+            Thread t = new Thread(sp);
+            t.start();
+            threads.add(t);
+        }
+
+
+        Thread log = new Thread(new Runnable() {
+            public void run()
+            {
+                try {
+
+                    while(true) {
+                        //System.out.print("----\n-----\r");
+                        publishers.forEach(p -> {
+                            p.printStats();
+                        });
+                        Thread.sleep(10000);
+                    }
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }});
+
+        log.start();
+
+        threads.forEach( thread -> {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                    e.printStackTrace();
+            }
+        });
+
+    }
+
+    /*private static final String BROKER_HOST = "ssl://10.0.1.55:%d";
     private static final int BROKER_PORT = 62616;
     private static  String BROKER_URL = String.format(BROKER_HOST, BROKER_PORT);
     private static final Boolean NON_TRANSACTED = false;
 
-    private static int NUM_MESSAGES_TO_SEND = 1;
-    private static int NUM_OF_THREADS = 1;
-    private static int NUM_OF_TOPICS = 10;
-    private static String TOPIC_NAME = "T";
+    private static int NUM_MESSAGES_TO_SEND = 10;
+    private static int NUM_OF_TOPICS = 20000;
+    private static String TOPIC_NAME = "Topic";
 
-    private static int sent[] = new int[NUM_OF_THREADS];
-    private static int index = 2;
+    private static int index = 1;
+    private static boolean isConnected = false;
+    private static ActiveMQSslConnectionFactory connectionFactory;
+    private static Connection c = null;
+
+    private static int sent = 0;
 
     public static void main(String[] args) {
-
 
         if (args.length > 0) {
             BROKER_URL = args[0];
@@ -62,11 +83,6 @@ public class Main {
             NUM_OF_TOPICS = Integer.parseInt(args[3]);
         }
 
-        if (args.length > 4) {
-            NUM_OF_THREADS = Integer.parseInt(args[4]);
-            sent = new int[NUM_OF_THREADS];
-        }
-
         if (args.length > 5) {
             TOPIC_NAME = args[5];
         }
@@ -78,165 +94,105 @@ public class Main {
         if (index > NUM_OF_TOPICS) {
             index = NUM_OF_TOPICS;
         }
-        final int offset = (index-1) * NUM_OF_TOPICS;
-        final int limit =  index * NUM_OF_TOPICS;
+        final int offset = (index - 1) * NUM_OF_TOPICS;
+        final int limit = index * NUM_OF_TOPICS;
 
-
-        final ActiveMQSslConnectionFactory connectionFactory = new ActiveMQSslConnectionFactory(BROKER_URL);
-
+        connectionFactory  = new ActiveMQSslConnectionFactory(BROKER_URL);
         connectionFactory.setUserName("admin");
         connectionFactory.setPassword("admin");
 
         connectionFactory.setKeyStore("file:///C:/Downloads/certs/client.ks");
         connectionFactory.setKeyStorePassword("password");
-
         connectionFactory.setTrustStore("file:///C:/Downloads/certs/client.ts");
         connectionFactory.setTrustStorePassword("password");
+        long unixTime = System.currentTimeMillis() / 1000L;
 
-       // } else {
-            //final ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("admin", "admin", BROKER_URL);
-       // }
-
-
-        ExecutorService es = Executors.newCachedThreadPool();
-        long startTime = System.currentTimeMillis();
-
-        for(int i = 0; i < NUM_OF_THREADS; i++) {
-            es.execute(new Runnable() {
-                @Override
-                public void run() {
-                    final long threadId = Thread.currentThread().getId()%NUM_OF_THREADS ;
-
-
-                    connect(connectionFactory, new Function() {
-                        @Override
-                        public Object apply(Object o) {
-                            int sent = 0;
-                            Session session = (Session)o;
-
-                            for (int i = 0; i < NUM_MESSAGES_TO_SEND; i++) {
-                                for (int j = offset; j < limit; j++) {
-                                    publishToTopic(session, TOPIC_NAME + ".j" + j, "Message: " + j);
-                                    publishToQueue(session, "Total" + index + ".Topics." + NUM_OF_TOPICS + ".Messages." + NUM_MESSAGES_TO_SEND, String.valueOf(sent));
-                                    sent++;
-                                    printStats((int) threadId, sent);
-
-                                }
-                            }
-
-                            publishToQueue(session, "Main" + index + ".Topics." + NUM_OF_TOPICS + ".Messages." + NUM_MESSAGES_TO_SEND, String.valueOf(sent));
-                            return null;
-                        }
-                    });
-                }
-            });
-
+        for (int i = 0; i < NUM_MESSAGES_TO_SEND; i++) {
+           for (int j = offset; j <= limit-1; j++) {
+               publishToTopic(TOPIC_NAME + ".j" + j, "message" + j);
+               sent++;
+               printStats("Sending...");
+               publishToQueue(TOPIC_NAME + ".overall." + unixTime, "message" + j);
+           }
         }
-
-        try{
-            BufferedReader br =
-                    new BufferedReader(new InputStreamReader(System.in));
-
-            String command;
-
-            while((command=br.readLine())!=null){
-                if (!command.trim().isEmpty())
-                   System.out.print("\n" + command);
-
-                if(command == "q") {
-                    System.exit(0);
-                }
-            }
-
-        }catch(IOException io){
-            io.printStackTrace();
-        }
-
-        es.shutdown();
 
         try {
-            boolean finished = es.awaitTermination(1, TimeUnit.MINUTES);
-            if (finished) {
-                long endTime = System.currentTimeMillis();
-                long millis = (endTime - startTime);
-                double seconds = millis/1000;
-
-                String executionTimeString = String.format("%d min %d sec \n",
-                        TimeUnit.MILLISECONDS.toMinutes(millis),
-                        TimeUnit.MILLISECONDS.toSeconds(millis) -
-                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis))
-                );
-
-                System.out.print("Execution time: " + executionTimeString);
-                System.out.print("BROKER: " + BROKER_URL +
-                        "\nTopic prefix: " +  TOPIC_NAME  +
-                        "\nThreads: " +  NUM_OF_THREADS +
-                        "\nTopics: "  + NUM_OF_TOPICS  +
-                        "\nMessages to send: "  +  NUM_MESSAGES_TO_SEND );
-
-                System.out.print("\nSent: " + Arrays.toString(sent) + " = "  + getSum() +  "\n");
-                System.out.print("Throughput: " + (NUM_OF_TOPICS*NUM_OF_THREADS*NUM_MESSAGES_TO_SEND / seconds) + " messages/sec \n");
-
+            if (c != null) {
+                c.close();
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public static void publishToTopic(Session session, String dest, String msg) {
-        try {
-            Destination destination = session.createTopic(dest);
-            MessageProducer producer = session.createProducer(destination);
-            producer.setDeliveryMode(DeliveryMode.PERSISTENT);
-            TextMessage message = session.createTextMessage(msg);
-            producer.send(message);
-            producer.close();
         } catch (JMSException e) {
             e.printStackTrace();
-          //  publishToTopic(session, dest, msg);
         }
+
     }
 
-    public static void publishToQueue(Session session, String dest, String msg) {
+    public static void publishToTopic(String dest, String msg) {
         try {
-            Destination destination = session.createQueue(dest);
-            MessageProducer producer = session.createProducer(destination);
-            producer.setDeliveryMode(DeliveryMode.PERSISTENT);
-            TextMessage message = session.createTextMessage(msg);
-
-            producer.send(message);
-            producer.close();
-        } catch (JMSException e) {
-            e.printStackTrace();
-           // publishToQueue(session, dest, msg);
-        }
-    }
-
-
-    public static void connect(ConnectionFactory connectionFactory, Function callback) {
-        Connection connection = null;
-        try {
-            connection = connectionFactory.createConnection();
-            connection.start();
-            Session session = connection.createSession(NON_TRANSACTED, Session.AUTO_ACKNOWLEDGE);
-            callback.apply(session);
-            session.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (JMSException e) {
-                    e.printStackTrace();
-                }
+            establishConnection();
+            if (c != null) {
+                Session session = c.createSession(NON_TRANSACTED, Session.AUTO_ACKNOWLEDGE);
+                Destination destination = session.createTopic(dest);
+                MessageProducer producer = session.createProducer(destination);
+                producer.setDeliveryMode(DeliveryMode.PERSISTENT);
+                TextMessage message = session.createTextMessage(msg);
+                producer.send(message);
+                producer.close();
+                session.close();
             }
+        } catch (JMSException e) {
+            printStats("Failed while sending to topic" + dest + " ...");
+            isConnected = false;
+            publishToTopic(dest, msg);
         }
     }
 
-    public static void printStats(int index, int counter) {
-        sent[index] = counter;
+    public static void publishToQueue(String dest, String msg) {
+        try {
+            establishConnection();
+            if (c != null) {
+                Session session = c.createSession(NON_TRANSACTED, Session.AUTO_ACKNOWLEDGE);
+                Destination destination = session.createQueue(dest);
+                MessageProducer producer = session.createProducer(destination);
+                producer.setDeliveryMode(DeliveryMode.PERSISTENT);
+                TextMessage message = session.createTextMessage(msg);
+                producer.send(message);
+                producer.close();
+                session.close();
+            }
+        } catch (JMSException e) {
+            printStats("Failed while sending to queue" + dest + "...");
+            isConnected = false;
+            publishToTopic(dest, msg);
+        }
+    }
+
+
+    public static void delay(long mills) {
+        try {
+            Thread.sleep(mills);
+        } catch (InterruptedException e1) {
+            establishConnection();
+        }
+    }
+
+    public static void establishConnection() {
+        try {
+            while (!isConnected) {
+                c = connectionFactory.createConnection();
+                c.start();
+                isConnected = true;
+                printStats("Connected...");
+            }
+
+        } catch (JMSException e) {
+            printStats("Reconnecting...");
+            isConnected = false;
+            establishConnection();
+        }
+    }
+
+
+    public static void printStats(String status) {
         try
         {
             final String os = System.getProperty("os.name");
@@ -255,17 +211,7 @@ public class Main {
             //  Handle any exceptions.
         }
 
-        System.out.print("BROKER: " + BROKER_URL + "; Topic prefix: " +  TOPIC_NAME + "; Threads: " +  NUM_OF_THREADS +  "; Topics: "  + NUM_OF_TOPICS  +  "; Messages to send: "  +  NUM_MESSAGES_TO_SEND +   "; Sending: " + Arrays.toString(sent) + " = " + getSum() + "\r");
+        System.out.print(status + " \t\t\t| BROKER: " + BROKER_URL + "; Topic prefix: " +  TOPIC_NAME +  "; Topics: "  + NUM_OF_TOPICS  +  "; Messages to send: "  +  NUM_MESSAGES_TO_SEND +   "; Sent: " + sent + "\r");
     }
-
-    public static int getSum() {
-        int sum = 0;
-        for (int t = 0; t < NUM_OF_THREADS; t++) {
-            sum += sent[t];
-        }
-        return  sum;
-    }
-
-
-
+    */
 }
