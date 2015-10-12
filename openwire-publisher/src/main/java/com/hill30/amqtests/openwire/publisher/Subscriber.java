@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * @author <a href="http://www.christianposta.com/blog">Christian Posta</a>
  */
 public class Subscriber {
-    private static final String BROKER_HOST = "tcp://10.0.1.55:%d";
+    private static final String BROKER_HOST = "tcp://10.0.1.132:%d";
     private static final int BROKER_PORT = 61616;
     private static final String BROKER_URL = String.format(BROKER_HOST, BROKER_PORT);
     private static final Boolean NON_TRANSACTED = false;
@@ -27,24 +27,25 @@ public class Subscriber {
             connection.start();
 
             Session session = connection.createSession(NON_TRANSACTED, Session.AUTO_ACKNOWLEDGE);
-            Queue destination = session.createQueue("Q.Topic.Out.j2000");
+            Queue destination = session.createQueue("Topic.overall.1443705457");
 
-            QueueBrowser browser = session.createBrowser(destination);
+            /*QueueBrowser browser = session.createBrowser(destination);
             Enumeration enumeration = browser.getEnumeration();
             System.out.println("Enum: " + enumeration.toString());
             while (enumeration.hasMoreElements()) {
                 TextMessage message = (TextMessage) enumeration.nextElement();
                 //System.out.println("Browsing: " + message.getText());
                 TimeUnit.MILLISECONDS.sleep(DELAY);
-            }
+            }*/
 
             // Create a MessageConsumer from the Session to the Topic or Queue
             MessageConsumer consumer = session.createConsumer(destination);
-
+            int i = 0;
             // Wait for a message
             while(true) {
-                Message message = consumer.receive(1000);
+                Message message = consumer.receive(1000000000);
                 if (message instanceof TextMessage) {
+                    i++;
                     TextMessage textMessage = (TextMessage) message;
                     String text = textMessage.getText();
                     System.out.println("Received: " + text);
@@ -53,7 +54,7 @@ public class Subscriber {
                     break;
                 }
             }
-
+            System.out.println("Received: " + i);
             consumer.close();
             session.close();
 

@@ -58,6 +58,7 @@ public class ConnectionAdapter {
         options.setUserName("admin");
         options.setPassword("admin".toCharArray());
 
+
         try {
             client.setCallback(new MqttCallback() {
                 @Override

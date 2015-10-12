@@ -8,13 +8,13 @@ import java.util.Arrays;
 
 public class SyncPublisher implements Runnable {
 
-    private  String BROKER_HOST = "ssl://10.0.1.55:%d";
-    private  int BROKER_PORT = 62616;
+    private  String BROKER_HOST = "tcp://10.0.1.132:%d";
+    private  int BROKER_PORT = 61616;
     private  String BROKER_URL = String.format(BROKER_HOST, BROKER_PORT);
     private  Boolean NON_TRANSACTED = false;
 
-    private  int NUM_MESSAGES_TO_SEND = 500;
-    private  int NUM_OF_TOPICS = 20000;
+    private  int NUM_MESSAGES_TO_SEND = 5;
+    private  int NUM_OF_TOPICS = 1000;
     private  String TOPIC_NAME = "Topic";
 
     private  int index = 1;

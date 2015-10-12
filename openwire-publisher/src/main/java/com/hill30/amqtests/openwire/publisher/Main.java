@@ -9,7 +9,7 @@ public class Main {
         ArrayList<Thread> threads = new ArrayList<Thread>();
         ArrayList<SyncPublisher> publishers = new ArrayList<SyncPublisher>();
 
-        for (int i=0; i < 100; i++) {
+        for (int i=0; i < 1; i++) {
             SyncPublisher sp = new SyncPublisher();
             publishers.add(sp);
 
