@@ -134,6 +134,36 @@
 </li>
 </ul>
 
+<h2>
+<a id="communication-protocol-selection" class="anchor" href="#communication-protocol-selection" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Communication Protocol Selection</h2>
+
+<pre><code>Considered:
+</code></pre>
+
+<ul>
+<li>  Internet browser-based </li>
+<li>  Plain HTTP-based </li>
+<li>  Plain TCP</li>
+<li>
+<p>MQTT</p>
+
+<p>MQTT communication protocol was selected for communication with mobile devices. 
+Reasons:</p>
+
+<ol>
+<li> Built for message-based communications with mobile devices.</li>
+<li> Available integration with Active MQ and other major message brokers.</li>
+<li> Integration client libraries available for both iOS and Android</li>
+<li> Widely accepted by industry for “Internet of Things” type of integrations.</li>
+<li> Standard protocol (OASIS).</li>
+<li> Binary compatibility/interoperability to minimize vendor dependency.</li>
+<li> Proven standard protocol (current version 3.1.1)</li>
+<li> For Android - Paho client-side library development supported by IBM.</li>
+<li> For iOS – native open source libraryhttps://github.com/ckrey/MQTT-Client-Framework.</li>
+</ol>
+</li>
+</ul>
+
 <h3>
 <a id="activemq-configuration" class="anchor" href="#activemq-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ActiveMQ Configuration.</h3>
 
