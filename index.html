@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Amq-tests by Hill30</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Amq-tests</h1>
+        <p>ActiveMQ - MQTT Performance Testing</p>
+
+        <p class="view"><a href="https://github.com/Hill30/amq-tests">View the Project on GitHub <small>Hill30/amq-tests</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/Hill30/amq-tests/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Hill30/amq-tests/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Hill30/amq-tests">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="case-study-enterprise-integration-with-mobile-applications" class="anchor" href="#case-study-enterprise-integration-with-mobile-applications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Case Study: Enterprise Integration with Mobile Applications</h1>
+
+<h2>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>Integrating enterprise hosted application with application deployed on mobile devices is challenging as it requires providing enterprise-level quality services over unstable networks with inconsistent bandwidth and security. We created this study to share knowledge obtain from real-life business deployment, to facilitate feedback and sharing of best practices, to put some extra emphasis on this and similar architectural solutions for open source products development to improve products’ stability and performance.</p>
+
+<h2>
+<a id="tech-objectives" class="anchor" href="#tech-objectives" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tech Objectives</h2>
+
+<ol>
+<li> Provide reliable communications with distributes network of mobile devices,</li>
+<li> Seamless integration of broad mobile network with internal messaging system.</li>
+<li> Support for most standard enterprise communication patterns: 
+
+<ul>
+<li>   Broadcasting and pair-to-pair communications.</li>
+<li>   Load-balancing and fault-tolerance</li>
+<li>   Message routing, filtering, etc...</li>
+<li>   Messages' expiration and escalation</li>
+<li>   Reliable message delivery</li>
+<li>   Secure communication.</li>
+</ul>
+</li>
+<li>Utilize standard and best practices for communications with growing network of mobile devices:
+
+<ul>
+<li>   Standard-based communication protocol</li>
+<li>   Supported on Android and iOS, </li>
+<li>   Non-reliable network connections, </li>
+<li>   Energy efficient communication patterns</li>
+<li>   Performance related:<br>
+
+<ul>
+<li>Max concurrently connected mobile devices/clients – 10,000.</li>
+<li>Max communication traffic: 1,000 messages 1Mb total per device per day.</li>
+<li>The latency of the message delivery for connected client – 60 seconds.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Minimized maintenance of messages
+
+<ul>
+<li>Undelivered messages to mobile devices should expire in 48 hours.</li>
+<li>Dormant client subscriptions should be removed with all messages cleared in 10 days.</li>
+</ul>
+</li>
+</ol>
+
+<h2>
+<a id="methodology-and-assumptions" class="anchor" href="#methodology-and-assumptions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Methodology and Assumptions</h2>
+
+<ul>
+<li>  Test environment will be used verify business objectives.</li>
+<li>  Testing will be done first for single broker and then for load-balanced deployment.</li>
+<li>  Test client will be created to simulate real-life mobile devices.</li>
+<li>  Network disconnect will be emulated by standard server firewall turn off-on.</li>
+<li>  Required solution’s security will be provided by standard products’ functionality</li>
+</ul>
+
+<h3>
+<a id="activemq-configuration" class="anchor" href="#activemq-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ActiveMQ Configuration.</h3>
+
+<ol>
+<li> Added/enabled MQTT adapter to Active MQ configuration.</li>
+<li> Increased max connections to 10,000</li>
+<li> Changed communication protocol to NIO (greatly reduces number of active threads for large number connections).</li>
+<li> Enabled more memory for the broker - 4GB (this is maximum using default wrapper that comes with ActiveMQ installation package).</li>
+<li> Enabled thread pool.</li>
+<li> Added transport level security – SSL.</li>
+</ol>
+
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
+
+<h3>
+<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Designer Templates</h3>
+
+<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+
+<h3>
+<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
+
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+
+<h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>You can <a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+
+<h3>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Hill30">Hill30</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
