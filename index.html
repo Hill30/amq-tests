@@ -90,6 +90,50 @@
 <li>  Required solution’s security will be provided by standard products’ functionality</li>
 </ul>
 
+<h2>
+<a id="architecture-highlights" class="anchor" href="#architecture-highlights" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Architecture Highlights</h2>
+
+<ul>
+<li>  Internal system components implemented as services</li>
+<li>  User-facing applications are iOS and Android applications.</li>
+<li>  Administrative and internal power user applications are web-based.</li>
+<li>  Message Broker will provide support for enterprise Integration patterns (point-to-point, broadcasting, routing, user permissions) for both internal and external applications.</li>
+<li>  User authentication/authorization will be integrated with existing client’s security system.</li>
+<li>  Application is responsible for data consistency and validation, deals with message duplicates.</li>
+</ul>
+
+<h2>
+<a id="componentsproducts" class="anchor" href="#componentsproducts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Components/Products</h2>
+
+<p>Internal services implemented in .Net following existing company’s standards.</p>
+
+<h3>
+<a id="message-broker-selection" class="anchor" href="#message-broker-selection" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Message Broker Selection</h3>
+
+<pre><code>Considered:
+</code></pre>
+
+<ul>
+<li>  Rabbit MQ</li>
+<li>  Tibco EMS</li>
+<li>  Active MQ</li>
+<li>
+<p>Zero MQ</p>
+
+<p>Active MQ was selected as message broker for the following reasons:</p>
+
+<ul>
+<li>Proven, mature, enterprise message broker platform</li>
+<li>Support for great variety of communication protocols.</li>
+<li>Available integration adapters with other proprietary and open-source message brokers.<br>
+</li>
+<li>Available support from third parties and original development team.<br>
+</li>
+<li>Build-in integration with Apache Camel for configurable message routing.</li>
+</ul>
+</li>
+</ul>
+
 <h3>
 <a id="activemq-configuration" class="anchor" href="#activemq-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ActiveMQ Configuration.</h3>
 
