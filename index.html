@@ -164,6 +164,9 @@ Reasons:</p>
 </li>
 </ul>
 
+<h2>
+<a id="active-mq--mqtt-integration-highlights" class="anchor" href="#active-mq--mqtt-integration-highlights" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Active MQ – MQTT Integration Highlights</h2>
+
 <h3>
 <a id="activemq-configuration" class="anchor" href="#activemq-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ActiveMQ Configuration.</h3>
 
@@ -173,8 +176,28 @@ Reasons:</p>
 <li> Changed communication protocol to NIO (greatly reduces number of active threads for large number connections).</li>
 <li> Enabled more memory for the broker - 4GB (this is maximum using default wrapper that comes with ActiveMQ installation package).</li>
 <li> Enabled thread pool.</li>
-<li> Added transport level security – SSL.</li>
+<li> Added transport level security – SSL.
+Changes extracted from config:
+
+…
+        
+…
+</li>
 </ol>
+
+<h3>
+<a id="mqtt-client" class="anchor" href="#mqtt-client" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MQTT Client</h3>
+
+<ol>
+<li> Active MQ topics, default communication channel will be used for connection with Active MQ broker.</li>
+<li> Messages sent to MQTT will use durable (to store-and-publish messages for disconnected subscribers) topics. </li>
+<li> MQTT will be sending message to non-durable topic (default MQTT adapter implementation in ActiveMQ).</li>
+</ol>
+
+<h3>
+<a id="active-mq-topic---queue-routing" class="anchor" href="#active-mq-topic---queue-routing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Active MQ Topic - Queue Routing</h3>
+
+<p>MQTT – Active MQ adapter receives incoming messages in non-durable topic. The broker is configured to use Camel to route all messages from this to non-durable topic to a queue. This provides durability for messages to survive broker restart. It also provides support for built-in load-balanced message processing.</p>
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
 
