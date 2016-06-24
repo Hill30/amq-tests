@@ -199,6 +199,18 @@ Changes extracted from config:
 
 <p>MQTT – Active MQ adapter receives incoming messages in non-durable topic. The broker is configured to use Camel to route all messages from this to non-durable topic to a queue. This provides durability for messages to survive broker restart. It also provides support for built-in load-balanced message processing.</p>
 
+<h2>
+<a id="active-mq---server-side-integration" class="anchor" href="#active-mq---server-side-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Active MQ - Server-Side Integration</h2>
+
+<p>Server side components implemented using .Net framework and integrated with Active MQ using NMS implementation library [<a href="http://activemq.apache.org/nms/">http://activemq.apache.org/nms/</a>].</p>
+
+<p>Server – Client communication uses AMQ durable topics which are mapped to MQTT channels by MQTT AMQ adapter. To make topic/messages durable (persistent to file) application service will be setting messages’ quality of service flag QoS to 1 or 2.</p>
+
+<p>Server specifies time-to-live for client messages to trigger expiration for non-delivered messages in the broker.</p>
+
+<p>Client-Server communication uses a combination of AMQ non-durable topic where messages received from MQTT adapter and queues to provide durability and load-balanced processing. 
+Apache Camel (with very basic, XML mapping is used to transfer messages from input topic to application processing queue. </p>
+
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
 
 <h3>
