@@ -210,12 +210,12 @@ Apache Camel (with very basic, XML mapping is used to transfer messages from inp
 <a id="target-deployment-configuration" class="anchor" href="#target-deployment-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Target Deployment Configuration</h3>
 
 <p>ActiveMQ 
-1.  Individual MQTT user mapped to dedicated durable topic.
-2.  Messages sent to durable topic have expiration timeout.
-3.  Incoming from MQTT client messages needs to be routed to a queue for durability and load-balanced processing.
-4.  Enabled Camel with pre-set XML-based configuration for topic to queue message routing.
-5.  Messages persisted in KahaDB (default) store.
-6.  Load Balancing and Failover choice: Network of brokers with duplex inter-broker communication.
+1. Individual MQTT user mapped to dedicated durable topic.<br>
+2. Messages sent to durable topic have expiration timeout.<br>
+3. Incoming from MQTT client messages needs to be routed to a queue for durability and load-balanced processing.<br>
+4. Enabled Camel with pre-set XML-based configuration for topic to queue message routing.<br>
+5. Messages persisted in KahaDB (default) store.<br>
+6. Load Balancing and Failover choice: Network of brokers with duplex inter-broker communication.<br>
       a.    Pros: 
           i.    Standard, most common configuration
           ii.   No need for shared date store (KahaDB) instance.
