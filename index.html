@@ -224,12 +224,20 @@ Apache Camel (with very basic, XML mapping is used to transfer messages from inp
 </li>
 <li>Load Balancing and Failover choice: Network of brokers with duplex inter-broker communication.<br>
  Pros:<br>
-      i.    Standard, most common configuration<br>
-      ii.   No need for shared date store (KahaDB) instance.<br>
- Cons:<br>
-      i.    Combination with durable topics results in MQTT client receiving duplicate messages switching between brokers.<br>
-      ii.   Incoming from MQTT messages need to be filtered from replication to avoid duplicates in re-routed queue.<br>
-      iii.  Every broker in Network of Broker configuration will use its own persistent store.<br>
+
+<ul>
+<li> Standard, most common configuration<br>
+</li>
+<li> No need for shared date store (KahaDB) instance.<br>
+Cons:<br>
+</li>
+<li> Combination with durable topics results in MQTT client receiving duplicate messages switching between brokers.<br>
+</li>
+<li> Incoming from MQTT messages need to be filtered from replication to avoid duplicates in re-routed queue.<br>
+</li>
+<li> Every broker in Network of Broker configuration will use its own persistent store.<br>
+</li>
+</ul>
 </li>
 </ol>
 
