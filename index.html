@@ -223,13 +223,14 @@ Apache Camel (with very basic, XML mapping is used to transfer messages from inp
 <li>Messages persisted in KahaDB (default) store.<br>
 </li>
 <li>Load Balancing and Failover choice: Network of brokers with duplex inter-broker communication.<br>
-  a.    Pros: 
-      i.    Standard, most common configuration
-      ii.   No need for shared date store (KahaDB) instance.
-  b.    Cons: 
-      i.    Combination with durable topics results in MQTT client receiving duplicate messages switching between brokers.
-      ii.   Incoming from MQTT messages need to be filtered from replication to avoid duplicates in re-routed queue.
-      iii.  Every broker in Network of Broker configuration will use its own persistent store. </li>
+ Pros:<br>
+      i.    Standard, most common configuration<br>
+      ii.   No need for shared date store (KahaDB) instance.<br>
+ Cons:<br>
+      i.    Combination with durable topics results in MQTT client receiving duplicate messages switching between brokers.<br>
+      ii.   Incoming from MQTT messages need to be filtered from replication to avoid duplicates in re-routed queue.<br>
+      iii.  Every broker in Network of Broker configuration will use its own persistent store.<br>
+</li>
 </ol>
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
