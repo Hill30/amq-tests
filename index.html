@@ -269,6 +269,26 @@ http://localhost:1124/api/auth
 </li>
 </ol>
 
+<h3>
+<a id="load-testing-verification" class="anchor" href="#load-testing-verification" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Load Testing Verification</h3>
+
+<p>Deployment OS, JVM
+1.  Windows 2012 Server, 8GB RAM, 100 GB hard drive
+2.  ActiveMQ default configuration with monitoring wrapper. The wrapper configuration changed to use 4GB for JVM (max for free version).</p>
+
+<p>Testing Single Broker<br>
+1.  Max clients supported by single broker.<br>
+2.  Graceful client disconnect: implemented by clients’ closing - opening connections using API.<br>
+3.  Network outage simulation: implemented using network firewall disconnects.      </p>
+
+<p>Component Diagram</p>
+
+<p><img src="https://github.com/Hill30/amq-tests/blob/master/Images/AMQ_App-MQTT_LoadTest_Single_Broker.png?raw=true" alt=""></p>
+
+<p>Deployment Diagram   </p>
+
+<p><img src="https://github.com/Hill30/amq-tests/blob/master/Images/AMQ_App-MQTT_Network_Deployment.png?raw=true" alt=""></p>
+
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
 
 <h3>
