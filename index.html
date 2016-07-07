@@ -222,8 +222,9 @@ Apache Camel (with very basic, XML mapping is used to transfer messages from inp
 </li>
 <li>Messages persisted in KahaDB (default) store.<br>
 </li>
-<li>Load Balancing and Failover choice: Network of brokers with duplex inter-broker communication.<br>
- Pros:<br>
+<li>
+<p>Load Balancing and Failover choice: Network of brokers with duplex inter-broker communication.<br>
+ Pros:  </p>
 
 <ul>
 <li> Standard, most common configuration<br>
@@ -238,6 +239,31 @@ Cons:<br>
 <li> Every broker in Network of Broker configuration will use its own persistent store.<br>
 </li>
 </ul>
+
+<p>MQTT Client</p>
+</li>
+<li>User can connect and receive/send messages from communication channel from multiple devices.<br>
+</li>
+<li>More than one MQTT device can be connected and receive messages at the same time.<br>
+</li>
+<li>
+<p>Device id is used to uniquely identify connection.   </p>
+
+<p>Component Diagram  </p>
+</li>
+</ol>
+
+<h3>
+<a id="end-to-end-security" class="anchor" href="#end-to-end-security" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>End-to-End Security</h3>
+
+<ol>
+<li>TSL/SSL used to secure connectivity for transferring sensitive data. Configuration extract:<br>
+</li>
+<li>User authentication implemented by configuring broker to use authentication plug-in that authenticates users against stand-alone authentication web service. Configuration extract:<br>
+
+            
+http://localhost:1124/api/auth
+
 </li>
 </ol>
 
