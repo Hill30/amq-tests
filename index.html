@@ -289,6 +289,33 @@ http://localhost:1124/api/auth
 
 <p><img src="https://github.com/Hill30/amq-tests/blob/master/Images/AMQ_App-MQTT_Network_Deployment.png?raw=true" alt=""></p>
 
+<p>Testing Network of Brokers (with max client identified in single broker test)<br>
+1. Graceful client disconnect: implemented by clients’ closing – opening connections using API.<br>
+2. Network outage simulation: implemented using network firewall disconnects.<br>
+3. Store and forward/expire simulation: subscribers disconnected using firewall while publisher keeps sending messages. Broker stores and checks messages for expiration. Once subscribers connected only non-expired messages get delivered.<br>
+4. Load-balancing implemented using NLB load-balancer that comes with Windows 2012 Server.    </p>
+
+<h3>
+<a id="system-monitoring" class="anchor" href="#system-monitoring" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>System Monitoring</h3>
+
+<ol>
+<li>CPU, RAM, Hard Drive space<br>
+</li>
+<li>Java resources<br>
+</li>
+<li>AMQ status (topics, queues)<br>
+</li>
+</ol>
+
+<h3>
+<a id="observations" class="anchor" href="#observations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Observations</h3>
+
+<p>Testing Single Broker<br>
+       Connections, load, disconnects: results    </p>
+
+<p>Load-Balanced<br>
+       Connections, load, disconnects: results     </p>
+
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
 
 <h3>
